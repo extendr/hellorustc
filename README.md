@@ -41,3 +41,7 @@ means if you use elaborate unwinding in your `rustc`, you'd somehow have to link
 build `std`.
 
 - [ ] Find a way to link to Rust's exception handling / unwinding. For now `-Cpanic=abort`, i.e. the C-way. This means that `extern "C"` is the only supported ABI, and that `C-unwind` cannot be supported by only calling `rustc`.
+
+## Acknowledgements
+
+The name `hellorustc` is inspired by the [`hellorust`](https://github.com/r-rust/hellorust).
