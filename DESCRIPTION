@@ -1,10 +1,11 @@
 Package: hellorustc
-Title: Proof of concept for using \code{rustc} directly with R packages
+Title: Use `rustc` only with R
 Version: 0.0.0.9000
-Authors@R: 
-    person("Mossa", "Reimert", , "mossa@sund.ku.com", role = c("aut", "cre"),
+Authors@R: c(
+    person("Mossa", "Reimert", , "mossa@sund.ku.dk", role = c("cre", "aut"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+  )
+Description: Proof of concept for using \code{rustc} directly with R packages
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
