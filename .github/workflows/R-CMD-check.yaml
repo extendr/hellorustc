@@ -33,6 +33,11 @@ jobs:
       - name: Install `bindgen`
         run: |
           cargo install bindgen-cli
+      - name: Add Rtools' targets to Rust
+        if: runner.os == 'Windows'
+        run: |
+          rustup target add i686-pc-windows-gnu
+          rustup target add x86_64-pc-windows-gnu
 
       - uses: actions/checkout@v4
 
