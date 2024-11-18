@@ -1,4 +1,7 @@
 # `hellorustc`
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/CGMossa/hellorustc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CGMossa/hellorustc/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 This repository is a prototype for using `rustc` as a friendly compiler with R packages.
 
