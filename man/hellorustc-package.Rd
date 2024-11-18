@@ -4,12 +4,12 @@
 \name{hellorustc-package}
 \alias{hellorustc}
 \alias{hellorustc-package}
-\title{hellorustc: What the Package Does (One Line, Title Case)}
+\title{hellorustc: Proof of concept for using \code{rustc} directly with R packages}
 \description{
 What the package does (one paragraph).
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Mossa Reimert \email{mossa@sund.ku.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
 
 }
 \keyword{internal}
