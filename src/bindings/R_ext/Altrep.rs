@@ -133,13 +133,6 @@ pub type R_altlist_Set_elt_method_t =
 pub struct R_altrep_class_t {
     pub ptr: SEXP,
 }
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of R_altrep_class_t"][::std::mem::size_of::<R_altrep_class_t>() - 8usize];
-    ["Alignment of R_altrep_class_t"][::std::mem::align_of::<R_altrep_class_t>() - 8usize];
-    ["Offset of field: R_altrep_class_t::ptr"]
-        [::std::mem::offset_of!(R_altrep_class_t, ptr) - 0usize];
-};
 extern "C" {
     pub fn R_new_altrep(aclass: R_altrep_class_t, data1: SEXP, data2: SEXP) -> SEXP;
     pub fn R_make_altstring_class(

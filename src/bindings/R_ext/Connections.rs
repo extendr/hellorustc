@@ -99,61 +99,6 @@ pub struct Rconn {
     pub buff_pos: usize,
 }
 pub const R_CONNECTIONS_VERSION: u32 = 1;
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of Rconn"][::std::mem::size_of::<Rconn>() - 488usize];
-    ["Alignment of Rconn"][::std::mem::align_of::<Rconn>() - 8usize];
-    ["Offset of field: Rconn::class"][::std::mem::offset_of!(Rconn, class) - 0usize];
-    ["Offset of field: Rconn::description"][::std::mem::offset_of!(Rconn, description) - 8usize];
-    ["Offset of field: Rconn::enc"][::std::mem::offset_of!(Rconn, enc) - 16usize];
-    ["Offset of field: Rconn::mode"][::std::mem::offset_of!(Rconn, mode) - 20usize];
-    ["Offset of field: Rconn::text"][::std::mem::offset_of!(Rconn, text) - 28usize];
-    ["Offset of field: Rconn::isopen"][::std::mem::offset_of!(Rconn, isopen) - 32usize];
-    ["Offset of field: Rconn::incomplete"][::std::mem::offset_of!(Rconn, incomplete) - 36usize];
-    ["Offset of field: Rconn::canread"][::std::mem::offset_of!(Rconn, canread) - 40usize];
-    ["Offset of field: Rconn::canwrite"][::std::mem::offset_of!(Rconn, canwrite) - 44usize];
-    ["Offset of field: Rconn::canseek"][::std::mem::offset_of!(Rconn, canseek) - 48usize];
-    ["Offset of field: Rconn::blocking"][::std::mem::offset_of!(Rconn, blocking) - 52usize];
-    ["Offset of field: Rconn::isGzcon"][::std::mem::offset_of!(Rconn, isGzcon) - 56usize];
-    ["Offset of field: Rconn::open"][::std::mem::offset_of!(Rconn, open) - 64usize];
-    ["Offset of field: Rconn::close"][::std::mem::offset_of!(Rconn, close) - 72usize];
-    ["Offset of field: Rconn::destroy"][::std::mem::offset_of!(Rconn, destroy) - 80usize];
-    ["Offset of field: Rconn::vfprintf"][::std::mem::offset_of!(Rconn, vfprintf) - 88usize];
-    ["Offset of field: Rconn::fgetc"][::std::mem::offset_of!(Rconn, fgetc) - 96usize];
-    ["Offset of field: Rconn::fgetc_internal"]
-        [::std::mem::offset_of!(Rconn, fgetc_internal) - 104usize];
-    ["Offset of field: Rconn::seek"][::std::mem::offset_of!(Rconn, seek) - 112usize];
-    ["Offset of field: Rconn::truncate"][::std::mem::offset_of!(Rconn, truncate) - 120usize];
-    ["Offset of field: Rconn::fflush"][::std::mem::offset_of!(Rconn, fflush) - 128usize];
-    ["Offset of field: Rconn::read"][::std::mem::offset_of!(Rconn, read) - 136usize];
-    ["Offset of field: Rconn::write"][::std::mem::offset_of!(Rconn, write) - 144usize];
-    ["Offset of field: Rconn::nPushBack"][::std::mem::offset_of!(Rconn, nPushBack) - 152usize];
-    ["Offset of field: Rconn::posPushBack"][::std::mem::offset_of!(Rconn, posPushBack) - 156usize];
-    ["Offset of field: Rconn::PushBack"][::std::mem::offset_of!(Rconn, PushBack) - 160usize];
-    ["Offset of field: Rconn::save"][::std::mem::offset_of!(Rconn, save) - 168usize];
-    ["Offset of field: Rconn::save2"][::std::mem::offset_of!(Rconn, save2) - 172usize];
-    ["Offset of field: Rconn::encname"][::std::mem::offset_of!(Rconn, encname) - 176usize];
-    ["Offset of field: Rconn::inconv"][::std::mem::offset_of!(Rconn, inconv) - 280usize];
-    ["Offset of field: Rconn::outconv"][::std::mem::offset_of!(Rconn, outconv) - 288usize];
-    ["Offset of field: Rconn::iconvbuff"][::std::mem::offset_of!(Rconn, iconvbuff) - 296usize];
-    ["Offset of field: Rconn::oconvbuff"][::std::mem::offset_of!(Rconn, oconvbuff) - 321usize];
-    ["Offset of field: Rconn::next"][::std::mem::offset_of!(Rconn, next) - 376usize];
-    ["Offset of field: Rconn::init_out"][::std::mem::offset_of!(Rconn, init_out) - 384usize];
-    ["Offset of field: Rconn::navail"][::std::mem::offset_of!(Rconn, navail) - 410usize];
-    ["Offset of field: Rconn::inavail"][::std::mem::offset_of!(Rconn, inavail) - 412usize];
-    ["Offset of field: Rconn::EOF_signalled"]
-        [::std::mem::offset_of!(Rconn, EOF_signalled) - 416usize];
-    ["Offset of field: Rconn::UTF8out"][::std::mem::offset_of!(Rconn, UTF8out) - 420usize];
-    ["Offset of field: Rconn::id"][::std::mem::offset_of!(Rconn, id) - 424usize];
-    ["Offset of field: Rconn::ex_ptr"][::std::mem::offset_of!(Rconn, ex_ptr) - 432usize];
-    ["Offset of field: Rconn::private"][::std::mem::offset_of!(Rconn, private) - 440usize];
-    ["Offset of field: Rconn::status"][::std::mem::offset_of!(Rconn, status) - 448usize];
-    ["Offset of field: Rconn::buff"][::std::mem::offset_of!(Rconn, buff) - 456usize];
-    ["Offset of field: Rconn::buff_len"][::std::mem::offset_of!(Rconn, buff_len) - 464usize];
-    ["Offset of field: Rconn::buff_stored_len"]
-        [::std::mem::offset_of!(Rconn, buff_stored_len) - 472usize];
-    ["Offset of field: Rconn::buff_pos"][::std::mem::offset_of!(Rconn, buff_pos) - 480usize];
-};
 extern "C" {
     pub fn R_new_custom_connection(
         description: *const ::std::os::raw::c_char,

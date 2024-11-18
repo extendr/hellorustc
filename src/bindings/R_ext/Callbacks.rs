@@ -84,49 +84,6 @@ pub struct _R_ObjectTable {
     pub onAttach: Rdb_onAttach,
     pub privateData: *mut ::std::os::raw::c_void,
 }
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of _ToplevelCallback"][::std::mem::size_of::<_ToplevelCallback>() - 40usize];
-    ["Alignment of _ToplevelCallback"][::std::mem::align_of::<_ToplevelCallback>() - 8usize];
-    ["Offset of field: _ToplevelCallback::cb"]
-        [::std::mem::offset_of!(_ToplevelCallback, cb) - 0usize];
-    ["Offset of field: _ToplevelCallback::data"]
-        [::std::mem::offset_of!(_ToplevelCallback, data) - 8usize];
-    ["Offset of field: _ToplevelCallback::finalizer"]
-        [::std::mem::offset_of!(_ToplevelCallback, finalizer) - 16usize];
-    ["Offset of field: _ToplevelCallback::name"]
-        [::std::mem::offset_of!(_ToplevelCallback, name) - 24usize];
-    ["Offset of field: _ToplevelCallback::next"]
-        [::std::mem::offset_of!(_ToplevelCallback, next) - 32usize];
-};
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of _R_ObjectTable"][::std::mem::size_of::<_R_ObjectTable>() - 96usize];
-    ["Alignment of _R_ObjectTable"][::std::mem::align_of::<_R_ObjectTable>() - 8usize];
-    ["Offset of field: _R_ObjectTable::type_"]
-        [::std::mem::offset_of!(_R_ObjectTable, type_) - 0usize];
-    ["Offset of field: _R_ObjectTable::cachedNames"]
-        [::std::mem::offset_of!(_R_ObjectTable, cachedNames) - 8usize];
-    ["Offset of field: _R_ObjectTable::active"]
-        [::std::mem::offset_of!(_R_ObjectTable, active) - 16usize];
-    ["Offset of field: _R_ObjectTable::exists"]
-        [::std::mem::offset_of!(_R_ObjectTable, exists) - 24usize];
-    ["Offset of field: _R_ObjectTable::get"][::std::mem::offset_of!(_R_ObjectTable, get) - 32usize];
-    ["Offset of field: _R_ObjectTable::remove"]
-        [::std::mem::offset_of!(_R_ObjectTable, remove) - 40usize];
-    ["Offset of field: _R_ObjectTable::assign"]
-        [::std::mem::offset_of!(_R_ObjectTable, assign) - 48usize];
-    ["Offset of field: _R_ObjectTable::objects"]
-        [::std::mem::offset_of!(_R_ObjectTable, objects) - 56usize];
-    ["Offset of field: _R_ObjectTable::canCache"]
-        [::std::mem::offset_of!(_R_ObjectTable, canCache) - 64usize];
-    ["Offset of field: _R_ObjectTable::onDetach"]
-        [::std::mem::offset_of!(_R_ObjectTable, onDetach) - 72usize];
-    ["Offset of field: _R_ObjectTable::onAttach"]
-        [::std::mem::offset_of!(_R_ObjectTable, onAttach) - 80usize];
-    ["Offset of field: _R_ObjectTable::privateData"]
-        [::std::mem::offset_of!(_R_ObjectTable, privateData) - 88usize];
-};
 extern "C" {
     pub fn Rf_removeTaskCallbackByIndex(id: ::std::os::raw::c_int) -> Rboolean;
     pub fn Rf_removeTaskCallbackByName(name: *const ::std::os::raw::c_char) -> Rboolean;

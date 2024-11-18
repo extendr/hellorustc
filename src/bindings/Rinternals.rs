@@ -89,61 +89,12 @@ pub const IDENT_USE_SRCREF: u32 = 32;
 pub const IDENT_EXTPTR_AS_REF: u32 = 64;
 pub const HT_TYPE_IDENTICAL: u32 = 0;
 pub const HT_TYPE_ADDRESS: u32 = 1;
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of R_outpstream_st"][::std::mem::size_of::<R_outpstream_st>() - 48usize];
-    ["Alignment of R_outpstream_st"][::std::mem::align_of::<R_outpstream_st>() - 8usize];
-    ["Offset of field: R_outpstream_st::data"]
-        [::std::mem::offset_of!(R_outpstream_st, data) - 0usize];
-    ["Offset of field: R_outpstream_st::type_"]
-        [::std::mem::offset_of!(R_outpstream_st, type_) - 8usize];
-    ["Offset of field: R_outpstream_st::version"]
-        [::std::mem::offset_of!(R_outpstream_st, version) - 12usize];
-    ["Offset of field: R_outpstream_st::OutChar"]
-        [::std::mem::offset_of!(R_outpstream_st, OutChar) - 16usize];
-    ["Offset of field: R_outpstream_st::OutBytes"]
-        [::std::mem::offset_of!(R_outpstream_st, OutBytes) - 24usize];
-    ["Offset of field: R_outpstream_st::OutPersistHookFunc"]
-        [::std::mem::offset_of!(R_outpstream_st, OutPersistHookFunc) - 32usize];
-    ["Offset of field: R_outpstream_st::OutPersistHookData"]
-        [::std::mem::offset_of!(R_outpstream_st, OutPersistHookData) - 40usize];
-};
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of R_inpstream_st"][::std::mem::size_of::<R_inpstream_st>() - 128usize];
-    ["Alignment of R_inpstream_st"][::std::mem::align_of::<R_inpstream_st>() - 8usize];
-    ["Offset of field: R_inpstream_st::data"]
-        [::std::mem::offset_of!(R_inpstream_st, data) - 0usize];
-    ["Offset of field: R_inpstream_st::type_"]
-        [::std::mem::offset_of!(R_inpstream_st, type_) - 8usize];
-    ["Offset of field: R_inpstream_st::InChar"]
-        [::std::mem::offset_of!(R_inpstream_st, InChar) - 16usize];
-    ["Offset of field: R_inpstream_st::InBytes"]
-        [::std::mem::offset_of!(R_inpstream_st, InBytes) - 24usize];
-    ["Offset of field: R_inpstream_st::InPersistHookFunc"]
-        [::std::mem::offset_of!(R_inpstream_st, InPersistHookFunc) - 32usize];
-    ["Offset of field: R_inpstream_st::InPersistHookData"]
-        [::std::mem::offset_of!(R_inpstream_st, InPersistHookData) - 40usize];
-    ["Offset of field: R_inpstream_st::native_encoding"]
-        [::std::mem::offset_of!(R_inpstream_st, native_encoding) - 48usize];
-    ["Offset of field: R_inpstream_st::nat2nat_obj"]
-        [::std::mem::offset_of!(R_inpstream_st, nat2nat_obj) - 112usize];
-    ["Offset of field: R_inpstream_st::nat2utf8_obj"]
-        [::std::mem::offset_of!(R_inpstream_st, nat2utf8_obj) - 120usize];
-};
 pub const SORTED_DECR_NA_1ST: _bindgen_ty_1 = _bindgen_ty_1::SORTED_DECR_NA_1ST;
 pub const SORTED_DECR: _bindgen_ty_1 = _bindgen_ty_1::SORTED_DECR;
 pub const UNKNOWN_SORTEDNESS: _bindgen_ty_1 = _bindgen_ty_1::UNKNOWN_SORTEDNESS;
 pub const SORTED_INCR: _bindgen_ty_1 = _bindgen_ty_1::SORTED_INCR;
 pub const SORTED_INCR_NA_1ST: _bindgen_ty_1 = _bindgen_ty_1::SORTED_INCR_NA_1ST;
 pub const KNOWN_UNSORTED: _bindgen_ty_1 = _bindgen_ty_1::KNOWN_UNSORTED;
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of R_hashtab_type"][::std::mem::size_of::<R_hashtab_type>() - 8usize];
-    ["Alignment of R_hashtab_type"][::std::mem::align_of::<R_hashtab_type>() - 8usize];
-    ["Offset of field: R_hashtab_type::cell"]
-        [::std::mem::offset_of!(R_hashtab_type, cell) - 0usize];
-};
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = "------ enum_SEXPTYPE -----"]

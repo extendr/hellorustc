@@ -142,62 +142,6 @@ pub const R_GE_capability_glyphs: u32 = 12;
 pub const R_GE_text_style_normal: u32 = 1;
 pub const R_GE_text_style_italic: u32 = 2;
 pub const R_GE_text_style_oblique: u32 = 3;
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of R_GE_gcontext"][::std::mem::size_of::<R_GE_gcontext>() - 288usize];
-    ["Alignment of R_GE_gcontext"][::std::mem::align_of::<R_GE_gcontext>() - 8usize];
-    ["Offset of field: R_GE_gcontext::col"][::std::mem::offset_of!(R_GE_gcontext, col) - 0usize];
-    ["Offset of field: R_GE_gcontext::fill"][::std::mem::offset_of!(R_GE_gcontext, fill) - 4usize];
-    ["Offset of field: R_GE_gcontext::gamma"]
-        [::std::mem::offset_of!(R_GE_gcontext, gamma) - 8usize];
-    ["Offset of field: R_GE_gcontext::lwd"][::std::mem::offset_of!(R_GE_gcontext, lwd) - 16usize];
-    ["Offset of field: R_GE_gcontext::lty"][::std::mem::offset_of!(R_GE_gcontext, lty) - 24usize];
-    ["Offset of field: R_GE_gcontext::lend"][::std::mem::offset_of!(R_GE_gcontext, lend) - 28usize];
-    ["Offset of field: R_GE_gcontext::ljoin"]
-        [::std::mem::offset_of!(R_GE_gcontext, ljoin) - 32usize];
-    ["Offset of field: R_GE_gcontext::lmitre"]
-        [::std::mem::offset_of!(R_GE_gcontext, lmitre) - 40usize];
-    ["Offset of field: R_GE_gcontext::cex"][::std::mem::offset_of!(R_GE_gcontext, cex) - 48usize];
-    ["Offset of field: R_GE_gcontext::ps"][::std::mem::offset_of!(R_GE_gcontext, ps) - 56usize];
-    ["Offset of field: R_GE_gcontext::lineheight"]
-        [::std::mem::offset_of!(R_GE_gcontext, lineheight) - 64usize];
-    ["Offset of field: R_GE_gcontext::fontface"]
-        [::std::mem::offset_of!(R_GE_gcontext, fontface) - 72usize];
-    ["Offset of field: R_GE_gcontext::fontfamily"]
-        [::std::mem::offset_of!(R_GE_gcontext, fontfamily) - 76usize];
-    ["Offset of field: R_GE_gcontext::patternFill"]
-        [::std::mem::offset_of!(R_GE_gcontext, patternFill) - 280usize];
-};
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of GESystemDesc"][::std::mem::size_of::<GESystemDesc>() - 16usize];
-    ["Alignment of GESystemDesc"][::std::mem::align_of::<GESystemDesc>() - 8usize];
-    ["Offset of field: GESystemDesc::systemSpecific"]
-        [::std::mem::offset_of!(GESystemDesc, systemSpecific) - 0usize];
-    ["Offset of field: GESystemDesc::callback"]
-        [::std::mem::offset_of!(GESystemDesc, callback) - 8usize];
-};
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of _GEDevDesc"][::std::mem::size_of::<_GEDevDesc>() - 248usize];
-    ["Alignment of _GEDevDesc"][::std::mem::align_of::<_GEDevDesc>() - 8usize];
-    ["Offset of field: _GEDevDesc::dev"][::std::mem::offset_of!(_GEDevDesc, dev) - 0usize];
-    ["Offset of field: _GEDevDesc::displayListOn"]
-        [::std::mem::offset_of!(_GEDevDesc, displayListOn) - 8usize];
-    ["Offset of field: _GEDevDesc::displayList"]
-        [::std::mem::offset_of!(_GEDevDesc, displayList) - 16usize];
-    ["Offset of field: _GEDevDesc::DLlastElt"]
-        [::std::mem::offset_of!(_GEDevDesc, DLlastElt) - 24usize];
-    ["Offset of field: _GEDevDesc::savedSnapshot"]
-        [::std::mem::offset_of!(_GEDevDesc, savedSnapshot) - 32usize];
-    ["Offset of field: _GEDevDesc::dirty"][::std::mem::offset_of!(_GEDevDesc, dirty) - 40usize];
-    ["Offset of field: _GEDevDesc::recordGraphics"]
-        [::std::mem::offset_of!(_GEDevDesc, recordGraphics) - 44usize];
-    ["Offset of field: _GEDevDesc::gesd"][::std::mem::offset_of!(_GEDevDesc, gesd) - 48usize];
-    ["Offset of field: _GEDevDesc::ask"][::std::mem::offset_of!(_GEDevDesc, ask) - 240usize];
-    ["Offset of field: _GEDevDesc::appending"]
-        [::std::mem::offset_of!(_GEDevDesc, appending) - 244usize];
-};
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " The graphics engine will only accept locations and dimensions\n in native device coordinates, but it provides the following functions\n for converting between a couple of simple alternative coordinate\n systems and device coordinates:\n    DEVICE = native units of the device\n    NDC = Normalised device coordinates\n    INCHES = inches (!)\n    CM = centimetres (!!)"]

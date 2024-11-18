@@ -32,39 +32,6 @@ pub struct structRstart {
     pub nconnections: ::std::os::raw::c_int,
 }
 pub const RSTART_VERSION: u32 = 1;
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of structRstart"][::std::mem::size_of::<structRstart>() - 88usize];
-    ["Alignment of structRstart"][::std::mem::align_of::<structRstart>() - 8usize];
-    ["Offset of field: structRstart::R_Quiet"]
-        [::std::mem::offset_of!(structRstart, R_Quiet) - 0usize];
-    ["Offset of field: structRstart::R_NoEcho"]
-        [::std::mem::offset_of!(structRstart, R_NoEcho) - 4usize];
-    ["Offset of field: structRstart::R_Interactive"]
-        [::std::mem::offset_of!(structRstart, R_Interactive) - 8usize];
-    ["Offset of field: structRstart::R_Verbose"]
-        [::std::mem::offset_of!(structRstart, R_Verbose) - 12usize];
-    ["Offset of field: structRstart::LoadSiteFile"]
-        [::std::mem::offset_of!(structRstart, LoadSiteFile) - 16usize];
-    ["Offset of field: structRstart::LoadInitFile"]
-        [::std::mem::offset_of!(structRstart, LoadInitFile) - 20usize];
-    ["Offset of field: structRstart::DebugInitFile"]
-        [::std::mem::offset_of!(structRstart, DebugInitFile) - 24usize];
-    ["Offset of field: structRstart::RestoreAction"]
-        [::std::mem::offset_of!(structRstart, RestoreAction) - 28usize];
-    ["Offset of field: structRstart::SaveAction"]
-        [::std::mem::offset_of!(structRstart, SaveAction) - 32usize];
-    ["Offset of field: structRstart::vsize"][::std::mem::offset_of!(structRstart, vsize) - 40usize];
-    ["Offset of field: structRstart::nsize"][::std::mem::offset_of!(structRstart, nsize) - 48usize];
-    ["Offset of field: structRstart::max_vsize"]
-        [::std::mem::offset_of!(structRstart, max_vsize) - 56usize];
-    ["Offset of field: structRstart::max_nsize"]
-        [::std::mem::offset_of!(structRstart, max_nsize) - 64usize];
-    ["Offset of field: structRstart::ppsize"]
-        [::std::mem::offset_of!(structRstart, ppsize) - 72usize];
-    ["Offset of field: structRstart::nconnections"]
-        [::std::mem::offset_of!(structRstart, nconnections) - 84usize];
-};
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " Startup Actions"]

@@ -23,14 +23,3 @@ pub struct R_allocator {
     #[doc = " custom data for the allocator implementation"]
     pub data: *mut ::std::os::raw::c_void,
 }
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of R_allocator"][::std::mem::size_of::<R_allocator>() - 32usize];
-    ["Alignment of R_allocator"][::std::mem::align_of::<R_allocator>() - 8usize];
-    ["Offset of field: R_allocator::mem_alloc"]
-        [::std::mem::offset_of!(R_allocator, mem_alloc) - 0usize];
-    ["Offset of field: R_allocator::mem_free"]
-        [::std::mem::offset_of!(R_allocator, mem_free) - 8usize];
-    ["Offset of field: R_allocator::res"][::std::mem::offset_of!(R_allocator, res) - 16usize];
-    ["Offset of field: R_allocator::data"][::std::mem::offset_of!(R_allocator, data) - 24usize];
-};

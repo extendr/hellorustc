@@ -22,22 +22,6 @@ pub struct _InputHandler {
 }
 pub const XActivity: u32 = 1;
 pub const StdinActivity: u32 = 2;
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of _InputHandler"][::std::mem::size_of::<_InputHandler>() - 40usize];
-    ["Alignment of _InputHandler"][::std::mem::align_of::<_InputHandler>() - 8usize];
-    ["Offset of field: _InputHandler::activity"]
-        [::std::mem::offset_of!(_InputHandler, activity) - 0usize];
-    ["Offset of field: _InputHandler::fileDescriptor"]
-        [::std::mem::offset_of!(_InputHandler, fileDescriptor) - 4usize];
-    ["Offset of field: _InputHandler::handler"]
-        [::std::mem::offset_of!(_InputHandler, handler) - 8usize];
-    ["Offset of field: _InputHandler::next"][::std::mem::offset_of!(_InputHandler, next) - 16usize];
-    ["Offset of field: _InputHandler::active"]
-        [::std::mem::offset_of!(_InputHandler, active) - 24usize];
-    ["Offset of field: _InputHandler::userData"]
-        [::std::mem::offset_of!(_InputHandler, userData) - 32usize];
-};
 extern "C" {
     pub fn initStdinHandler() -> *mut InputHandler;
     pub fn consoleInputHandler(buf: *mut ::std::os::raw::c_uchar, len: ::std::os::raw::c_int);
