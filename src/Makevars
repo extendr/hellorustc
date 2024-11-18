@@ -5,7 +5,7 @@ BINDINGS_DIR := bindings
 all_r_headers := $(shell find $(R_INCLUDE_DIR) -name '*.h')
 
 # Main target
-.PHONY: all_r_bindings
+.PHONY: $(.PHONY) all_r_bindings
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
 	@for header in $(all_r_headers); do \
