@@ -41,5 +41,89 @@ extern "C" {
     pub fn fpu_setup(arg1: Rboolean);
     #[doc = " in ../unix/system.c"]
     pub static mut R_running_as_main_program: ::std::os::raw::c_int;
+    pub static mut ptr_R_Suicide:
+        ::std::option::Option<unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char)>;
+    pub static mut ptr_R_ShowMessage:
+        ::std::option::Option<unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char)>;
+    pub static mut ptr_R_ReadConsole: ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: *const ::std::os::raw::c_char,
+            arg2: *mut ::std::os::raw::c_uchar,
+            arg3: ::std::os::raw::c_int,
+            arg4: ::std::os::raw::c_int,
+        ) -> ::std::os::raw::c_int,
+    >;
+    pub static mut ptr_R_WriteConsole: ::std::option::Option<
+        unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char, arg2: ::std::os::raw::c_int),
+    >;
+    pub static mut ptr_R_WriteConsoleEx: ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: *const ::std::os::raw::c_char,
+            arg2: ::std::os::raw::c_int,
+            arg3: ::std::os::raw::c_int,
+        ),
+    >;
+    pub static mut ptr_R_ResetConsole: ::std::option::Option<unsafe extern "C" fn()>;
+    pub static mut ptr_R_FlushConsole: ::std::option::Option<unsafe extern "C" fn()>;
+    pub static mut ptr_R_ClearerrConsole: ::std::option::Option<unsafe extern "C" fn()>;
+    pub static mut ptr_R_Busy:
+        ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>;
+    pub static mut ptr_R_CleanUp: ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: SA_TYPE,
+            arg2: ::std::os::raw::c_int,
+            arg3: ::std::os::raw::c_int,
+        ),
+    >;
+    pub static mut ptr_R_ShowFiles: ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: ::std::os::raw::c_int,
+            arg2: *mut *const ::std::os::raw::c_char,
+            arg3: *mut *const ::std::os::raw::c_char,
+            arg4: *const ::std::os::raw::c_char,
+            arg5: Rboolean,
+            arg6: *const ::std::os::raw::c_char,
+        ) -> ::std::os::raw::c_int,
+    >;
+    pub static mut ptr_R_ChooseFile: ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: ::std::os::raw::c_int,
+            arg2: *mut ::std::os::raw::c_char,
+            arg3: ::std::os::raw::c_int,
+        ) -> ::std::os::raw::c_int,
+    >;
+    pub static mut ptr_R_EditFile: ::std::option::Option<
+        unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int,
+    >;
+    pub static mut ptr_R_loadhistory:
+        ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP)>;
+    pub static mut ptr_R_savehistory:
+        ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP)>;
+    pub static mut ptr_R_addhistory:
+        ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP)>;
+    #[doc = " added in 3.0.0"]
+    pub static mut ptr_R_EditFiles: ::std::option::Option<
+        unsafe extern "C" fn(
+            arg1: ::std::os::raw::c_int,
+            arg2: *mut *const ::std::os::raw::c_char,
+            arg3: *mut *const ::std::os::raw::c_char,
+            arg4: *const ::std::os::raw::c_char,
+        ) -> ::std::os::raw::c_int,
+    >;
+    #[doc = " naming follows earlier versions in R.app"]
+    pub static mut ptr_do_selectlist: ::std::option::Option<
+        unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP) -> SEXP,
+    >;
+    pub static mut ptr_do_dataentry: ::std::option::Option<
+        unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP) -> SEXP,
+    >;
+    pub static mut ptr_do_dataviewer: ::std::option::Option<
+        unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP) -> SEXP,
+    >;
+    pub static mut ptr_R_ProcessEvents: ::std::option::Option<unsafe extern "C" fn()>;
+    #[doc = " These two are not used by R itself, but are used by the tcltk package"]
+    pub static mut R_timeout_handler:
+        ::std::option::Option<unsafe extern "C" fn() -> ::std::os::raw::c_int>;
+    pub static mut R_timeout_val: ::std::os::raw::c_long;
     pub static mut R_SignalHandlers: ::std::os::raw::c_int;
 }
