@@ -1,7 +1,4 @@
-# Directory to store generated .rs files
 BINDINGS_DIR = bindings
-
-# Find all .h files recursively under R_INCLUDE_DIR
 all_r_headers = $(shell find $(R_INCLUDE_DIR) -name '*.h')
 
 # Main target
