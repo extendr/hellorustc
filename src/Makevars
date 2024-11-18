@@ -1,11 +1,16 @@
 BINDINGS_DIR = bindings
 all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
 OBJECTS = rust_add.o
+# OBJECTS = librust_add.a
+# PKG_LIBS += -lc -lm -lresolv -ldl -lpthread  -dynamiclib -Wl,-dylib -shared -L. -lrust_add
+# PKG_LIBS += -L. -lrust_add
+PKG_LIBS += -lc -lm "-Wl,-dead_strip" "-dynamiclib" "-Wl,-dylib" "-nodefaultlibs"
 
 r_blocked_items = --blocklist-item="VECTOR_PTR|SEXPREC"
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
 RUSTC_VERSION = `rustc --version`
-bindgen_args = --raw-line "/* OS: ${R_OSTYPE} */"  \
+bindgen_args = \
+	--raw-line "/* OS: ${R_OSTYPE} */"  \
 	--raw-line "/* Platform: r$(R_PLATFORM) */" \
 	--raw-line "/* $(RUSTC_VERSION) */" \
 	--raw-line "/* R version: $(R_VERSION) */" \
@@ -13,11 +18,15 @@ bindgen_args = --raw-line "/* OS: ${R_OSTYPE} */"  \
 	--no-layout-tests \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
 	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
-bindgen_clang_args = -Wno-visibility -Denum_SEXPTYPE -DR_NO_REMAP -fparse-all-comments -DR_INTERFACE_PTRS  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
+bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP \
+ -Wno-visibility \
+ -fparse-all-comments -DR_INTERFACE_PTRS \
+ -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
 # .PHONY: all all_r_bindings rust_add.o
 
-all: $(SHLIB) all_r_bindings rust_analyzer_dummy rust_add.o
+# all: $(SHLIB) all_r_bindings rust_analyzer_dummy rust_add.o
+all: $(SHLIB) $(OBJECTS) rust_add.o
 
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
@@ -29,9 +38,17 @@ all_r_bindings:
 	done
 	@echo "All bindings have been generated."
 
-RUSTC = rustc
+
 rust_add.o: rust_add.rs
-	`rustc --target=aarch64-apple-darwin -Cllvm-args=--align-all-functions=64 --crate-type=staticlib --emit=obj rust_add.rs -o rust_add.o`
+	`rustc --edition=2021 \
+	--print native-static-libs \
+	-Cpanic=abort \
+	-Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked \
+	-Cllvm-args=--align-all-functions=64 \
+	--target=aarch64-apple-darwin --crate-type=staticlib \
+	--emit=dep-info,obj \
+	--out-dir . \
+	rust_add.rs`
 
 rust_analyzer_dummy: all_r_bindings
 	mkdir -p dummy/bindings

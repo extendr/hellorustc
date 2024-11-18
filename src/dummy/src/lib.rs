@@ -29,42 +29,36 @@ extern "C" fn ultimate_answer() -> SEXP {
     unsafe { Rf_ScalarInteger(42_i32) }
 }
 
-// #include <R.h>
-// #include <Rinternals.h>
+include!("../bindings/R_ext/Error.rs");
 
-// // Function to add two numbers
-// SEXP add(SEXP x, SEXP y) {
-//     // Ensure inputs are numeric vectors of length 1
-//     if (!isReal(x) || LENGTH(x) != 1) {
-//         error("x must be a numeric value");
-//     }
-//     if (!isReal(y) || LENGTH(y) != 1) {
-//         error("y must be a numeric value");
-//     }
+#[no_mangle]
+unsafe extern "C" fn add(x: SEXP, y: SEXP) -> SEXP {
+    use std::ffi::CStr;
 
-//     // Retrieve the numeric values
-//     double x_value = REAL(x)[0];
-//     double y_value = REAL(y)[0];
+    // Ensure inputs are numeric vectors of length 1
+    if Rf_isReal(x) == Rboolean::FALSE || Rf_xlength(x) != 1 {
+        Rf_error(
+            CStr::from_bytes_until_nul(b"x must be a numeric value\nul")
+                .unwrap()
+                .as_ptr(),
+        );
+    }
+    if Rf_isReal(y) == Rboolean::FALSE || Rf_xlength(y) != 1 {
+        Rf_error(
+            CStr::from_bytes_until_nul(b"y must be a numeric value\nul")
+                .unwrap()
+                .as_ptr(),
+        );
+    }
 
-//     // Perform the addition
-//     SEXP result = PROTECT(allocVector(REALSXP, 1));
-//     REAL(result)[0] = x_value + y_value;
+    // Retrieve the numeric values
+    let x_value = REAL(x).read();
+    let y_value = REAL(y).read();
 
-//     UNPROTECT(1);
-//     return result;
-// }
+    // Perform the addition
+    let result = Rf_protect(Rf_allocVector(SEXPTYPE::REALSXP, 1));
+    REAL(result).write(x_value + y_value);
 
-// pub fn add(left: u64, right: u64) -> u64 {
-//     left + right
-// }
-
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
-
-//     #[test]
-//     fn it_works() {
-//         let result = add(2, 2);
-//         assert_eq!(result, 4);
-//     }
-// }
+    Rf_unprotect(1);
+    result
+}
