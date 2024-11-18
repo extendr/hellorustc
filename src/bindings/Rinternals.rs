@@ -54,11 +54,6 @@ pub enum SEXPTYPE {
     FREESXP = 31,
     FUNSXP = 99,
 }
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct SEXPREC {
-    _unused: [u8; 0],
-}
 pub type SEXP = *mut SEXPREC;
 pub type PROTECT_INDEX = ::std::os::raw::c_int;
 #[repr(C)]
