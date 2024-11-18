@@ -3,11 +3,18 @@ all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
 OBJECTS = rust_add.o hello.o
 
 RUSTC = rustc
+
+ifeq ($(R_OSTYPE),windows)
+	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
+else 
+	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked
+endif
+
 RUSTC_FLAGS = \
 	$(LIBR0) $(LIBR1) \
 	--edition=2021 \
 	-Cpanic=abort \
-	-Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked \
+	$(RUSTC_DEFAULT_FLAGS) \
 	-Cllvm-args=--align-all-functions=64 \
 	--crate-type=cdylib \
 	--emit=dep-info,obj,link

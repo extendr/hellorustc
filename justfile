@@ -14,4 +14,4 @@ uninstall:
     R CMD REMOVE hellorustc
 
 test:
-    R -e 'devtools::load_all();.Call("ultimate_answer")'
+    R -e 'devtools::load_all();.Call("ultimate_answer");.Call("hellorustc")'
