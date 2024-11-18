@@ -1,7 +1,7 @@
 BINDINGS_DIR = bindings
 all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
 OBJECTS = rust_add.o
-# OBJECTS = librust_add.a
+
 # PKG_LIBS += -lc -lm -lresolv -ldl -lpthread  -dynamiclib -Wl,-dylib -shared -L. -lrust_add
 # PKG_LIBS += -L. -lrust_add
 # PKG_LIBS += -lc -lm "-Wl,-dead_strip" "-dynamiclib" "-Wl,-dylib" "-nodefaultlibs"
@@ -23,10 +23,9 @@ bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP \
  -fparse-all-comments -DR_INTERFACE_PTRS \
  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
-# .PHONY: all all_r_bindings rust_add.o
-
+# .PHONY: all
 # all: $(SHLIB) all_r_bindings rust_analyzer_dummy rust_add.o
-all: $(SHLIB) $(OBJECTS) rust_add.o
+all: $(SHLIB) $(OBJECTS)
 
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
