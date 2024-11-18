@@ -1,19 +1,18 @@
 BINDINGS_DIR = bindings
 all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
-OBJECTS = rust_add.o hello.o
-
 RUSTC = rustc
+OBJECTS = rust_add.o hello.o
 
 ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
-TARGET = --target x86_64-pc-windows-gnu
+	TARGET = --target x86_64-pc-windows-gnu
 else 
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked
-TARGET = 
+	TARGET = 
 endif
 
 RUSTC_FLAGS = \
-$(TARGET) \
+	$(TARGET) \
 	$(LIBR0) $(LIBR1) \
 	--edition=2021 \
 	-Cpanic=abort \
@@ -38,7 +37,7 @@ bindgen_args = \
 	--no-layout-tests \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
 	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
-bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP \
+bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS \
  -Wno-visibility \
  -fparse-all-comments -DR_INTERFACE_PTRS \
  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
@@ -57,7 +56,7 @@ all_r_bindings:
 	@echo "All bindings have been generated."
 
 %.o: %.rs
-	@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
+		@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
 
 hello.o: hello.rs
 rust_add.o: rust_add.rs
