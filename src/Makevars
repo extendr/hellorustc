@@ -4,7 +4,7 @@ all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
 .PHONY: all_r_bindings
 all: $(SHLIB) all_r_bindings
 
-r_blocked_items = --blocklist-item=VECTOR_PTR --blocklist-item=SEXPREC
+r_blocked_items = --blocklist-item="VECTOR_PTR|SEXPREC"
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
 RUSTC_VERSION = `rustc --version`
 bindgen_args = --raw-line "/* OS: ${R_OSTYPE} */"  \
