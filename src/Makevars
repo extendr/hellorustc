@@ -9,7 +9,7 @@ RUSTC_FLAGS = \
 	-Cpanic=abort \
 	-Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked \
 	-Cllvm-args=--align-all-functions=64 \
-	--target=aarch64-apple-darwin --crate-type=cdylib \
+	--crate-type=cdylib \
 	--emit=dep-info,obj,link
 
 # PKG_LIBS += -lc -lm -lresolv -ldl -lpthread  -dynamiclib -Wl,-dylib -shared -L. -lrust_add
