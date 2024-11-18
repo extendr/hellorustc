@@ -81,9 +81,6 @@ where
     }
 }
 pub const RSTART_VERSION: u32 = 1;
-pub const Rboolean_FALSE: Rboolean = 0;
-pub const Rboolean_TRUE: Rboolean = 1;
-pub type Rboolean = u32;
 pub const SA_TYPE_SA_NORESTORE: SA_TYPE = 0;
 pub const SA_TYPE_SA_RESTORE: SA_TYPE = 1;
 pub const SA_TYPE_SA_DEFAULT: SA_TYPE = 2;
@@ -93,7 +90,6 @@ pub const SA_TYPE_SA_SAVEASK: SA_TYPE = 5;
 pub const SA_TYPE_SA_SUICIDE: SA_TYPE = 6;
 pub type SA_TYPE = u32;
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
 pub struct structRstart {
     pub R_Quiet: Rboolean,
     pub R_NoEcho: Rboolean,
