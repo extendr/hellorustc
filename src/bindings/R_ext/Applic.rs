@@ -158,7 +158,7 @@ extern "C" {
         trace: ::std::os::raw::c_int,
         ex: *mut ::std::os::raw::c_void,
     );
-    #[doc = " appl/interv.c: Also in Utils.h, used in package eco"]
+    #[doc = " ../../appl/interv.c: first also in Applic.h"]
     pub fn findInterval(
         xt: *mut f64,
         n: ::std::os::raw::c_int,
