@@ -4,3 +4,4 @@
 ^\.vscode$
 ^\.github$
 ^src/dummy/target$
+^notes$
