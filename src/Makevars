@@ -1,8 +1,6 @@
 BINDINGS_DIR = bindings
 all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
-
-.PHONY: all_r_bindings
-all: $(SHLIB) all_r_bindings
+OBJECTS = rust_add.o
 
 r_blocked_items = --blocklist-item="VECTOR_PTR|SEXPREC"
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
@@ -17,6 +15,10 @@ bindgen_args = --raw-line "/* OS: ${R_OSTYPE} */"  \
 	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
 bindgen_clang_args = -Wno-visibility -Denum_SEXPTYPE -DR_NO_REMAP -fparse-all-comments -DR_INTERFACE_PTRS  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
+# .PHONY: all all_r_bindings rust_add.o
+
+all: $(SHLIB) all_r_bindings rust_analyzer_dummy rust_add.o
+
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
 	@for header in $(all_r_headers); do \
@@ -26,5 +28,13 @@ all_r_bindings:
 		bindgen "$$header" -o "$$output" $(bindgen_args) --allowlist-file $$header  -- -I$(R_INCLUDE_DIR) $(bindgen_clang_args); \
 	done
 	@echo "All bindings have been generated."
+
+RUSTC = rustc
+rust_add.o: rust_add.rs
+	`rustc --target=aarch64-apple-darwin -Cllvm-args=--align-all-functions=64 --crate-type=staticlib --emit=obj rust_add.rs -o rust_add.o`
+
+rust_analyzer_dummy: all_r_bindings
+	mkdir -p dummy/bindings
+	cp -r bindings/ dummy/bindings
 
 # TODO: add nonapi = Rscript -e 'cat(tools:::nonAPI, sep = "\n")' | tr -d '\r' | sort -u | tee ./nonAPI.txt
