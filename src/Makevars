@@ -21,3 +21,5 @@ all_r_bindings:
 		bindgen "$$header" -o "$$output" $(bindgen_args) --allowlist-file $$header  -- -I$(R_INCLUDE_DIR) $(bindgen_clang_args); \
 	done
 	@echo "All bindings have been generated."
+
+# TODO: add nonapi = Rscript -e 'cat(tools:::nonAPI, sep = "\n")' | tr -d '\r' | sort -u | tee ./nonAPI.txt
