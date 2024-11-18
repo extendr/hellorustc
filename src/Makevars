@@ -1,6 +1,15 @@
 BINDINGS_DIR = bindings
 all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
-OBJECTS = rust_add.o
+OBJECTS = rust_add.o hello.o
+
+RUSTC = rustc
+RUSTC_FLAGS = \
+	--edition=2021 \
+	-Cpanic=abort \
+	-Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked \
+	-Cllvm-args=--align-all-functions=64 \
+	--target=aarch64-apple-darwin --crate-type=cdylib \
+	--emit=dep-info,obj
 
 # PKG_LIBS += -lc -lm -lresolv -ldl -lpthread  -dynamiclib -Wl,-dylib -shared -L. -lrust_add
 # PKG_LIBS += -L. -lrust_add
@@ -48,6 +57,11 @@ rust_add.o: rust_add.rs
 	--emit=dep-info,obj \
 	--out-dir . \
 	rust_add.rs`
+
+%.o: %.rs
+	@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
+
+hello.o: hello.rs
 
 rust_analyzer_dummy: all_r_bindings
 	mkdir -p dummy/bindings
