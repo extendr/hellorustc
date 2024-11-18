@@ -1,18 +1,22 @@
 BINDINGS_DIR = bindings
-all_r_headers = $(shell find $(R_INCLUDE_DIR) -name '*.h')
+all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
 
-# install_bindgen:
-# 	cargo install bindgen-cli
+# .PHONY: all_r_bindings
 
 r_blocked_items = --blocklist-item VECTOR_PTR --blocklist-item SEXPREC
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
 RUSTC_VERSION = `rustc --version`
-bindgen_args = --raw-line "/* OS: ${R_OSTYPE} */" --raw-line "/* Platform: r$(R_PLATFORM) */" --raw-line "/* $(RUSTC_VERSION) */" --raw-line "/* R version: $(R_VERSION) */" --verbose --enable-function-attribute-detection --sort-semantically --translate-enum-integer-types --merge-extern-blocks --no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
+bindgen_args = --raw-line "/* OS: ${R_OSTYPE} */"  \
+	--raw-line "/* Platform: r$(R_PLATFORM) */" \
+	--raw-line "/* $(RUSTC_VERSION) */" \
+	--raw-line "/* R version: $(R_VERSION) */" \
+	--enable-function-attribute-detection \
+	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
+	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
 bindgen_clang_args = -Wno-visibility -Denum_SEXPTYPE -DR_NO_REMAP -fparse-all-comments -DR_INTERFACE_PTRS  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
-# Main target
-.PHONY: $(.PHONY) all_r_bindings
 all_r_bindings:
+	# @$(ECHO) $(all_r_headers)
 	@mkdir -p $(BINDINGS_DIR)
 	@for header in $(all_r_headers); do \
 		output=$(BINDINGS_DIR)/$$(echo $$header | sed "s|$(R_INCLUDE_DIR)/||;s|.h$$|.rs|"); \
