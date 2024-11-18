@@ -19,3 +19,22 @@ A major pre-requisite is to have `bindgen` installed, i.e.
 ```sh
 cargo install bindgen-cli --force
 ```
+
+And to use `bindgen`, one needs to install and configure `clang`. On a Mac, this is already setup.
+
+## Learnings
+
+This was done as a means to learn more about _what_ variables are available for us
+in `Makevars`, and how they could be used to accomplish various things.
+
+Another is to learn about the inner workings of `cargo`, through investigating what it
+takes to make `rustc` produce the right artefact. I would not recommend this experience in "production".
+
+Also, note that the way rust crates are linked here is not the usual `staticlib` way that is seen in extendr, savvy, roxido, etc.
+
+`_rust_eh_personality` is missing. This is a sentence that comes up often. The issue is
+that Rust has a `std`, with which _exception handling (`eh`)_ is implemented. This
+means if you use elaborate unwinding in your `rustc`, you'd somehow have to link or
+build `std`.
+
+- [ ] Find a way to link to Rust's exception handling / unwinding. For now `-Cpanic=abort`, i.e. the C-way. This means that `extern "C"` is the only supported ABI, and that `C-unwind` cannot be supported by only calling `rustc`.
