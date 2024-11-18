@@ -4,8 +4,8 @@ all_r_headers = $(shell find $(R_INCLUDE_DIR) -name '*.h')
 # install_bindgen:
 # 	cargo install bindgen-cli
 
-bindgen_args = --translate-enum-integer-types --merge-extern-blocks --no-recursive-allowlist
-
+bindgen_args = --translate-enum-integer-types --merge-extern-blocks --no-recursive-allowlist --rustified-non-exhaustive-enum=.*
+bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP
 # Main target
 .PHONY: $(.PHONY) all_r_bindings
 all_r_bindings:
@@ -14,6 +14,6 @@ all_r_bindings:
 		output=$(BINDINGS_DIR)/$$(echo $$header | sed "s|$(R_INCLUDE_DIR)/||;s|.h$$|.rs|"); \
 		echo "Generating $$output from $$header"; \
 		mkdir -p $$(dirname $$output); \
-		bindgen "$$header" -o "$$output" $(bindgen_args) --allowlist-file $$header  -- -I$(R_INCLUDE_DIR) -DR_NO_REMAP; \
+		bindgen "$$header" -o "$$output" $(bindgen_args) --allowlist-file $$header  -- -I$(R_INCLUDE_DIR) $(bindgen_clang_args); \
 	done
 	@echo "All bindings have been generated."

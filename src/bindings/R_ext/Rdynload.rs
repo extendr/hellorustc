@@ -53,12 +53,16 @@ pub struct Rf_RegisteredNativeSymbol {
     _unused: [u8; 0],
 }
 pub type R_RegisteredNativeSymbol = Rf_RegisteredNativeSymbol;
-pub const NativeSymbolType_R_ANY_SYM: NativeSymbolType = 0;
-pub const NativeSymbolType_R_C_SYM: NativeSymbolType = 1;
-pub const NativeSymbolType_R_CALL_SYM: NativeSymbolType = 2;
-pub const NativeSymbolType_R_FORTRAN_SYM: NativeSymbolType = 3;
-pub const NativeSymbolType_R_EXTERNAL_SYM: NativeSymbolType = 4;
-pub type NativeSymbolType = u32;
+#[repr(u32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum NativeSymbolType {
+    R_ANY_SYM = 0,
+    R_C_SYM = 1,
+    R_CALL_SYM = 2,
+    R_FORTRAN_SYM = 3,
+    R_EXTERNAL_SYM = 4,
+}
 extern "C" {
     pub fn R_registerRoutines(
         info: *mut DllInfo,

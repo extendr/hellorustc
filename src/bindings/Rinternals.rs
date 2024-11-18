@@ -4,34 +4,6 @@ pub const R_LEN_T_MAX: u32 = 2147483647;
 pub const R_XLEN_T_MAX: u64 = 4503599627370496;
 pub const R_SHORT_LEN_MAX: u32 = 2147483647;
 pub const R_PRIdXLEN_T: &[u8; 3] = b"td\0";
-pub const NILSXP: u32 = 0;
-pub const SYMSXP: u32 = 1;
-pub const LISTSXP: u32 = 2;
-pub const CLOSXP: u32 = 3;
-pub const ENVSXP: u32 = 4;
-pub const PROMSXP: u32 = 5;
-pub const LANGSXP: u32 = 6;
-pub const SPECIALSXP: u32 = 7;
-pub const BUILTINSXP: u32 = 8;
-pub const CHARSXP: u32 = 9;
-pub const LGLSXP: u32 = 10;
-pub const INTSXP: u32 = 13;
-pub const REALSXP: u32 = 14;
-pub const CPLXSXP: u32 = 15;
-pub const STRSXP: u32 = 16;
-pub const DOTSXP: u32 = 17;
-pub const ANYSXP: u32 = 18;
-pub const VECSXP: u32 = 19;
-pub const EXPRSXP: u32 = 20;
-pub const BCODESXP: u32 = 21;
-pub const EXTPTRSXP: u32 = 22;
-pub const WEAKREFSXP: u32 = 23;
-pub const RAWSXP: u32 = 24;
-pub const OBJSXP: u32 = 25;
-pub const S4SXP: u32 = 25;
-pub const NEWSXP: u32 = 30;
-pub const FREESXP: u32 = 31;
-pub const FUNSXP: u32 = 99;
 pub const TYPE_BITS: u32 = 5;
 pub const MAX_NUM_SEXPTYPE: u32 = 32;
 pub const NAMEDMAX: u32 = 7;
@@ -50,7 +22,38 @@ pub const HT_TYPE_ADDRESS: u32 = 1;
 pub type Rbyte = ::std::os::raw::c_uchar;
 pub type R_len_t = ::std::os::raw::c_int;
 pub type R_xlen_t = isize;
-pub type SEXPTYPE = ::std::os::raw::c_uint;
+#[repr(u32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum SEXPTYPE {
+    NILSXP = 0,
+    SYMSXP = 1,
+    LISTSXP = 2,
+    CLOSXP = 3,
+    ENVSXP = 4,
+    PROMSXP = 5,
+    LANGSXP = 6,
+    SPECIALSXP = 7,
+    BUILTINSXP = 8,
+    CHARSXP = 9,
+    LGLSXP = 10,
+    INTSXP = 13,
+    REALSXP = 14,
+    CPLXSXP = 15,
+    STRSXP = 16,
+    DOTSXP = 17,
+    ANYSXP = 18,
+    VECSXP = 19,
+    EXPRSXP = 20,
+    BCODESXP = 21,
+    EXTPTRSXP = 22,
+    WEAKREFSXP = 23,
+    RAWSXP = 24,
+    OBJSXP = 25,
+    NEWSXP = 30,
+    FREESXP = 31,
+    FUNSXP = 99,
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SEXPREC {
@@ -64,25 +67,37 @@ pub struct R_allocator {
     _unused: [u8; 0],
 }
 pub type R_allocator_t = R_allocator;
-pub const nchar_type_Bytes: nchar_type = 0;
-pub const nchar_type_Chars: nchar_type = 1;
-pub const nchar_type_Width: nchar_type = 2;
-pub type nchar_type = u32;
-pub const cetype_t_CE_NATIVE: cetype_t = 0;
-pub const cetype_t_CE_UTF8: cetype_t = 1;
-pub const cetype_t_CE_LATIN1: cetype_t = 2;
-pub const cetype_t_CE_BYTES: cetype_t = 3;
-pub const cetype_t_CE_SYMBOL: cetype_t = 5;
-pub const cetype_t_CE_ANY: cetype_t = 99;
-pub type cetype_t = u32;
+#[repr(u32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum nchar_type {
+    Bytes = 0,
+    Chars = 1,
+    Width = 2,
+}
+#[repr(u32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum cetype_t {
+    CE_NATIVE = 0,
+    CE_UTF8 = 1,
+    CE_LATIN1 = 2,
+    CE_BYTES = 3,
+    CE_SYMBOL = 5,
+    CE_ANY = 99,
+}
 pub type R_CFinalizer_t = ::std::option::Option<unsafe extern "C" fn(arg1: SEXP)>;
 pub type R_pstream_data_t = *mut ::std::os::raw::c_void;
-pub const R_pstream_format_t_R_pstream_any_format: R_pstream_format_t = 0;
-pub const R_pstream_format_t_R_pstream_ascii_format: R_pstream_format_t = 1;
-pub const R_pstream_format_t_R_pstream_binary_format: R_pstream_format_t = 2;
-pub const R_pstream_format_t_R_pstream_xdr_format: R_pstream_format_t = 3;
-pub const R_pstream_format_t_R_pstream_asciihex_format: R_pstream_format_t = 4;
-pub type R_pstream_format_t = u32;
+#[repr(u32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum R_pstream_format_t {
+    R_pstream_any_format = 0,
+    R_pstream_ascii_format = 1,
+    R_pstream_binary_format = 2,
+    R_pstream_xdr_format = 3,
+    R_pstream_asciihex_format = 4,
+}
 pub type R_outpstream_t = *mut R_outpstream_st;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -168,13 +183,23 @@ const _: () = {
     ["Offset of field: R_inpstream_st::nat2utf8_obj"]
         [::std::mem::offset_of!(R_inpstream_st, nat2utf8_obj) - 120usize];
 };
-pub const SORTED_DECR_NA_1ST: _bindgen_ty_1 = -2;
-pub const SORTED_DECR: _bindgen_ty_1 = -1;
-pub const UNKNOWN_SORTEDNESS: _bindgen_ty_1 = -2147483648;
-pub const SORTED_INCR: _bindgen_ty_1 = 1;
-pub const SORTED_INCR_NA_1ST: _bindgen_ty_1 = 2;
-pub const KNOWN_UNSORTED: _bindgen_ty_1 = 0;
-pub type _bindgen_ty_1 = i32;
+pub const SORTED_DECR_NA_1ST: _bindgen_ty_1 = _bindgen_ty_1::SORTED_DECR_NA_1ST;
+pub const SORTED_DECR: _bindgen_ty_1 = _bindgen_ty_1::SORTED_DECR;
+pub const UNKNOWN_SORTEDNESS: _bindgen_ty_1 = _bindgen_ty_1::UNKNOWN_SORTEDNESS;
+pub const SORTED_INCR: _bindgen_ty_1 = _bindgen_ty_1::SORTED_INCR;
+pub const SORTED_INCR_NA_1ST: _bindgen_ty_1 = _bindgen_ty_1::SORTED_INCR_NA_1ST;
+pub const KNOWN_UNSORTED: _bindgen_ty_1 = _bindgen_ty_1::KNOWN_UNSORTED;
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum _bindgen_ty_1 {
+    SORTED_DECR_NA_1ST = -2,
+    SORTED_DECR = -1,
+    UNKNOWN_SORTEDNESS = -2147483648,
+    SORTED_INCR = 1,
+    SORTED_INCR_NA_1ST = 2,
+    KNOWN_UNSORTED = 0,
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct R_hashtab_type {

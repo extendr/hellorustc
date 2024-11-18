@@ -81,14 +81,18 @@ where
     }
 }
 pub const RSTART_VERSION: u32 = 1;
-pub const SA_TYPE_SA_NORESTORE: SA_TYPE = 0;
-pub const SA_TYPE_SA_RESTORE: SA_TYPE = 1;
-pub const SA_TYPE_SA_DEFAULT: SA_TYPE = 2;
-pub const SA_TYPE_SA_NOSAVE: SA_TYPE = 3;
-pub const SA_TYPE_SA_SAVE: SA_TYPE = 4;
-pub const SA_TYPE_SA_SAVEASK: SA_TYPE = 5;
-pub const SA_TYPE_SA_SUICIDE: SA_TYPE = 6;
-pub type SA_TYPE = u32;
+#[repr(u32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum SA_TYPE {
+    SA_NORESTORE = 0,
+    SA_RESTORE = 1,
+    SA_DEFAULT = 2,
+    SA_NOSAVE = 3,
+    SA_SAVE = 4,
+    SA_SAVEASK = 5,
+    SA_SUICIDE = 6,
+}
 #[repr(C)]
 pub struct structRstart {
     pub R_Quiet: Rboolean,
