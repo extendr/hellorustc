@@ -38,7 +38,7 @@ jobs:
         run: |
           rustup target add i686-pc-windows-gnu
           rustup target add x86_64-pc-windows-gnu
-          rustup override set x86_64-pc-windows-gnu
+          rustup override set stable-gnu
 
       - uses: actions/checkout@v4
 
