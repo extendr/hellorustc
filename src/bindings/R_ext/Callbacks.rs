@@ -12,36 +12,6 @@ pub type R_ToplevelCallback = ::std::option::Option<
 >;
 #[doc = "Linked list element for storing the top-level task callbacks."]
 pub type R_ToplevelCallbackEl = _ToplevelCallback;
-#[doc = "Linked list element for storing the top-level task callbacks."]
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _ToplevelCallback {
-    #[doc = " the C routine to call."]
-    pub cb: R_ToplevelCallback,
-    #[doc = " the user-level data to pass to the call to cb()"]
-    pub data: *mut ::std::os::raw::c_void,
-    #[doc = " Called when the callback is removed."]
-    pub finalizer: ::std::option::Option<unsafe extern "C" fn(data: *mut ::std::os::raw::c_void)>,
-    #[doc = " a name by which to identify this element."]
-    pub name: *mut ::std::os::raw::c_char,
-    #[doc = " the next element in the linked list."]
-    pub next: *mut R_ToplevelCallbackEl,
-}
-#[allow(clippy::unnecessary_operation, clippy::identity_op)]
-const _: () = {
-    ["Size of _ToplevelCallback"][::std::mem::size_of::<_ToplevelCallback>() - 40usize];
-    ["Alignment of _ToplevelCallback"][::std::mem::align_of::<_ToplevelCallback>() - 8usize];
-    ["Offset of field: _ToplevelCallback::cb"]
-        [::std::mem::offset_of!(_ToplevelCallback, cb) - 0usize];
-    ["Offset of field: _ToplevelCallback::data"]
-        [::std::mem::offset_of!(_ToplevelCallback, data) - 8usize];
-    ["Offset of field: _ToplevelCallback::finalizer"]
-        [::std::mem::offset_of!(_ToplevelCallback, finalizer) - 16usize];
-    ["Offset of field: _ToplevelCallback::name"]
-        [::std::mem::offset_of!(_ToplevelCallback, name) - 24usize];
-    ["Offset of field: _ToplevelCallback::next"]
-        [::std::mem::offset_of!(_ToplevelCallback, next) - 32usize];
-};
 #[doc = "The following definitions are for callbacks to R functions and\nmethods related to user-level tables.  This was implemented in a\nseparate package formerly available from Omegahat and these\ndeclarations allow the package to interface to the internal R code.\n\nSee https://developer.r-project.org/RObjectTables.pdf."]
 pub type R_ObjectTable = _R_ObjectTable;
 #[doc = " Do we actually need the exists() since it is never called but R\nuses get to see if the symbol is bound to anything?"]
@@ -79,6 +49,21 @@ pub type Rdb_canCache = ::std::option::Option<
 >;
 pub type Rdb_onDetach = ::std::option::Option<unsafe extern "C" fn(arg1: *mut R_ObjectTable)>;
 pub type Rdb_onAttach = ::std::option::Option<unsafe extern "C" fn(arg1: *mut R_ObjectTable)>;
+#[doc = "Linked list element for storing the top-level task callbacks."]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _ToplevelCallback {
+    #[doc = " the C routine to call."]
+    pub cb: R_ToplevelCallback,
+    #[doc = " the user-level data to pass to the call to cb()"]
+    pub data: *mut ::std::os::raw::c_void,
+    #[doc = " Called when the callback is removed."]
+    pub finalizer: ::std::option::Option<unsafe extern "C" fn(data: *mut ::std::os::raw::c_void)>,
+    #[doc = " a name by which to identify this element."]
+    pub name: *mut ::std::os::raw::c_char,
+    #[doc = " the next element in the linked list."]
+    pub next: *mut R_ToplevelCallbackEl,
+}
 #[repr(C)]
 pub struct _R_ObjectTable {
     pub type_: ::std::os::raw::c_int,
@@ -94,6 +79,21 @@ pub struct _R_ObjectTable {
     pub onAttach: Rdb_onAttach,
     pub privateData: *mut ::std::os::raw::c_void,
 }
+#[allow(clippy::unnecessary_operation, clippy::identity_op)]
+const _: () = {
+    ["Size of _ToplevelCallback"][::std::mem::size_of::<_ToplevelCallback>() - 40usize];
+    ["Alignment of _ToplevelCallback"][::std::mem::align_of::<_ToplevelCallback>() - 8usize];
+    ["Offset of field: _ToplevelCallback::cb"]
+        [::std::mem::offset_of!(_ToplevelCallback, cb) - 0usize];
+    ["Offset of field: _ToplevelCallback::data"]
+        [::std::mem::offset_of!(_ToplevelCallback, data) - 8usize];
+    ["Offset of field: _ToplevelCallback::finalizer"]
+        [::std::mem::offset_of!(_ToplevelCallback, finalizer) - 16usize];
+    ["Offset of field: _ToplevelCallback::name"]
+        [::std::mem::offset_of!(_ToplevelCallback, name) - 24usize];
+    ["Offset of field: _ToplevelCallback::next"]
+        [::std::mem::offset_of!(_ToplevelCallback, next) - 32usize];
+};
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
 const _: () = {
     ["Size of _R_ObjectTable"][::std::mem::size_of::<_R_ObjectTable>() - 96usize];

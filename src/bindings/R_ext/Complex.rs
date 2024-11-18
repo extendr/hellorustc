@@ -7,12 +7,6 @@ pub struct __BindgenComplex<T> {
     pub im: T,
 }
 #[repr(C)]
-#[derive(Copy, Clone)]
-pub union Rcomplex {
-    pub __bindgen_anon_1: Rcomplex__bindgen_ty_1,
-    pub private_data_c: __BindgenComplex<f64>,
-}
-#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Rcomplex__bindgen_ty_1 {
     pub r: f64,
@@ -35,3 +29,9 @@ const _: () = {
     ["Offset of field: Rcomplex::private_data_c"]
         [::std::mem::offset_of!(Rcomplex, private_data_c) - 0usize];
 };
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union Rcomplex {
+    pub __bindgen_anon_1: Rcomplex__bindgen_ty_1,
+    pub private_data_c: __BindgenComplex<f64>,
+}

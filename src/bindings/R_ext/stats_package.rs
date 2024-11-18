@@ -18,9 +18,6 @@ pub enum VPos {
     G = 27,
     HC = 70,
 }
-impl IVPos {
-    pub const INITS: IVPos = IVPos::INITH;
-}
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " 0-based indices into iv"]
@@ -65,6 +62,9 @@ pub enum IVPos {
     VNEED = 3,
     VSAVE = 59,
     X0PRT = 23,
+}
+impl IVPos {
+    pub const INITS: IVPos = IVPos::INITH;
 }
 extern "C" {
     pub fn S_Rf_divset(
