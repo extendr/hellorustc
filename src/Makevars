@@ -4,12 +4,13 @@ OBJECTS = rust_add.o hello.o
 
 RUSTC = rustc
 RUSTC_FLAGS = \
+	$(LIBR0) $(LIBR1) \
 	--edition=2021 \
 	-Cpanic=abort \
 	-Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked \
 	-Cllvm-args=--align-all-functions=64 \
 	--target=aarch64-apple-darwin --crate-type=cdylib \
-	--emit=dep-info,obj
+	--emit=dep-info,obj,link
 
 # PKG_LIBS += -lc -lm -lresolv -ldl -lpthread  -dynamiclib -Wl,-dylib -shared -L. -lrust_add
 # PKG_LIBS += -L. -lrust_add
@@ -32,9 +33,8 @@ bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP \
  -fparse-all-comments -DR_INTERFACE_PTRS \
  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
-# .PHONY: all
-# all: $(SHLIB) all_r_bindings rust_analyzer_dummy rust_add.o
-all: $(SHLIB) $(OBJECTS)
+# TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
+all: $(SHLIB) $(OBJECTS) all_r_bindings
 
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
