@@ -4,7 +4,8 @@ all_r_headers = $(shell find $(R_INCLUDE_DIR) -name '*.h')
 # install_bindgen:
 # 	cargo install bindgen-cli
 
-bindgen_args = --translate-enum-integer-types --merge-extern-blocks --no-recursive-allowlist --rustified-non-exhaustive-enum=.*
+r_blocked_items = VECTOR_PTR
+bindgen_args = --translate-enum-integer-types --merge-extern-blocks --no-recursive-allowlist --rustified-non-exhaustive-enum=.* --blocklist-item $(r_blocked_items)
 bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP
 # Main target
 .PHONY: $(.PHONY) all_r_bindings
