@@ -15,6 +15,7 @@ pub enum RNGtype {
 }
 #[repr(u32)]
 #[non_exhaustive]
+#[doc = " Different kinds of \"N(0,1)\" generators :"]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum N01type {
     BUGGY_KINDERMAN_RAMAGE = 0,
@@ -26,6 +27,7 @@ pub enum N01type {
 }
 #[repr(u32)]
 #[non_exhaustive]
+#[doc = " Different ways to generate discrete uniform samples"]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum Sampletype {
     ROUNDING = 0,
@@ -38,6 +40,7 @@ extern "C" {
     pub fn PutRNGstate();
     pub fn unif_rand() -> f64;
     pub fn R_unif_index(arg1: f64) -> f64;
+    #[doc = " These are also defined in Rmath.h"]
     pub fn norm_rand() -> f64;
     pub fn exp_rand() -> f64;
     pub fn user_unif_rand() -> *mut f64;

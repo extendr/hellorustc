@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum Rboolean {
+    #[doc = ", MAYBE"]
     FALSE = 0,
+    #[doc = ", MAYBE"]
     TRUE = 1,
 }

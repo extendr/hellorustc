@@ -3,5 +3,6 @@
 pub const __STDC_WANT_IEC_60559_FUNCS_EXT__: u32 = 1;
 extern "C" {
     pub fn R_FlushConsole();
+    #[doc = " always declared, but only usable under Win32 and Aqua"]
     pub fn R_ProcessEvents();
 }

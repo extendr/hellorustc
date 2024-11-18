@@ -83,10 +83,13 @@ where
 pub const RSTART_VERSION: u32 = 1;
 #[repr(u32)]
 #[non_exhaustive]
+#[doc = " Startup Actions"]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum SA_TYPE {
+    #[doc = " = 0"]
     SA_NORESTORE = 0,
     SA_RESTORE = 1,
+    #[doc = " was === SA_RESTORE"]
     SA_DEFAULT = 2,
     SA_NOSAVE = 3,
     SA_SAVE = 4,
@@ -190,6 +193,7 @@ pub type Rstart = *mut structRstart;
 extern "C" {
     pub fn R_DefParams(arg1: Rstart);
     pub fn R_DefParamsEx(arg1: Rstart, arg2: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    #[doc = " New code should always use R_DefParamsEx(Rstart, RSTART_VERSION) to\ninform R about the version of the structure used. R_DefParams(Rstart)\nonly supports version 0 of the structure."]
     pub fn R_SetParams(arg1: Rstart);
     pub fn R_DefCallbacks(arg1: Rstart, arg2: ::std::os::raw::c_int);
     pub fn R_SetWin32(arg1: Rstart);

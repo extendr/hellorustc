@@ -18,8 +18,10 @@ pub const M_LN_SQRT_PI: f64 = 0.5723649429247001;
 pub const M_LN_SQRT_2PI: f64 = 0.9189385332046728;
 pub const M_LN_SQRT_PId2: f64 = 0.22579135264472744;
 extern "C" {
+    #[doc = " R's versions with !R_FINITE checks"]
     pub fn R_pow(x: f64, y: f64) -> f64;
     pub fn R_pow_di(arg1: f64, arg2: ::std::os::raw::c_int) -> f64;
+    #[doc = " Random Number Generators"]
     pub fn norm_rand() -> f64;
     pub fn unif_rand() -> f64;
     pub fn R_unif_index(arg1: f64) -> f64;

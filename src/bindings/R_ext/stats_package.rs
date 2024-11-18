@@ -9,6 +9,7 @@ pub enum AlgType {
 }
 #[repr(u32)]
 #[non_exhaustive]
+#[doc = " 0-based indices into v"]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum VPos {
     F = 9,
@@ -22,6 +23,7 @@ impl IVPos {
 }
 #[repr(u32)]
 #[non_exhaustive]
+#[doc = " 0-based indices into iv"]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum IVPos {
     AI = 90,

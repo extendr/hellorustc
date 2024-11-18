@@ -11,7 +11,9 @@ pub struct _InputHandler {
     pub fileDescriptor: ::std::os::raw::c_int,
     pub handler: InputHandlerProc,
     pub next: *mut _InputHandler,
+    #[doc = " Whether we should be listening to this file descriptor or not."]
     pub active: ::std::os::raw::c_int,
+    #[doc = " Data that can be passed to the routine as its only argument.\nThis might be a user-level function or closure when we implement\na callback to R mechanism."]
     pub userData: *mut ::std::os::raw::c_void,
 }
 #[allow(clippy::unnecessary_operation, clippy::identity_op)]
