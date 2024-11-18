@@ -2,6 +2,3 @@
 
 pub const M_PI: f64 = 3.141592653589793;
 pub const PI: f64 = 3.141592653589793;
-pub const FLT_HAS_SUBNORM: u32 = 1;
-pub const DBL_HAS_SUBNORM: u32 = 1;
-pub const LDBL_HAS_SUBNORM: u32 = 1;

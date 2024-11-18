@@ -38,8 +38,6 @@ const _: () = {
     ["Offset of field: Rcomplex::private_data_c"]
         [::std::mem::offset_of!(Rcomplex, private_data_c) - 0usize];
 };
-pub type wchar_t = ::std::os::raw::c_int;
-pub type max_align_t = f64;
 extern "C" {
     pub fn R_isort(arg1: *mut ::std::os::raw::c_int, arg2: ::std::os::raw::c_int);
     pub fn R_rsort(arg1: *mut f64, arg2: ::std::os::raw::c_int);
