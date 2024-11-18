@@ -1,0 +1,8 @@
+
+r_ext_headers = $(wildcard $(R_INCLUDE_DIR)/R_ext/*.h)
+all_r_headers = $(wildcard $(R_INCLUDE_DIR)/**/*.h)
+
+BINDGEN_OUTPUTS = $(all_r_headers:.h=.rs)
+
+all_r_bindings: $(all_r_headers)
+	bindgen $^ -o $@ -- -I$(R_INCLUDE_DIR)
