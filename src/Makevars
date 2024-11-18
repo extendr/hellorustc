@@ -46,22 +46,11 @@ all_r_bindings:
 	done
 	@echo "All bindings have been generated."
 
-
-rust_add.o: rust_add.rs
-	`rustc --edition=2021 \
-	--print native-static-libs \
-	-Cpanic=abort \
-	-Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked \
-	-Cllvm-args=--align-all-functions=64 \
-	--target=aarch64-apple-darwin --crate-type=cdylib \
-	--emit=dep-info,obj \
-	--out-dir . \
-	rust_add.rs`
-
 %.o: %.rs
 	@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
 
 hello.o: hello.rs
+rust_add.o: rust_add.rs
 
 rust_analyzer_dummy: all_r_bindings
 	mkdir -p dummy/bindings
