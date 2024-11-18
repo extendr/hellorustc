@@ -9,3 +9,6 @@ install_r:
 
 document:
     R -e 'devtools::document()'
+
+uninstall:
+    R CMD REMOVE hellorustc
