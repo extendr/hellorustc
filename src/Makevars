@@ -1,8 +1,20 @@
+# Define R include directory
+R_INCLUDE_DIR := $(shell Rscript -e 'cat(R.home("include"))')
 
-r_ext_headers = $(wildcard $(R_INCLUDE_DIR)/R_ext/*.h)
-all_r_headers = $(wildcard $(R_INCLUDE_DIR)/**/*.h)
+# Directory to store generated .rs files
+BINDINGS_DIR := bindings
 
-BINDGEN_OUTPUTS = $(all_r_headers:.h=.rs)
+# Find all .h files recursively under R_INCLUDE_DIR
+all_r_headers := $(shell find $(R_INCLUDE_DIR) -name '*.h')
 
-all_r_bindings: $(all_r_headers)
-	bindgen $^ -o $@ -- -I$(R_INCLUDE_DIR)
+# Main target
+.PHONY: all_r_bindings
+all_r_bindings:
+	@mkdir -p $(BINDINGS_DIR)
+	@for header in $(all_r_headers); do \
+		output=$(BINDINGS_DIR)/$$(echo $$header | sed "s|$(R_INCLUDE_DIR)/||;s|.h$$|.rs|"); \
+		echo "Generating $$output from $$header"; \
+		mkdir -p $$(dirname $$output); \
+		bindgen "$$header" -o "$$output" --merge-extern-blocks --no-recursive-allowlist -- -I$(R_INCLUDE_DIR) -DR_NO_REMAP; \
+	done
+	@echo "All bindings have been generated."
