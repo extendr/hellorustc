@@ -6,3 +6,6 @@ install_and_log:
 
 install_r:
     R CMD INSTALL .
+
+document:
+    R -e 'devtools::document()'
