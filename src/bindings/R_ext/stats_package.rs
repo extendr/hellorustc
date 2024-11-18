@@ -12,13 +12,13 @@ pub const HAVE_ALLOCA_H: u32 = 1;
 pub const HAVE_UINTPTR_T: u32 = 1;
 pub const AlgType_NREG: AlgType = 1;
 pub const AlgType_OPT: AlgType = 2;
-pub type AlgType = ::std::os::raw::c_uint;
+pub type AlgType = u32;
 pub const VPos_F: VPos = 9;
 pub const VPos_F0: VPos = 12;
 pub const VPos_FDIF: VPos = 10;
 pub const VPos_G: VPos = 27;
 pub const VPos_HC: VPos = 70;
-pub type VPos = ::std::os::raw::c_uint;
+pub type VPos = u32;
 pub const IVPos_AI: IVPos = 90;
 pub const IVPos_AM: IVPos = 94;
 pub const IVPos_ALGSAV: IVPos = 50;
@@ -59,7 +59,7 @@ pub const IVPos_TOOBIG: IVPos = 1;
 pub const IVPos_VNEED: IVPos = 3;
 pub const IVPos_VSAVE: IVPos = 59;
 pub const IVPos_X0PRT: IVPos = 23;
-pub type IVPos = ::std::os::raw::c_uint;
+pub type IVPos = u32;
 extern "C" {
     pub fn S_Rf_divset(
         alg: ::std::os::raw::c_int,

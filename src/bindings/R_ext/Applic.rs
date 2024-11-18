@@ -12,7 +12,7 @@ pub const HAVE_ALLOCA_H: u32 = 1;
 pub const HAVE_UINTPTR_T: u32 = 1;
 pub const Rboolean_FALSE: Rboolean = 0;
 pub const Rboolean_TRUE: Rboolean = 1;
-pub type Rboolean = ::std::os::raw::c_uint;
+pub type Rboolean = u32;
 pub type integr_fn = ::std::option::Option<
     unsafe extern "C" fn(x: *mut f64, n: ::std::os::raw::c_int, ex: *mut ::std::os::raw::c_void),
 >;

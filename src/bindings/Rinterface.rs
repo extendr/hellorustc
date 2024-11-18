@@ -2,7 +2,7 @@
 
 pub const Rboolean_FALSE: Rboolean = 0;
 pub const Rboolean_TRUE: Rboolean = 1;
-pub type Rboolean = ::std::os::raw::c_uint;
+pub type Rboolean = u32;
 extern "C" {
     pub static mut R_Interactive: Rboolean;
     pub static mut R_NoEcho: Rboolean;

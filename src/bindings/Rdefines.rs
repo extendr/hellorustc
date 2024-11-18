@@ -68,7 +68,7 @@ pub const TRUE: u32 = 1;
 pub const FALSE: u32 = 0;
 pub const Rboolean_FALSE: Rboolean = 0;
 pub const Rboolean_TRUE: Rboolean = 1;
-pub type Rboolean = ::std::os::raw::c_uint;
+pub type Rboolean = u32;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union Rcomplex {
@@ -155,7 +155,7 @@ pub const NativeSymbolType_R_C_SYM: NativeSymbolType = 1;
 pub const NativeSymbolType_R_CALL_SYM: NativeSymbolType = 2;
 pub const NativeSymbolType_R_FORTRAN_SYM: NativeSymbolType = 3;
 pub const NativeSymbolType_R_EXTERNAL_SYM: NativeSymbolType = 4;
-pub type NativeSymbolType = ::std::os::raw::c_uint;
+pub type NativeSymbolType = u32;
 pub type Rbyte = ::std::os::raw::c_uchar;
 pub type R_len_t = ::std::os::raw::c_int;
 pub type R_xlen_t = isize;
@@ -176,14 +176,14 @@ pub type R_allocator_t = R_allocator;
 pub const nchar_type_Bytes: nchar_type = 0;
 pub const nchar_type_Chars: nchar_type = 1;
 pub const nchar_type_Width: nchar_type = 2;
-pub type nchar_type = ::std::os::raw::c_uint;
+pub type nchar_type = u32;
 pub const cetype_t_CE_NATIVE: cetype_t = 0;
 pub const cetype_t_CE_UTF8: cetype_t = 1;
 pub const cetype_t_CE_LATIN1: cetype_t = 2;
 pub const cetype_t_CE_BYTES: cetype_t = 3;
 pub const cetype_t_CE_SYMBOL: cetype_t = 5;
 pub const cetype_t_CE_ANY: cetype_t = 99;
-pub type cetype_t = ::std::os::raw::c_uint;
+pub type cetype_t = u32;
 pub type R_CFinalizer_t = ::std::option::Option<unsafe extern "C" fn(arg1: SEXP)>;
 pub type R_pstream_data_t = *mut ::std::os::raw::c_void;
 pub const R_pstream_format_t_R_pstream_any_format: R_pstream_format_t = 0;
@@ -191,7 +191,7 @@ pub const R_pstream_format_t_R_pstream_ascii_format: R_pstream_format_t = 1;
 pub const R_pstream_format_t_R_pstream_binary_format: R_pstream_format_t = 2;
 pub const R_pstream_format_t_R_pstream_xdr_format: R_pstream_format_t = 3;
 pub const R_pstream_format_t_R_pstream_asciihex_format: R_pstream_format_t = 4;
-pub type R_pstream_format_t = ::std::os::raw::c_uint;
+pub type R_pstream_format_t = u32;
 pub type R_outpstream_t = *mut R_outpstream_st;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -283,7 +283,7 @@ pub const UNKNOWN_SORTEDNESS: _bindgen_ty_1 = -2147483648;
 pub const SORTED_INCR: _bindgen_ty_1 = 1;
 pub const SORTED_INCR_NA_1ST: _bindgen_ty_1 = 2;
 pub const KNOWN_UNSORTED: _bindgen_ty_1 = 0;
-pub type _bindgen_ty_1 = ::std::os::raw::c_int;
+pub type _bindgen_ty_1 = i32;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct R_hashtab_type {

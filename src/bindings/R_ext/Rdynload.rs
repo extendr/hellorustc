@@ -3,7 +3,7 @@
 pub const SINGLESXP: u32 = 302;
 pub const Rboolean_FALSE: Rboolean = 0;
 pub const Rboolean_TRUE: Rboolean = 1;
-pub type Rboolean = ::std::os::raw::c_uint;
+pub type Rboolean = u32;
 pub type DL_FUNC = ::std::option::Option<unsafe extern "C" fn() -> *mut ::std::os::raw::c_void>;
 pub type R_NativePrimitiveArgType = ::std::os::raw::c_uint;
 #[repr(C)]
@@ -61,7 +61,7 @@ pub const NativeSymbolType_R_C_SYM: NativeSymbolType = 1;
 pub const NativeSymbolType_R_CALL_SYM: NativeSymbolType = 2;
 pub const NativeSymbolType_R_FORTRAN_SYM: NativeSymbolType = 3;
 pub const NativeSymbolType_R_EXTERNAL_SYM: NativeSymbolType = 4;
-pub type NativeSymbolType = ::std::os::raw::c_uint;
+pub type NativeSymbolType = u32;
 extern "C" {
     pub fn R_registerRoutines(
         info: *mut DllInfo,

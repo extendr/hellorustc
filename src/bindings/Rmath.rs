@@ -19,7 +19,7 @@ pub const M_LN_SQRT_2PI: f64 = 0.9189385332046728;
 pub const M_LN_SQRT_PId2: f64 = 0.22579135264472744;
 pub const Rboolean_FALSE: Rboolean = 0;
 pub const Rboolean_TRUE: Rboolean = 1;
-pub type Rboolean = ::std::os::raw::c_uint;
+pub type Rboolean = u32;
 extern "C" {
     pub fn R_pow(x: f64, y: f64) -> f64;
     pub fn R_pow_di(arg1: f64, arg2: ::std::os::raw::c_int) -> f64;

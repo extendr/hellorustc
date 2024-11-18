@@ -20,7 +20,7 @@ pub const HAVE_UINTPTR_T: u32 = 1;
 pub const PI: f64 = 3.141592653589793;
 pub const Rboolean_FALSE: Rboolean = 0;
 pub const Rboolean_TRUE: Rboolean = 1;
-pub type Rboolean = ::std::os::raw::c_uint;
+pub type Rboolean = u32;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union Rcomplex {
@@ -58,17 +58,17 @@ pub const RNGtype_KNUTH_TAOCP: RNGtype = 4;
 pub const RNGtype_USER_UNIF: RNGtype = 5;
 pub const RNGtype_KNUTH_TAOCP2: RNGtype = 6;
 pub const RNGtype_LECUYER_CMRG: RNGtype = 7;
-pub type RNGtype = ::std::os::raw::c_uint;
+pub type RNGtype = u32;
 pub const N01type_BUGGY_KINDERMAN_RAMAGE: N01type = 0;
 pub const N01type_AHRENS_DIETER: N01type = 1;
 pub const N01type_BOX_MULLER: N01type = 2;
 pub const N01type_USER_NORM: N01type = 3;
 pub const N01type_INVERSION: N01type = 4;
 pub const N01type_KINDERMAN_RAMAGE: N01type = 5;
-pub type N01type = ::std::os::raw::c_uint;
+pub type N01type = u32;
 pub const Sampletype_ROUNDING: Sampletype = 0;
 pub const Sampletype_REJECTION: Sampletype = 1;
-pub type Sampletype = ::std::os::raw::c_uint;
+pub type Sampletype = u32;
 pub type Int32 = ::std::os::raw::c_uint;
 extern "C" {
     pub static mut R_NaN: f64;
