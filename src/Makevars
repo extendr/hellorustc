@@ -24,7 +24,7 @@ RUSTC_FLAGS = \
 	$(TARGET) \
 	$(RUSTC_LINKER) \
 	$(LIBGCC_EH_FLAG) \
-	-L"$(R_HOME)/lib$(R_ARCH)" -lR \
+	-L"$(R_HOME)/bin$(R_ARCH)" -lR \
 	--edition=2021 \
 	-Cpanic=abort \
 	$(RUSTC_DEFAULT_FLAGS) \
