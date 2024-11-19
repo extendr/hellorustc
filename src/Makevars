@@ -1,7 +1,11 @@
 BINDINGS_DIR = bindings
 all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
 RUSTC = rustc
+
+# User-defined variables
 OBJECTS = rust_add.o hello.o
+hello.o: hello.rs
+rust_add.o: rust_add.rs
 
 ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
@@ -71,9 +75,6 @@ all_r_bindings:
 
 %.o: %.rs
 		@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
-
-hello.o: hello.rs
-rust_add.o: rust_add.rs
 
 rust_analyzer_dummy: all_r_bindings
 	mkdir -p dummy/bindings
