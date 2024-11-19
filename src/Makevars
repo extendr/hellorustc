@@ -62,6 +62,7 @@ LIBGCC_EH_RECIPE_SETUP:
 debug:
 	@$(ECHO) "LIBR0 = $(LIBR0)"
 	@$(ECHO) "LIBR1 = $(LIBR1)"
+@$(ECHO) "LIBR = $(LIBR)"
 
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
