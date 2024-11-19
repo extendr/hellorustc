@@ -6,10 +6,10 @@
 \alias{hellorustc-package}
 \title{hellorustc: Use `rustc` only with R}
 \description{
-Proof of concept for using \code{rustc} directly with R packages
+Proof of concept for using `rustc` directly with R packages.
 }
 \author{
-\strong{Maintainer}: Mossa Reimert \email{mossa@sund.ku.dk} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Mossa Reimert \email{mossa@sund.ku.dk} (\href{https://orcid.org/0009-0007-9297-1523}{ORCID})
 
 }
 \keyword{internal}

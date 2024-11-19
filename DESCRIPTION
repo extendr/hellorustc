@@ -1,11 +1,10 @@
 Package: hellorustc
 Title: Use `rustc` only with R
 Version: 0.0.0.9000
-Authors@R: c(
+Authors@R:
     person("Mossa", "Reimert", , "mossa@sund.ku.dk", role = c("cre", "aut"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-  )
-Description: Proof of concept for using \code{rustc} directly with R packages
+           comment = c(ORCID = "0009-0007-9297-1523"))
+Description: Proof of concept for using `rustc` directly with R packages.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
