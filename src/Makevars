@@ -22,6 +22,7 @@ endif
 
 
 RUSTC_FLAGS = \
+--print native-static-libs \
 	$(TARGET) \
 	$(RUSTC_LINKER) \
 	$(LIBGCC_EH_FLAG) \
@@ -71,8 +72,7 @@ all_r_bindings:
 	@echo "All bindings have been generated."
 
 %.o: %.rs
-	@$(ECHO) R_LIBRARY_PATH = $(R_LIBRARY_PATH)
-	@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
+		@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
 
 # User-defined variables
 OBJECTS = rust_add.o hello.o
