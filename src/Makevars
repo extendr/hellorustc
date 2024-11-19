@@ -24,7 +24,7 @@ RUSTC_FLAGS = \
 	$(TARGET) \
 	$(RUSTC_LINKER) \
 	$(LIBGCC_EH_FLAG) \
-	$(LIBR0) $(LIBR1) \
+	-L"$(R_HOME)/lib$(R_ARCH)" -lR \
 	--edition=2021 \
 	-Cpanic=abort \
 	$(RUSTC_DEFAULT_FLAGS) \
@@ -62,7 +62,7 @@ LIBGCC_EH_RECIPE_SETUP:
 debug:
 	@$(ECHO) "LIBR0 = $(LIBR0)"
 	@$(ECHO) "LIBR1 = $(LIBR1)"
-@$(ECHO) "LIBR = $(LIBR)"
+	@$(ECHO) "LIBR = $(LIBR)"
 
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
