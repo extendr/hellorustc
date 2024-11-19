@@ -54,15 +54,10 @@ bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINE
  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
-all: debug LIBGCC_EH_RECIPE_SETUP $(SHLIB) $(OBJECTS) all_r_bindings
+all: LIBGCC_EH_RECIPE_SETUP $(SHLIB) $(OBJECTS) all_r_bindings
 
 LIBGCC_EH_RECIPE_SETUP:
 	@$(LIBGCC_EH_RECIPE)
-
-debug:
-	@$(ECHO) "LIBR0 = $(LIBR0)"
-	@$(ECHO) "LIBR1 = $(LIBR1)"
-	@$(ECHO) "LIBR = $(LIBR)"
 
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
