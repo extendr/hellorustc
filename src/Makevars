@@ -7,14 +7,17 @@ ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
 	TARGET = --target x86_64-pc-windows-gnu
 	OS_DEFINES = -DWin32
+	RUSTC_LINKER = -Clinker=x86_64-w64-mingw32.static.posix-gcc.exe
 else 
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked
 	TARGET =
 	OS_DEFINES = 
+	RUSTC_LINKER = 
 endif
 
 RUSTC_FLAGS = \
 	$(TARGET) \
+	$(RUSTC_LINKER) \
 	$(LIBR0) $(LIBR1) \
 	--edition=2021 \
 	-Cpanic=abort \
