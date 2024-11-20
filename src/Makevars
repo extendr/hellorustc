@@ -48,7 +48,7 @@ ATTRIBUTE_CUSTOM = \
 # --with-attribute-custom=".*=\#[cfg(feature = \"$(addprefix r_,$(subst .,_,$(R_VERSION_MAJOR_MINOR_ONLY)))\")]" \
 # --with-attribute-custom=".*=\#[cfg(target_family = \"$(R_OSTYPE)\")]" \
 
-bindgen_args = \
+BINDGEN_ARGS = \
 	--raw-line "/* OS: ${R_OSTYPE} */"  \
 	--raw-line "/* Platform: $(R_PLATFORM) */" \
 	--raw-line "/* $(RUSTC_VERSION) */" \
@@ -58,7 +58,7 @@ bindgen_args = \
 	$(ATTRIBUTE_CUSTOM) \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
 	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
-bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINES) \
+BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINES) \
  -Wno-visibility \
  -fparse-all-comments -DR_INTERFACE_PTRS \
  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
@@ -80,7 +80,7 @@ ALL_R_BINDINGS: $(ALL_R_BINDINGS)
 $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	@echo "Generating $@ from $<"
 	@mkdir -p $(dir $@)
-	-@bindgen "$<" -o "$@" $(bindgen_args) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(bindgen_clang_args)
+	-@bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
 
 %.o: %.rs
 	@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
