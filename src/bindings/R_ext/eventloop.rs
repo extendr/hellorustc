@@ -22,7 +22,11 @@ pub struct _InputHandler {
     #[doc = " Data that can be passed to the routine as its only argument.\nThis might be a user-level function or closure when we implement\na callback to R mechanism."]
     pub userData: *mut ::std::os::raw::c_void,
 }
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const XActivity: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const StdinActivity: u32 = 2;
 extern "C" {
     #[cfg(feature = "nonapi")]
@@ -89,7 +93,16 @@ extern "C" {
         timeout: *mut [u8; 0usize],
         intr: ::std::option::Option<unsafe extern "C" fn()>,
     ) -> ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_InputHandlers: *mut InputHandler;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_PolledEvents: ::std::option::Option<unsafe extern "C" fn()>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_wait_usec: ::std::os::raw::c_int;
 }

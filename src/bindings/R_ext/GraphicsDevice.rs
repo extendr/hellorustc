@@ -266,9 +266,17 @@ pub struct _DevDesc {
     #[doc = " Area for future expansion.\nBy zeroing this, devices are more likely to work if loaded\ninto a later version of R than that they were compiled under."]
     pub reserved: [::std::os::raw::c_char; 64usize],
 }
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_USE_PROTOTYPES: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const leftButton: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const middleButton: u32 = 2;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const rightButton: u32 = 4;
 #[repr(i32)]
 #[non_exhaustive]
@@ -365,11 +373,17 @@ extern "C" {
     #[cfg(feature = "r_4_4_1")]
     #[cfg(target_family = "unix")]
     pub fn Rf_doesIdle(dd: pDevDesc) -> Rboolean;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_interrupts_suspended: Rboolean;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_interrupts_pending: ::std::os::raw::c_int;
     #[cfg(feature = "r_4_4_1")]
     #[cfg(target_family = "unix")]
     pub fn Rf_onintr();
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut mbcslocale: Rboolean;
     #[cfg(feature = "r_4_4_1")]
     #[cfg(target_family = "unix")]

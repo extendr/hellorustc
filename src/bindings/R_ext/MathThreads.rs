@@ -6,6 +6,10 @@
 /* R version: 4.4.1 */
 
 extern "C" {
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_num_math_threads: ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_max_num_math_threads: ::std::os::raw::c_int;
 }

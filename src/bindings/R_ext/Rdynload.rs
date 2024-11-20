@@ -47,6 +47,8 @@ pub struct _DllInfo {
 pub struct Rf_RegisteredNativeSymbol {
     _unused: [u8; 0],
 }
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const SINGLESXP: u32 = 302;
 #[repr(u32)]
 #[non_exhaustive]

@@ -78,24 +78,62 @@ pub struct R_inpstream_st {
 pub struct R_hashtab_type {
     pub cell: SEXP,
 }
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_LEN_T_MAX: u32 = 2147483647;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_XLEN_T_MAX: u64 = 4503599627370496;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_SHORT_LEN_MAX: u32 = 2147483647;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_PRIdXLEN_T: &[u8; 3] = b"td\0";
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const TYPE_BITS: u32 = 5;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const MAX_NUM_SEXPTYPE: u32 = 32;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const NAMEDMAX: u32 = 7;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_XDR_DOUBLE_SIZE: u32 = 8;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_XDR_INTEGER_SIZE: u32 = 4;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_CODESET_MAX: u32 = 63;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const IDENT_NUM_AS_BITS: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const IDENT_NA_AS_BITS: u32 = 2;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const IDENT_ATTR_BY_ORDER: u32 = 4;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const IDENT_USE_BYTECODE: u32 = 8;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const IDENT_USE_CLOENV: u32 = 16;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const IDENT_USE_SRCREF: u32 = 32;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const IDENT_EXTPTR_AS_REF: u32 = 64;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const HT_TYPE_IDENTICAL: u32 = 0;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const HT_TYPE_ADDRESS: u32 = 1;
 pub const SORTED_DECR_NA_1ST: _bindgen_ty_1 = _bindgen_ty_1::SORTED_DECR_NA_1ST;
 pub const SORTED_DECR: _bindgen_ty_1 = _bindgen_ty_1::SORTED_DECR;
@@ -540,112 +578,220 @@ extern "C" {
     #[cfg(target_family = "unix")]
     pub fn EXTPTR_PTR(arg1: SEXP) -> *mut ::std::os::raw::c_void;
     #[doc = " The \"global\" environment"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_GlobalEnv: SEXP;
     #[doc = " An empty environment at the root of the\nenvironment tree"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_EmptyEnv: SEXP;
     #[doc = " The base environment; formerly R_NilValue"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_BaseEnv: SEXP;
     #[doc = " The (fake) namespace for base"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_BaseNamespace: SEXP;
     #[doc = " Registry for registered namespaces"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_NamespaceRegistry: SEXP;
     #[doc = " Current srcref, for debuggers"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_Srcref: SEXP;
     #[doc = " The nil object"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_NilValue: SEXP;
     #[doc = " Unbound marker"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_UnboundValue: SEXP;
     #[doc = " Missing argument marker"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_MissingArg: SEXP;
     #[doc = " To be found in BC interp. state\n(marker)"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_InBCInterpreter: SEXP;
     #[doc = " Use current expression (marker)"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_CurrentExpression: SEXP;
     #[doc = " Marker for restarted function calls"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_RestartToken: SEXP;
     #[doc = " \"as.character\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_AsCharacterSymbol: SEXP;
     #[doc = " \"@\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_AtsignSymbol: SEXP;
     #[doc = " <-- backcompatible version of:"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_baseSymbol: SEXP;
     #[doc = " \"base\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_BaseSymbol: SEXP;
     #[doc = " \"{\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_BraceSymbol: SEXP;
     #[doc = " \"[[\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_Bracket2Symbol: SEXP;
     #[doc = " \"[\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_BracketSymbol: SEXP;
     #[doc = " \"class\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_ClassSymbol: SEXP;
     #[doc = " \".Device\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DeviceSymbol: SEXP;
     #[doc = " \"dimnames\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DimNamesSymbol: SEXP;
     #[doc = " \"dim\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DimSymbol: SEXP;
     #[doc = " \"$\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DollarSymbol: SEXP;
     #[doc = " \"...\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DotsSymbol: SEXP;
     #[doc = " \"::\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DoubleColonSymbol: SEXP;
     #[doc = " \"drop\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DropSymbol: SEXP;
     #[doc = " \"eval\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_EvalSymbol: SEXP;
     #[doc = " \"function\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_FunctionSymbol: SEXP;
     #[doc = " \".Last.value\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_LastvalueSymbol: SEXP;
     #[doc = " \"levels\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_LevelsSymbol: SEXP;
     #[doc = " \"mode\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_ModeSymbol: SEXP;
     #[doc = " \"na.rm\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_NaRmSymbol: SEXP;
     #[doc = " \"name\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_NameSymbol: SEXP;
     #[doc = " \"names\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_NamesSymbol: SEXP;
     #[doc = " \".__NAMESPACE__.\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_NamespaceEnvSymbol: SEXP;
     #[doc = " \"package\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_PackageSymbol: SEXP;
     #[doc = " \"previous\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_PreviousSymbol: SEXP;
     #[doc = " \"quote\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_QuoteSymbol: SEXP;
     #[doc = " \"row.names\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_RowNamesSymbol: SEXP;
     #[doc = " \".Random.seed\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_SeedsSymbol: SEXP;
     #[doc = " \"sort.list\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_SortListSymbol: SEXP;
     #[doc = " \"source\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_SourceSymbol: SEXP;
     #[doc = " \"spec\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_SpecSymbol: SEXP;
     #[doc = " \":::\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_TripleColonSymbol: SEXP;
     #[doc = " \"tsp\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_TspSymbol: SEXP;
     #[doc = " \".defined\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_dot_defined: SEXP;
     #[doc = " \".Method\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_dot_Method: SEXP;
     #[doc = " \".packageName\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_dot_packageName: SEXP;
     #[doc = " \".target\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_dot_target: SEXP;
     #[doc = " \".Generic\""]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_dot_Generic: SEXP;
     #[doc = " NA_STRING as a CHARSXP"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_NaString: SEXP;
     #[doc = " \"\" as a CHARSXP"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_BlankString: SEXP;
     #[doc = " \"\" as a STRSXP"]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_BlankScalarString: SEXP;
     #[cfg(feature = "r_4_4_1")]
     #[cfg(target_family = "unix")]

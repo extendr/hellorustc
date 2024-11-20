@@ -5,22 +5,56 @@
 /* rustc 1.81.0 (eeb90cda1 2024-09-04) */
 /* R version: 4.4.1 */
 
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const __STDC_WANT_IEC_60559_FUNCS_EXT__: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_VERSION_STRING: &[u8; 6] = b"4.4.1\0";
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const HAVE_EXPM1: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const HAVE_HYPOT: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const HAVE_LOG1P: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const HAVE_WORKING_LOG1P: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_2PI: f64 = 6.283185307179586;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_SQRT_3: f64 = 1.7320508075688772;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_SQRT_32: f64 = 5.656854249492381;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_LOG10_2: f64 = 0.3010299956639812;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_SQRT_PI: f64 = 1.772453850905516;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_1_SQRT_2PI: f64 = 0.3989422804014327;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_SQRT_2dPI: f64 = 0.7978845608028654;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_LN_2PI: f64 = 1.8378770664093456;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_LN_SQRT_PI: f64 = 0.5723649429247001;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_LN_SQRT_2PI: f64 = 0.9189385332046728;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const M_LN_SQRT_PId2: f64 = 0.22579135264472744;
 extern "C" {
     #[cfg(feature = "r_4_4_1")]

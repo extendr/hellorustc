@@ -7,8 +7,14 @@
 
 extern "C" {
     #[doc = " TRUE during interactive use"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_Interactive: Rboolean;
     #[doc = " do not echo R code"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_NoEcho: Rboolean;
     #[cfg(feature = "nonapi")]
     #[cfg(feature = "r_4_4_1")]
@@ -42,19 +48,37 @@ extern "C" {
     #[cfg(target_family = "unix")]
     pub fn R_HomeDir() -> *mut ::std::os::raw::c_char;
     #[doc = " Current image dirty"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DirtyImage: ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_GUIType: *mut ::std::os::raw::c_char;
     #[cfg(feature = "nonapi")]
     #[cfg(feature = "r_4_4_1")]
     #[cfg(target_family = "unix")]
     pub fn R_setupHistory();
     #[doc = " Name of the history file"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_HistoryFile: *mut ::std::os::raw::c_char;
     #[doc = " Size of the history file"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_HistorySize: ::std::os::raw::c_int;
     #[doc = " restore the history file?"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_RestoreHistory: ::std::os::raw::c_int;
     #[doc = " Root of the R tree"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_Home: *mut ::std::os::raw::c_char;
     #[cfg(feature = "nonapi")]
     #[cfg(feature = "r_4_4_1")]
@@ -71,6 +95,9 @@ extern "C" {
     #[cfg(target_family = "unix")]
     pub fn Rf_onintrNoResume();
     #[doc = " Need opaque pointer type for export"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_GlobalContext: *mut ::std::os::raw::c_void;
     #[cfg(feature = "nonapi")]
     #[cfg(feature = "r_4_4_1")]
@@ -84,7 +111,13 @@ extern "C" {
     #[cfg(feature = "r_4_4_1")]
     #[cfg(target_family = "unix")]
     pub fn process_user_Renviron();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_Consolefile: *mut FILE;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_Outputfile: *mut FILE;
     #[cfg(feature = "nonapi")]
     #[cfg(feature = "r_4_4_1")]
@@ -96,11 +129,23 @@ extern "C" {
     #[cfg(target_family = "unix")]
     pub fn fpu_setup(arg1: Rboolean);
     #[doc = " in ../unix/system.c"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_running_as_main_program: ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_Suicide:
         ::std::option::Option<unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char)>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_ShowMessage:
         ::std::option::Option<unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char)>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_ReadConsole: ::std::option::Option<
         unsafe extern "C" fn(
             arg1: *const ::std::os::raw::c_char,
@@ -109,9 +154,15 @@ extern "C" {
             arg4: ::std::os::raw::c_int,
         ) -> ::std::os::raw::c_int,
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_WriteConsole: ::std::option::Option<
         unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char, arg2: ::std::os::raw::c_int),
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_WriteConsoleEx: ::std::option::Option<
         unsafe extern "C" fn(
             arg1: *const ::std::os::raw::c_char,
@@ -119,11 +170,26 @@ extern "C" {
             arg3: ::std::os::raw::c_int,
         ),
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_ResetConsole: ::std::option::Option<unsafe extern "C" fn()>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_FlushConsole: ::std::option::Option<unsafe extern "C" fn()>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_ClearerrConsole: ::std::option::Option<unsafe extern "C" fn()>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_Busy:
         ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_CleanUp: ::std::option::Option<
         unsafe extern "C" fn(
             arg1: SA_TYPE,
@@ -131,6 +197,9 @@ extern "C" {
             arg3: ::std::os::raw::c_int,
         ),
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_ShowFiles: ::std::option::Option<
         unsafe extern "C" fn(
             arg1: ::std::os::raw::c_int,
@@ -141,6 +210,9 @@ extern "C" {
             arg6: *const ::std::os::raw::c_char,
         ) -> ::std::os::raw::c_int,
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_ChooseFile: ::std::option::Option<
         unsafe extern "C" fn(
             arg1: ::std::os::raw::c_int,
@@ -148,16 +220,31 @@ extern "C" {
             arg3: ::std::os::raw::c_int,
         ) -> ::std::os::raw::c_int,
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_EditFile: ::std::option::Option<
         unsafe extern "C" fn(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int,
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_loadhistory:
         ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP)>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_savehistory:
         ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP)>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_addhistory:
         ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP)>;
     #[doc = " added in 3.0.0"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_EditFiles: ::std::option::Option<
         unsafe extern "C" fn(
             arg1: ::std::os::raw::c_int,
@@ -167,19 +254,40 @@ extern "C" {
         ) -> ::std::os::raw::c_int,
     >;
     #[doc = " naming follows earlier versions in R.app"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_do_selectlist: ::std::option::Option<
         unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP) -> SEXP,
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_do_dataentry: ::std::option::Option<
         unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP) -> SEXP,
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_do_dataviewer: ::std::option::Option<
         unsafe extern "C" fn(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP) -> SEXP,
     >;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut ptr_R_ProcessEvents: ::std::option::Option<unsafe extern "C" fn()>;
     #[doc = " These two are not used by R itself, but are used by the tcltk package"]
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_timeout_handler:
         ::std::option::Option<unsafe extern "C" fn() -> ::std::os::raw::c_int>;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_timeout_val: ::std::os::raw::c_long;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_SignalHandlers: ::std::os::raw::c_int;
 }

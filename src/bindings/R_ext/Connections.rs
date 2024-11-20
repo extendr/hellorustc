@@ -100,6 +100,8 @@ pub struct Rconn {
     pub buff_stored_len: usize,
     pub buff_pos: usize,
 }
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const R_CONNECTIONS_VERSION: u32 = 1;
 extern "C" {
     #[cfg(feature = "nonapi")]

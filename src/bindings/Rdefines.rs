@@ -6,5 +6,9 @@
 /* R version: 4.4.1 */
 
 pub type s_object = SEXPREC;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const TRUE: u32 = 1;
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const FALSE: u32 = 0;

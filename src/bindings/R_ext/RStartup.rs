@@ -33,6 +33,8 @@ pub struct structRstart {
     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
     pub nconnections: ::std::os::raw::c_int,
 }
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub const RSTART_VERSION: u32 = 1;
 #[repr(u32)]
 #[non_exhaustive]

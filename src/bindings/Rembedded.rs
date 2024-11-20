@@ -51,11 +51,17 @@ extern "C" {
     #[cfg(feature = "r_4_4_1")]
     #[cfg(target_family = "unix")]
     pub fn Rf_KillAllDevices();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_DirtyImage: ::std::os::raw::c_int;
     #[cfg(feature = "nonapi")]
     #[cfg(feature = "r_4_4_1")]
     #[cfg(target_family = "unix")]
     pub fn R_CleanTempDir();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub static mut R_TempDir: *mut ::std::os::raw::c_char;
     #[cfg(feature = "nonapi")]
     #[cfg(feature = "r_4_4_1")]
