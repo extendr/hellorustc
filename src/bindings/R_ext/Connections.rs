@@ -112,5 +112,6 @@ extern "C" {
     #[cfg(feature = "nonapi")]
     pub fn R_WriteConnection(con: Rconnection, buf: *mut ::std::os::raw::c_void, n: usize)
         -> usize;
+    #[cfg(feature = "nonapi")]
     pub fn R_GetConnection(sConn: SEXP) -> Rconnection;
 }

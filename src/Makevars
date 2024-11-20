@@ -1,7 +1,8 @@
 BINDINGS_DIR = bindings
 ALL_R_HEADERS = `find $(R_INCLUDE_DIR) -name '*.h'`
-NONAPI = `R -e "cat(tools:::nonAPI, sep = '|')"`
+NONAPI = `R -s --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
 RUSTC = rustc
+R_VERSION_MAJOR_MINOR_ONLY = `echo $(R_VERSION) | sed 's/..$$//'`
 
 ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
