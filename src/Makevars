@@ -1,6 +1,6 @@
 BINDINGS_DIR = bindings
 ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
-NONAPI = `R -s --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
+NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
 RUSTC = rustc
 R_VERSION_MAJOR_MINOR_ONLY = `echo $(R_VERSION) | sed 's/..$$//'`
 
