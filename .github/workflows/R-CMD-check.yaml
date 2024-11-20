@@ -32,7 +32,8 @@ jobs:
     steps:
       - name: Install `bindgen`
         run: |
-          cargo install bindgen-cli
+          # cargo install bindgen-cli
+          cargo install bindgen-cli --git https://github.com/rust-lang/rust-bindgen.git
       - name: Add Rtools' targets to Rust
         if: runner.os == 'Windows'
         run: |
