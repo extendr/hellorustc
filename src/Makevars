@@ -1,5 +1,5 @@
 BINDINGS_DIR = bindings
-ALL_R_HEADERS = `find $(R_INCLUDE_DIR) -name '*.h'`
+ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
 NONAPI = `R -s --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
 RUSTC = rustc
 R_VERSION_MAJOR_MINOR_ONLY = `echo $(R_VERSION) | sed 's/..$$//'`
@@ -45,7 +45,7 @@ RUSTC_VERSION = `rustc --version`
 ATTRIBUTE_CUSTOM = \
 	--with-attribute-custom="$(NONAPI)=\#[cfg(feature = \"nonapi\")]" \
 	$()
-# --with-attribute-custom=".*=\#[cfg(feature = \"$(addprefix r_,$(subst .,_,$(R_VERSION)))\")]" \
+# --with-attribute-custom=".*=\#[cfg(feature = \"$(addprefix r_,$(subst .,_,$(R_VERSION_MAJOR_MINOR_ONLY)))\")]" \
 # --with-attribute-custom=".*=\#[cfg(target_family = \"$(R_OSTYPE)\")]" \
 
 bindgen_args = \
@@ -64,21 +64,23 @@ bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINE
  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
-all: LIBGCC_EH_RECIPE_SETUP all_r_bindings $(OBJECTS) $(SHLIB)
+all: LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(OBJECTS) $(SHLIB)
 
 LIBGCC_EH_RECIPE_SETUP:
 	@$(LIBGCC_EH_RECIPE)
 
-all_r_bindings:
-	$(ECHO) "NONAPI = $(NONAPI)"
-	@mkdir -p $(BINDINGS_DIR)
-	@for header in $(ALL_R_HEADERS); do \
-		output=$(BINDINGS_DIR)/$$(echo $$header | sed "s|$(R_INCLUDE_DIR)/||;s|.h$$|.rs|"); \
-		echo "Generating $$output from $$header"; \
-		mkdir -p $$(dirname $$output); \
-		bindgen "$$header" -o "$$output" $(bindgen_args) --allowlist-file $$header  -- -I$(R_INCLUDE_DIR) $(bindgen_clang_args); \
-	done
-	@echo "All bindings have been generated."
+# Map .h paths in R_INCLUDE_DIR to .rs paths in BINDINGS_DIR
+ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(BINDINGS_DIR)/%.rs,$(ALL_R_HEADERS))
+
+# Rule to generate all bindings
+ALL_R_BINDINGS: $(ALL_R_BINDINGS)
+	@echo "All bindings are up-to-date."
+
+# Pattern rule to generate .rs from .h
+$(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
+	@echo "Generating $@ from $<"
+	@mkdir -p $(dir $@)
+	-@bindgen "$<" -o "$@" $(bindgen_args) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(bindgen_clang_args)
 
 %.o: %.rs
 	@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
@@ -88,7 +90,7 @@ OBJECTS = rust_add.o hello.o
 hello.o: hello.rs
 rust_add.o: rust_add.rs
 
-rust_analyzer_dummy: all_r_bindings
+rust_analyzer_dummy: ALL_R_BINDINGS
 	mkdir -p dummy/bindings
 	cp -r bindings/ dummy/bindings
 
