@@ -6,16 +6,25 @@
 /* R version: 4.4.1 */
 
 extern "C" {
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_formatLogical(
         arg1: *const ::std::os::raw::c_int,
         arg2: R_xlen_t,
         arg3: *mut ::std::os::raw::c_int,
     );
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_formatInteger(
         arg1: *const ::std::os::raw::c_int,
         arg2: R_xlen_t,
         arg3: *mut ::std::os::raw::c_int,
     );
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_formatReal(
         arg1: *const f64,
         arg2: R_xlen_t,
@@ -24,6 +33,9 @@ extern "C" {
         arg5: *mut ::std::os::raw::c_int,
         arg6: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_formatComplex(
         arg1: *const Rcomplex,
         arg2: R_xlen_t,
@@ -35,8 +47,14 @@ extern "C" {
         arg8: *mut ::std::os::raw::c_int,
         arg9: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn formatLogicalS(arg1: SEXP, arg2: R_xlen_t, arg3: *mut ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn formatIntegerS(arg1: SEXP, arg2: R_xlen_t, arg3: *mut ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn formatRealS(
         arg1: SEXP,
         arg2: R_xlen_t,
@@ -45,6 +63,8 @@ extern "C" {
         arg5: *mut ::std::os::raw::c_int,
         arg6: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn formatComplexS(
         arg1: SEXP,
         arg2: R_xlen_t,
@@ -56,14 +76,22 @@ extern "C" {
         arg8: *mut ::std::os::raw::c_int,
         arg9: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_EncodeLogical(
         arg1: ::std::os::raw::c_int,
         arg2: ::std::os::raw::c_int,
     ) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_EncodeInteger(
         arg1: ::std::os::raw::c_int,
         arg2: ::std::os::raw::c_int,
     ) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_EncodeReal0(
         arg1: f64,
         arg2: ::std::os::raw::c_int,
@@ -71,6 +99,9 @@ extern "C" {
         arg4: ::std::os::raw::c_int,
         arg5: *const ::std::os::raw::c_char,
     ) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_EncodeComplex(
         arg1: Rcomplex,
         arg2: ::std::os::raw::c_int,
@@ -81,6 +112,9 @@ extern "C" {
         arg7: ::std::os::raw::c_int,
         arg8: *const ::std::os::raw::c_char,
     ) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_EncodeReal(
         arg1: f64,
         arg2: ::std::os::raw::c_int,
@@ -88,20 +122,37 @@ extern "C" {
         arg4: ::std::os::raw::c_int,
         arg5: ::std::os::raw::c_char,
     ) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_IndexWidth(arg1: R_xlen_t) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_VectorIndex(arg1: R_xlen_t, arg2: ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_printIntegerVector(
         arg1: *const ::std::os::raw::c_int,
         arg2: R_xlen_t,
         arg3: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_printRealVector(arg1: *const f64, arg2: R_xlen_t, arg3: ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_printComplexVector(
         arg1: *const Rcomplex,
         arg2: R_xlen_t,
         arg3: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn printIntegerVectorS(arg1: SEXP, arg2: R_xlen_t, arg3: ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn printRealVectorS(arg1: SEXP, arg2: R_xlen_t, arg3: ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn printComplexVectorS(arg1: SEXP, arg2: R_xlen_t, arg3: ::std::os::raw::c_int);
 }

@@ -7,6 +7,8 @@
 
 pub type Rconnection = *mut Rconn;
 #[repr(C)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct Rconn {
     pub class: *mut ::std::os::raw::c_char,
     pub description: *mut ::std::os::raw::c_char,
@@ -100,14 +102,25 @@ pub struct Rconn {
 }
 pub const R_CONNECTIONS_VERSION: u32 = 1;
 extern "C" {
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_new_custom_connection(
         description: *const ::std::os::raw::c_char,
         mode: *const ::std::os::raw::c_char,
         class_name: *const ::std::os::raw::c_char,
         ptr: *mut Rconnection,
     ) -> SEXP;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_ReadConnection(con: Rconnection, buf: *mut ::std::os::raw::c_void, n: usize) -> usize;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_WriteConnection(con: Rconnection, buf: *mut ::std::os::raw::c_void, n: usize)
         -> usize;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GetConnection(sConn: SEXP) -> Rconnection;
 }

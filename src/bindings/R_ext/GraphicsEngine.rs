@@ -15,6 +15,8 @@ pub type pGEDevDesc = *mut GEDevDesc;
 pub type rcolor = ::std::os::raw::c_uint;
 #[doc = " A structure containing graphical parameters\n\n This is how graphical parameters are passed from graphics systems\n to the graphics engine AND from the graphics engine to graphics\n devices.\n\n Devices are not *required* to honour graphical parameters\n (e.g., alpha transparency is going to be tough for some)"]
 #[repr(C)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct R_GE_gcontext {
     #[doc = " pen colour (lines, text, borders, ...)"]
     pub col: ::std::os::raw::c_int,
@@ -47,6 +49,8 @@ pub struct R_GE_gcontext {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct GESystemDesc {
     #[doc = " An array of information about each graphics system that\n has registered with the graphics engine.\n This is used to store graphics state for each graphics\n system on each device."]
     pub systemSpecific: *mut ::std::os::raw::c_void,
@@ -54,6 +58,8 @@ pub struct GESystemDesc {
     pub callback: GEcallback,
 }
 #[repr(C)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct _GEDevDesc {
     #[doc = " Stuff that the devices can see (and modify).\n All detailed in GraphicsDevice.h"]
     pub dev: pDevDesc,
@@ -145,6 +151,8 @@ pub const R_GE_text_style_oblique: u32 = 3;
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " The graphics engine will only accept locations and dimensions\n in native device coordinates, but it provides the following functions\n for converting between a couple of simple alternative coordinate\n systems and device coordinates:\n    DEVICE = native units of the device\n    NDC = Normalised device coordinates\n    INCHES = inches (!)\n    CM = centimetres (!!)"]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum GEUnit {
     #[doc = " native device coordinates (rasters)"]
@@ -156,6 +164,8 @@ pub enum GEUnit {
 }
 #[repr(u32)]
 #[non_exhaustive]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum GEevent {
     #[doc = " In response to this event, the registered graphics system\n should allocate and initialise the systemSpecific structure\n\n Should return R_NilValue on failure so that engine\n can tidy up memory allocation"]
@@ -180,6 +190,8 @@ pub enum GEevent {
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = "  Some line end/join constants"]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum R_GE_lineend {
     GE_ROUND_CAP = 1,
@@ -188,6 +200,8 @@ pub enum R_GE_lineend {
 }
 #[repr(u32)]
 #[non_exhaustive]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum R_GE_linejoin {
     GE_ROUND_JOIN = 1,
@@ -195,49 +209,121 @@ pub enum R_GE_linejoin {
     GE_BEVEL_JOIN = 3,
 }
 extern "C" {
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_getVersion() -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_checkVersionOrDie(version: ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_desc2GEDesc(dd: pDevDesc) -> pGEDevDesc;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEdeviceNumber(arg1: pGEDevDesc) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEgetDevice(arg1: ::std::os::raw::c_int) -> pGEDevDesc;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEaddDevice(arg1: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEaddDevice2(arg1: pGEDevDesc, arg2: *const ::std::os::raw::c_char);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEaddDevice2f(
         arg1: pGEDevDesc,
         arg2: *const ::std::os::raw::c_char,
         arg3: *const ::std::os::raw::c_char,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEkillDevice(arg1: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEcreateDevDesc(dev: pDevDesc) -> pGEDevDesc;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEdestroyDevDesc(dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEsystemState(
         dd: pGEDevDesc,
         index: ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_void;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEregisterWithDevice(dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEregisterSystem(callback: GEcallback, systemRegisterIndex: *mut ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEunregisterSystem(registerIndex: ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEhandleEvent(event: GEevent, dev: pDevDesc, data: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEfromDeviceX(value: f64, to: GEUnit, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEtoDeviceX(value: f64, from: GEUnit, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEfromDeviceY(value: f64, to: GEUnit, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEtoDeviceY(value: f64, from: GEUnit, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEfromDeviceWidth(value: f64, to: GEUnit, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEtoDeviceWidth(value: f64, from: GEUnit, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEfromDeviceHeight(value: f64, to: GEUnit, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEtoDeviceHeight(value: f64, from: GEUnit, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_RGBpar(arg1: SEXP, arg2: ::std::os::raw::c_int) -> rcolor;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_RGBpar3(arg1: SEXP, arg2: ::std::os::raw::c_int, arg3: rcolor) -> rcolor;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_col2name(col: rcolor) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " Convert either a name or a #RRGGBB[AA] string to internal.\nBecause people were using it, it also converts \"1\", \"2\" ...\nto a colour in the palette, and \"0\" to transparent white."]
     pub fn R_GE_str2col(s: *const ::std::os::raw::c_char) -> rcolor;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GE_LENDpar(value: SEXP, ind: ::std::os::raw::c_int) -> R_GE_lineend;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GE_LENDget(lend: R_GE_lineend) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GE_LJOINpar(value: SEXP, ind: ::std::os::raw::c_int) -> R_GE_linejoin;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GE_LJOINget(ljoin: R_GE_linejoin) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GESetClip(x1: f64, y1: f64, x2: f64, y2: f64, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GENewPage(gc: pGEcontext, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GELine(x1: f64, y1: f64, x2: f64, y2: f64, gc: pGEcontext, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEPolyline(
         n: ::std::os::raw::c_int,
         x: *mut f64,
@@ -245,6 +331,8 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEPolygon(
         n: ::std::os::raw::c_int,
         x: *mut f64,
@@ -252,6 +340,8 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEXspline(
         n: ::std::os::raw::c_int,
         x: *mut f64,
@@ -263,8 +353,14 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     ) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GECircle(x: f64, y: f64, radius: f64, gc: pGEcontext, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GERect(x0: f64, y0: f64, x1: f64, y1: f64, gc: pGEcontext, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEPath(
         x: *mut f64,
         y: *mut f64,
@@ -274,6 +370,8 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GERaster(
         raster: *mut ::std::os::raw::c_uint,
         w: ::std::os::raw::c_int,
@@ -287,7 +385,11 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GECap(dd: pGEDevDesc) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEText(
         x: f64,
         y: f64,
@@ -299,7 +401,11 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEMode(mode: ::std::os::raw::c_int, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GESymbol(
         x: f64,
         y: f64,
@@ -308,7 +414,11 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEPretty(lo: *mut f64, up: *mut f64, ndiv: *mut ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEMetricInfo(
         c: ::std::os::raw::c_int,
         gc: pGEcontext,
@@ -317,18 +427,24 @@ extern "C" {
         width: *mut f64,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEStrWidth(
         str_: *const ::std::os::raw::c_char,
         enc: cetype_t,
         gc: pGEcontext,
         dd: pGEDevDesc,
     ) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEStrHeight(
         str_: *const ::std::os::raw::c_char,
         enc: cetype_t,
         gc: pGEcontext,
         dd: pGEDevDesc,
     ) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEStrMetric(
         str_: *const ::std::os::raw::c_char,
         enc: cetype_t,
@@ -338,10 +454,18 @@ extern "C" {
         width: *mut f64,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEstring_to_pch(pch: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = "-------------------------------------------------------------------\n\n  LINE TEXTURE CODE is concerned with the internals of R\n  line texture representation."]
     pub fn GE_LTYpar(arg1: SEXP, arg2: ::std::os::raw::c_int) -> ::std::os::raw::c_uint;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GE_LTYget(arg1: ::std::os::raw::c_uint) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " Raster operations"]
     pub fn R_GE_rasterScale(
         sraster: *mut ::std::os::raw::c_uint,
@@ -351,6 +475,8 @@ extern "C" {
         dw: ::std::os::raw::c_int,
         dh: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_rasterInterpolate(
         sraster: *mut ::std::os::raw::c_uint,
         sw: ::std::os::raw::c_int,
@@ -359,6 +485,8 @@ extern "C" {
         dw: ::std::os::raw::c_int,
         dh: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_rasterRotatedSize(
         w: ::std::os::raw::c_int,
         h: ::std::os::raw::c_int,
@@ -366,6 +494,8 @@ extern "C" {
         wnew: *mut ::std::os::raw::c_int,
         hnew: *mut ::std::os::raw::c_int,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_rasterRotatedOffset(
         w: ::std::os::raw::c_int,
         h: ::std::os::raw::c_int,
@@ -374,6 +504,8 @@ extern "C" {
         xoff: *mut f64,
         yoff: *mut f64,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_rasterResizeForRotation(
         sraster: *mut ::std::os::raw::c_uint,
         w: ::std::os::raw::c_int,
@@ -383,6 +515,8 @@ extern "C" {
         hnew: ::std::os::raw::c_int,
         gc: pGEcontext,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_rasterRotate(
         sraster: *mut ::std::os::raw::c_uint,
         w: ::std::os::raw::c_int,
@@ -392,9 +526,15 @@ extern "C" {
         gc: pGEcontext,
         perPixelAlpha: Rboolean,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " From plotmath.c"]
     pub fn GEExpressionWidth(expr: SEXP, gc: pGEcontext, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEExpressionHeight(expr: SEXP, gc: pGEcontext, dd: pGEDevDesc) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEExpressionMetric(
         expr: SEXP,
         gc: pGEcontext,
@@ -403,6 +543,8 @@ extern "C" {
         width: *mut f64,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEMathText(
         x: f64,
         y: f64,
@@ -413,6 +555,8 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " From plot3d.c : used in package clines"]
     pub fn GEcontourLines(
         x: *mut f64,
@@ -423,6 +567,8 @@ extern "C" {
         levels: *mut f64,
         nl: ::std::os::raw::c_int,
     ) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " From vfonts.c"]
     pub fn R_GE_VStrWidth(
         s: *const ::std::os::raw::c_char,
@@ -430,12 +576,16 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     ) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_VStrHeight(
         s: *const ::std::os::raw::c_char,
         enc: cetype_t,
         gc: pGEcontext,
         dd: pGEDevDesc,
     ) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_VText(
         x: f64,
         y: f64,
@@ -447,25 +597,55 @@ extern "C" {
         gc: pGEcontext,
         dd: pGEDevDesc,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEcurrentDevice() -> pGEDevDesc;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEdeviceDirty(dd: pGEDevDesc) -> Rboolean;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEdirtyDevice(dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEcheckState(dd: pGEDevDesc) -> Rboolean;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GErecording(call: SEXP, dd: pGEDevDesc) -> Rboolean;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GErecordGraphicOperation(op: SEXP, args: SEXP, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEinitDisplayList(dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEplayDisplayList(dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEcopyDisplayList(fromDevice: ::std::os::raw::c_int);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEcreateSnapshot(dd: pGEDevDesc) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEplaySnapshot(snapshot: SEXP, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEonExit();
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEnullDevice();
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_CreateAtVector(
         axp: *mut f64,
         usr: *const f64,
         nint: ::std::os::raw::c_int,
         logflag: Rboolean,
     ) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_GAxisPars(
         min: *mut f64,
         max: *mut f64,
@@ -473,52 +653,144 @@ extern "C" {
         log: Rboolean,
         axis: ::std::os::raw::c_int,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " Patterns - from ../../main/patterns.c"]
     pub fn R_GE_isPattern(x: SEXP) -> Rboolean;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_patternType(pattern: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_linearGradientX1(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_linearGradientY1(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_linearGradientX2(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_linearGradientY2(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_linearGradientNumStops(pattern: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_linearGradientStop(pattern: SEXP, i: ::std::os::raw::c_int) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_linearGradientColour(pattern: SEXP, i: ::std::os::raw::c_int) -> rcolor;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_linearGradientExtend(pattern: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientCX1(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientCY1(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientR1(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientCX2(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientCY2(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientR2(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientNumStops(pattern: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientStop(pattern: SEXP, i: ::std::os::raw::c_int) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientColour(pattern: SEXP, i: ::std::os::raw::c_int) -> rcolor;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_radialGradientExtend(pattern: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_tilingPatternFunction(pattern: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_tilingPatternX(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_tilingPatternY(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_tilingPatternWidth(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_tilingPatternHeight(pattern: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_tilingPatternExtend(pattern: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_clipPathFillRule(path: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEStroke(path: SEXP, gc: pGEcontext, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEFill(path: SEXP, rule: ::std::os::raw::c_int, gc: pGEcontext, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEFillStroke(path: SEXP, rule: ::std::os::raw::c_int, gc: pGEcontext, dd: pGEDevDesc);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_maskType(mask: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphInfoGlyphs(glyphInfo: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphInfoFonts(glyphInfo: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphID(glyphs: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphX(glyphs: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphY(glyphs: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphFont(glyphs: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphSize(glyphs: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphColour(glyphs: SEXP) -> SEXP;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphFontFile(glyphFont: SEXP) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphFontIndex(glyphFont: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphFontFamily(glyphFont: SEXP) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphFontWeight(glyphFont: SEXP) -> f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphFontStyle(glyphFont: SEXP) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GE_glyphFontPSname(glyphFont: SEXP) -> *const ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn GEGlyph(
         n: ::std::os::raw::c_int,
         glyphs: *mut ::std::os::raw::c_int,

@@ -7,7 +7,11 @@
 
 pub const __STDC_WANT_IEC_60559_FUNCS_EXT__: u32 = 1;
 extern "C" {
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_FlushConsole();
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " always declared, but only usable under Win32 and Aqua"]
     pub fn R_ProcessEvents();
 }

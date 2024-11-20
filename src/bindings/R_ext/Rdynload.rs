@@ -16,6 +16,8 @@ pub type R_RegisteredNativeSymbol = Rf_RegisteredNativeSymbol;
 #[doc = "These are very similar to those in Rdynpriv.h,\nbut we maintain them separately to give us more freedom to do\nsome computations on the internal versions that are derived from\nthese definitions."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct R_CMethodDef {
     pub name: *const ::std::os::raw::c_char,
     pub fun: DL_FUNC,
@@ -24,6 +26,8 @@ pub struct R_CMethodDef {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct R_CallMethodDef {
     pub name: *const ::std::os::raw::c_char,
     pub fun: DL_FUNC,
@@ -31,17 +35,23 @@ pub struct R_CallMethodDef {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct _DllInfo {
     _unused: [u8; 0],
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct Rf_RegisteredNativeSymbol {
     _unused: [u8; 0],
 }
 pub const SINGLESXP: u32 = 302;
 #[repr(u32)]
 #[non_exhaustive]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum NativeSymbolType {
     R_ANY_SYM = 0,
@@ -51,6 +61,8 @@ pub enum NativeSymbolType {
     R_EXTERNAL_SYM = 4,
 }
 extern "C" {
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_registerRoutines(
         info: *mut DllInfo,
         croutines: *const R_CMethodDef,
@@ -58,22 +70,36 @@ extern "C" {
         fortranRoutines: *const R_FortranMethodDef,
         externalRoutines: *const R_ExternalMethodDef,
     ) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_useDynamicSymbols(info: *mut DllInfo, value: Rboolean) -> Rboolean;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_forceSymbols(info: *mut DllInfo, value: Rboolean) -> Rboolean;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_getDllInfo(name: *const ::std::os::raw::c_char) -> *mut DllInfo;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " To be used by applications embedding R to register their symbols\nthat are not related to any dynamic module"]
     pub fn R_getEmbeddingDllInfo() -> *mut DllInfo;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_FindSymbol(
         arg1: *const ::std::os::raw::c_char,
         arg2: *const ::std::os::raw::c_char,
         symbol: *mut R_RegisteredNativeSymbol,
     ) -> DL_FUNC;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " Interface for exporting and importing functions from one package\nfor use from C code in a package.  The registration part probably\nought to be integrated with the other registrations.  The naming of\nthese routines may be less than ideal."]
     pub fn R_RegisterCCallable(
         package: *const ::std::os::raw::c_char,
         name: *const ::std::os::raw::c_char,
         fptr: DL_FUNC,
     );
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_GetCCallable(
         package: *const ::std::os::raw::c_char,
         name: *const ::std::os::raw::c_char,

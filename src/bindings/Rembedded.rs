@@ -6,25 +6,63 @@
 /* R version: 4.4.1 */
 
 extern "C" {
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_initEmbeddedR(
         argc: ::std::os::raw::c_int,
         argv: *mut *mut ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_endEmbeddedR(fatal: ::std::os::raw::c_int);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_initialize_R(
         ac: ::std::os::raw::c_int,
         av: *mut *mut ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn setup_Rmainloop();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_ReplDLLinit();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_ReplDLLdo1() -> ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_setStartTime();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_RunExitFinalizers();
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn CleanEd();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_KillAllDevices();
     pub static mut R_DirtyImage: ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_CleanTempDir();
     pub static mut R_TempDir: *mut ::std::os::raw::c_char;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_SaveGlobalEnv();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn fpu_setup(start: Rboolean);
 }

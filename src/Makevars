@@ -1,5 +1,6 @@
 BINDINGS_DIR = bindings
-all_r_headers = `find $(R_INCLUDE_DIR) -name '*.h'`
+ALL_R_HEADERS = `find $(R_INCLUDE_DIR) -name '*.h'`
+NONAPI = `R -e "cat(tools:::nonAPI, sep = '|')"`
 RUSTC = rustc
 
 ifeq ($(R_OSTYPE),windows)
@@ -20,7 +21,6 @@ else
 	R_LIBRARY_PATH = -L$(R_HOME)/lib$(R_ARCH)
 endif
 
-
 RUSTC_FLAGS = \
 --print native-static-libs \
 	$(TARGET) \
@@ -32,7 +32,7 @@ RUSTC_FLAGS = \
 	$(RUSTC_DEFAULT_FLAGS) \
 	-Cllvm-args=--align-all-functions=64 \
 	--crate-type=cdylib \
-	--emit=dep-info,obj,link
+	--emit=dep-info,obj
 
 # PKG_LIBS += -lc -lm -lresolv -ldl -lpthread  -dynamiclib -Wl,-dylib -shared -L. -lrust_add
 # PKG_LIBS += -L. -lrust_add
@@ -41,6 +41,11 @@ RUSTC_FLAGS = \
 r_blocked_items = --blocklist-item="VECTOR_PTR|SEXPREC"
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
 RUSTC_VERSION = `rustc --version`
+ATTRIBUTE_CUSTOM = --with-attribute-custom="$(NONAPI)=\#[cfg(feature = \"nonapi\")]" \
+	--with-attribute-custom=".*=\#[cfg(feature = \"$(addprefix r_,$(subst .,_,$(R_VERSION)))\")]" \
+	--with-attribute-custom=".*=\#[cfg(target_family = \"$(R_OSTYPE)\")]" \
+	$()
+
 bindgen_args = \
 	--raw-line "/* OS: ${R_OSTYPE} */"  \
 	--raw-line "/* Platform: $(R_PLATFORM) */" \
@@ -48,6 +53,7 @@ bindgen_args = \
 	--raw-line "/* R version: $(R_VERSION) */" \
 	--enable-function-attribute-detection \
 	--no-layout-tests \
+$(ATTRIBUTE_CUSTOM) \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
 	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
 bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINES) \
@@ -63,7 +69,7 @@ LIBGCC_EH_RECIPE_SETUP:
 
 all_r_bindings:
 	@mkdir -p $(BINDINGS_DIR)
-	@for header in $(all_r_headers); do \
+	@for header in $(ALL_R_HEADERS); do \
 		output=$(BINDINGS_DIR)/$$(echo $$header | sed "s|$(R_INCLUDE_DIR)/||;s|.h$$|.rs|"); \
 		echo "Generating $$output from $$header"; \
 		mkdir -p $$(dirname $$output); \

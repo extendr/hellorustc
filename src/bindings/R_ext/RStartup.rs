@@ -12,6 +12,8 @@ pub struct __BindgenBitfieldUnit<Storage> {
     storage: Storage,
 }
 #[repr(C)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct structRstart {
     pub R_Quiet: Rboolean,
     pub R_NoEcho: Rboolean,
@@ -35,6 +37,8 @@ pub const RSTART_VERSION: u32 = 1;
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " Startup Actions"]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum SA_TYPE {
     #[doc = " = 0"]
@@ -58,10 +62,7 @@ where
     Storage: AsRef<[u8]> + AsMut<[u8]>,
 {
     #[inline]
-    pub fn get_bit(&self, index: usize) -> bool {
-        debug_assert!(index / 8 < self.storage.as_ref().len());
-        let byte_index = index / 8;
-        let byte = self.storage.as_ref()[byte_index];
+    fn extract_bit(byte: u8, index: usize) -> bool {
         let bit_index = if cfg!(target_endian = "big") {
             7 - (index % 8)
         } else {
@@ -71,10 +72,21 @@ where
         byte & mask == mask
     }
     #[inline]
-    pub fn set_bit(&mut self, index: usize, val: bool) {
+    pub fn get_bit(&self, index: usize) -> bool {
         debug_assert!(index / 8 < self.storage.as_ref().len());
         let byte_index = index / 8;
-        let byte = &mut self.storage.as_mut()[byte_index];
+        let byte = self.storage.as_ref()[byte_index];
+        Self::extract_bit(byte, index)
+    }
+    #[inline]
+    pub unsafe fn raw_get_bit(this: *const Self, index: usize) -> bool {
+        debug_assert!(index / 8 < core::mem::size_of::<Storage>());
+        let byte_index = index / 8;
+        let byte = *(core::ptr::addr_of!((*this).storage) as *const u8).offset(byte_index as isize);
+        Self::extract_bit(byte, index)
+    }
+    #[inline]
+    fn change_bit(byte: u8, index: usize, val: bool) -> u8 {
         let bit_index = if cfg!(target_endian = "big") {
             7 - (index % 8)
         } else {
@@ -82,10 +94,25 @@ where
         };
         let mask = 1 << bit_index;
         if val {
-            *byte |= mask;
+            byte | mask
         } else {
-            *byte &= !mask;
+            byte & !mask
         }
+    }
+    #[inline]
+    pub fn set_bit(&mut self, index: usize, val: bool) {
+        debug_assert!(index / 8 < self.storage.as_ref().len());
+        let byte_index = index / 8;
+        let byte = &mut self.storage.as_mut()[byte_index];
+        *byte = Self::change_bit(*byte, index, val);
+    }
+    #[inline]
+    pub unsafe fn raw_set_bit(this: *mut Self, index: usize, val: bool) {
+        debug_assert!(index / 8 < core::mem::size_of::<Storage>());
+        let byte_index = index / 8;
+        let byte =
+            (core::ptr::addr_of_mut!((*this).storage) as *mut u8).offset(byte_index as isize);
+        *byte = Self::change_bit(*byte, index, val);
     }
     #[inline]
     pub fn get(&self, bit_offset: usize, bit_width: u8) -> u64 {
@@ -95,6 +122,24 @@ where
         let mut val = 0;
         for i in 0..(bit_width as usize) {
             if self.get_bit(i + bit_offset) {
+                let index = if cfg!(target_endian = "big") {
+                    bit_width as usize - 1 - i
+                } else {
+                    i
+                };
+                val |= 1 << index;
+            }
+        }
+        val
+    }
+    #[inline]
+    pub unsafe fn raw_get(this: *const Self, bit_offset: usize, bit_width: u8) -> u64 {
+        debug_assert!(bit_width <= 64);
+        debug_assert!(bit_offset / 8 < core::mem::size_of::<Storage>());
+        debug_assert!((bit_offset + (bit_width as usize)) / 8 <= core::mem::size_of::<Storage>());
+        let mut val = 0;
+        for i in 0..(bit_width as usize) {
+            if Self::raw_get_bit(this, i + bit_offset) {
                 let index = if cfg!(target_endian = "big") {
                     bit_width as usize - 1 - i
                 } else {
@@ -121,6 +166,22 @@ where
             self.set_bit(index + bit_offset, val_bit_is_set);
         }
     }
+    #[inline]
+    pub unsafe fn raw_set(this: *mut Self, bit_offset: usize, bit_width: u8, val: u64) {
+        debug_assert!(bit_width <= 64);
+        debug_assert!(bit_offset / 8 < core::mem::size_of::<Storage>());
+        debug_assert!((bit_offset + (bit_width as usize)) / 8 <= core::mem::size_of::<Storage>());
+        for i in 0..(bit_width as usize) {
+            let mask = 1 << i;
+            let val_bit_is_set = val & mask == mask;
+            let index = if cfg!(target_endian = "big") {
+                bit_width as usize - 1 - i
+            } else {
+                i
+            };
+            Self::raw_set_bit(this, index + bit_offset, val_bit_is_set);
+        }
+    }
 }
 impl structRstart {
     #[inline]
@@ -135,6 +196,28 @@ impl structRstart {
         }
     }
     #[inline]
+    pub unsafe fn NoRenviron_raw(this: *const Self) -> Rboolean {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                0usize,
+                16u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_NoRenviron_raw(this: *mut Self, val: Rboolean) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                0usize,
+                16u8,
+                val as u64,
+            )
+        }
+    }
+    #[inline]
     pub fn RstartVersion(&self) -> ::std::os::raw::c_int {
         unsafe { ::std::mem::transmute(self._bitfield_1.get(16usize, 16u8) as u32) }
     }
@@ -143,6 +226,28 @@ impl structRstart {
         unsafe {
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(16usize, 16u8, val as u64)
+        }
+    }
+    #[inline]
+    pub unsafe fn RstartVersion_raw(this: *const Self) -> ::std::os::raw::c_int {
+        unsafe {
+            ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 4usize]>>::raw_get(
+                ::std::ptr::addr_of!((*this)._bitfield_1),
+                16usize,
+                16u8,
+            ) as u32)
+        }
+    }
+    #[inline]
+    pub unsafe fn set_RstartVersion_raw(this: *mut Self, val: ::std::os::raw::c_int) {
+        unsafe {
+            let val: u32 = ::std::mem::transmute(val);
+            <__BindgenBitfieldUnit<[u8; 4usize]>>::raw_set(
+                ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+                16usize,
+                16u8,
+                val as u64,
+            )
         }
     }
     #[inline]
@@ -163,21 +268,47 @@ impl structRstart {
     }
 }
 extern "C" {
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_DefParams(arg1: Rstart);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_DefParamsEx(arg1: Rstart, arg2: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " New code should always use R_DefParamsEx(Rstart, RSTART_VERSION) to\ninform R about the version of the structure used. R_DefParams(Rstart)\nonly supports version 0 of the structure."]
     pub fn R_SetParams(arg1: Rstart);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_DefCallbacks(arg1: Rstart, arg2: ::std::os::raw::c_int);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_SetWin32(arg1: Rstart);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_SizeFromEnv(arg1: Rstart);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_common_command_line(
         arg1: *mut ::std::os::raw::c_int,
         arg2: *mut *mut ::std::os::raw::c_char,
         arg3: Rstart,
     );
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_set_command_line_arguments(
         argc: ::std::os::raw::c_int,
         argv: *mut *mut ::std::os::raw::c_char,
     );
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn setup_Rmainloop();
 }

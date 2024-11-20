@@ -10,6 +10,8 @@ pub type InputHandlerProc =
 pub type InputHandler = _InputHandler;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct _InputHandler {
     pub activity: ::std::os::raw::c_int,
     pub fileDescriptor: ::std::os::raw::c_int,
@@ -23,33 +25,62 @@ pub struct _InputHandler {
 pub const XActivity: u32 = 1;
 pub const StdinActivity: u32 = 2;
 extern "C" {
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn initStdinHandler() -> *mut InputHandler;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn consoleInputHandler(buf: *mut ::std::os::raw::c_uchar, len: ::std::os::raw::c_int);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn addInputHandler(
         handlers: *mut InputHandler,
         fd: ::std::os::raw::c_int,
         handler: InputHandlerProc,
         activity: ::std::os::raw::c_int,
     ) -> *mut InputHandler;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn getInputHandler(
         handlers: *mut InputHandler,
         fd: ::std::os::raw::c_int,
     ) -> *mut InputHandler;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn removeInputHandler(
         handlers: *mut *mut InputHandler,
         it: *mut InputHandler,
     ) -> ::std::os::raw::c_int;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn getSelectedHandler(handlers: *mut InputHandler, mask: *mut fd_set) -> *mut InputHandler;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_checkActivity(
         usec: ::std::os::raw::c_int,
         ignore_stdin: ::std::os::raw::c_int,
     ) -> *mut fd_set;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_checkActivityEx(
         usec: ::std::os::raw::c_int,
         ignore_stdin: ::std::os::raw::c_int,
         intr: ::std::option::Option<unsafe extern "C" fn()>,
     ) -> *mut fd_set;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_runHandlers(handlers: *mut InputHandler, mask: *mut fd_set);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_SelectEx(
         n: ::std::os::raw::c_int,
         readfds: *mut fd_set,

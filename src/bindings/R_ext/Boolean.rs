@@ -7,6 +7,8 @@
 
 #[repr(u32)]
 #[non_exhaustive]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum Rboolean {
     #[doc = ", MAYBE"]

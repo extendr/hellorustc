@@ -10,17 +10,43 @@ extern "C" {
     pub static mut R_Interactive: Rboolean;
     #[doc = " do not echo R code"]
     pub static mut R_NoEcho: Rboolean;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_RestoreGlobalEnv();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_RestoreGlobalEnvFromFile(arg1: *const ::std::os::raw::c_char, arg2: Rboolean);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_SaveGlobalEnv();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_SaveGlobalEnvToFile(arg1: *const ::std::os::raw::c_char);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_FlushConsole();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_ClearerrConsole();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_Suicide(arg1: *const ::std::os::raw::c_char);
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_HomeDir() -> *mut ::std::os::raw::c_char;
     #[doc = " Current image dirty"]
     pub static mut R_DirtyImage: ::std::os::raw::c_int;
     pub static mut R_GUIType: *mut ::std::os::raw::c_char;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_setupHistory();
     #[doc = " Name of the history file"]
     pub static mut R_HistoryFile: *mut ::std::os::raw::c_char;
@@ -30,19 +56,44 @@ extern "C" {
     pub static mut R_RestoreHistory: ::std::os::raw::c_int;
     #[doc = " Root of the R tree"]
     pub static mut R_Home: *mut ::std::os::raw::c_char;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_jump_to_toplevel();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_mainloop();
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_onintr();
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn Rf_onintrNoResume();
     #[doc = " Need opaque pointer type for export"]
     pub static mut R_GlobalContext: *mut ::std::os::raw::c_void;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn process_site_Renviron();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn process_system_Renviron();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn process_user_Renviron();
     pub static mut R_Consolefile: *mut FILE;
     pub static mut R_Outputfile: *mut FILE;
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " in ../unix/sys-unix.c"]
     pub fn R_setStartTime();
+    #[cfg(feature = "nonapi")]
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn fpu_setup(arg1: Rboolean);
     #[doc = " in ../unix/system.c"]
     pub static mut R_running_as_main_program: ::std::os::raw::c_int;

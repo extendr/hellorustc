@@ -6,24 +6,46 @@
 /* R version: 4.4.1 */
 
 extern "C" {
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn vmaxget() -> *mut ::std::os::raw::c_void;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn vmaxset(arg1: *const ::std::os::raw::c_void);
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_gc();
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_gc_running() -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_alloc(arg1: usize, arg2: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_allocLD(nelem: usize) -> *mut f64;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn S_alloc(
         arg1: ::std::os::raw::c_long,
         arg2: ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn S_realloc(
         arg1: *mut ::std::os::raw::c_char,
         arg2: ::std::os::raw::c_long,
         arg3: ::std::os::raw::c_long,
         arg4: ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_char;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_malloc_gc(arg1: usize) -> *mut ::std::os::raw::c_void;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_calloc_gc(arg1: usize, arg2: usize) -> *mut ::std::os::raw::c_void;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_realloc_gc(
         arg1: *mut ::std::os::raw::c_void,
         arg2: usize,

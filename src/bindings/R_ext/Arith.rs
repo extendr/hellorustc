@@ -16,8 +16,14 @@ extern "C" {
     pub static mut R_NaReal: f64;
     #[doc = " NA_INTEGER:= INT_MIN currently"]
     pub static mut R_NaInt: ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     #[doc = " NA_STRING is a SEXP, so defined in Rinternals.h"]
     pub fn R_IsNA(arg1: f64) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_IsNaN(arg1: f64) -> ::std::os::raw::c_int;
+    #[cfg(feature = "r_4_4_1")]
+    #[cfg(target_family = "unix")]
     pub fn R_finite(arg1: f64) -> ::std::os::raw::c_int;
 }

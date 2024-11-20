@@ -13,12 +13,16 @@ pub struct __BindgenComplex<T> {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub struct Rcomplex__bindgen_ty_1 {
     pub r: f64,
     pub i: f64,
 }
 #[repr(C)]
 #[derive(Copy, Clone)]
+#[cfg(feature = "r_4_4_1")]
+#[cfg(target_family = "unix")]
 pub union Rcomplex {
     pub __bindgen_anon_1: Rcomplex__bindgen_ty_1,
     pub private_data_c: __BindgenComplex<f64>,
