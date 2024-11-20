@@ -57,8 +57,6 @@ pub type Rdb_onAttach = ::std::option::Option<unsafe extern "C" fn(arg1: *mut R_
 #[doc = "Linked list element for storing the top-level task callbacks."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct _ToplevelCallback {
     #[doc = " the C routine to call."]
     pub cb: R_ToplevelCallback,
@@ -72,8 +70,6 @@ pub struct _ToplevelCallback {
     pub next: *mut R_ToplevelCallbackEl,
 }
 #[repr(C)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct _R_ObjectTable {
     pub type_: ::std::os::raw::c_int,
     pub cachedNames: *mut *mut ::std::os::raw::c_char,
@@ -90,20 +86,12 @@ pub struct _R_ObjectTable {
 }
 extern "C" {
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_removeTaskCallbackByIndex(id: ::std::os::raw::c_int) -> Rboolean;
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_removeTaskCallbackByName(name: *const ::std::os::raw::c_char) -> Rboolean;
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_removeTaskCallback(which: SEXP) -> SEXP;
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_addTaskCallback(
         cb: R_ToplevelCallback,
         data: *mut ::std::os::raw::c_void,

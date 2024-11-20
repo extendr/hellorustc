@@ -13,15 +13,11 @@ pub type L_fp = ::std::option::Option<
     ) -> *mut ::std::os::raw::c_int,
 >;
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ilaver_(
         major: *mut ::std::os::raw::c_int,
         minor: *mut ::std::os::raw::c_int,
         patch: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dbdsqr_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -40,8 +36,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ddisna_(
         job: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -51,8 +45,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbbrd_(
         vect: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -74,8 +66,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbcon_(
         norm: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -91,8 +81,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbequ_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -107,8 +95,6 @@ extern "C" {
         amax: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbrfs_(
         trans: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -131,8 +117,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbsv_(
         n: *const ::std::os::raw::c_int,
         kl: *const ::std::os::raw::c_int,
@@ -145,8 +129,6 @@ extern "C" {
         ldb: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbsvx_(
         fact: *const ::std::os::raw::c_int,
         trans: *const ::std::os::raw::c_char,
@@ -175,8 +157,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbtf2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -187,8 +167,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbtrf_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -199,8 +177,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbtrs_(
         trans: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -215,8 +191,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgebak_(
         job: *const ::std::os::raw::c_char,
         side: *const ::std::os::raw::c_char,
@@ -231,8 +205,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgebal_(
         job: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -244,8 +216,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgebd2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -258,8 +228,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgebrd_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -273,8 +241,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgecon_(
         norm: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -287,8 +253,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeequ_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -301,8 +265,6 @@ extern "C" {
         amax: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgees_(
         jobvs: *const ::std::os::raw::c_char,
         sort: *const ::std::os::raw::c_char,
@@ -324,8 +286,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeesx_(
         jobvs: *const ::std::os::raw::c_char,
         sort: *const ::std::os::raw::c_char,
@@ -353,8 +313,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeev_(
         jobvl: *const ::std::os::raw::c_char,
         jobvr: *const ::std::os::raw::c_char,
@@ -373,8 +331,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeevx_(
         balanc: *const ::std::os::raw::c_char,
         jobvl: *const ::std::os::raw::c_char,
@@ -404,8 +360,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgehd2_(
         n: *const ::std::os::raw::c_int,
         ilo: *const ::std::os::raw::c_int,
@@ -416,8 +370,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgehrd_(
         n: *const ::std::os::raw::c_int,
         ilo: *const ::std::os::raw::c_int,
@@ -429,8 +381,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgelq2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -440,8 +390,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgelqf_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -452,8 +400,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgels_(
         trans: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -468,8 +414,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgelss_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -485,8 +429,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgelsy_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -502,8 +444,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeql2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -513,8 +453,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeqlf_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -525,8 +463,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeqp3_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -538,8 +474,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeqr2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -549,8 +483,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeqrf_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -561,8 +493,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgerfs_(
         trans: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -583,8 +513,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgerq2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -594,8 +522,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgerqf_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -606,8 +532,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgesv_(
         n: *const ::std::os::raw::c_int,
         nrhs: *const ::std::os::raw::c_int,
@@ -618,8 +542,6 @@ extern "C" {
         ldb: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgesvd_(
         jobu: *const ::std::os::raw::c_char,
         jobvt: *const ::std::os::raw::c_char,
@@ -638,8 +560,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgesvx_(
         fact: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -667,8 +587,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgetf2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -677,8 +595,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgetrf_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -687,8 +603,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgetri_(
         n: *const ::std::os::raw::c_int,
         a: *mut f64,
@@ -698,8 +612,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgetrs_(
         trans: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -712,8 +624,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggbak_(
         job: *const ::std::os::raw::c_char,
         side: *const ::std::os::raw::c_char,
@@ -729,8 +639,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggbal_(
         job: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -746,8 +654,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgges_(
         jobvsl: *const ::std::os::raw::c_char,
         jobvsr: *const ::std::os::raw::c_char,
@@ -779,8 +685,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggglm_(
         n: *const ::std::os::raw::c_int,
         m: *const ::std::os::raw::c_int,
@@ -796,8 +700,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgghrd_(
         compq: *const ::std::os::raw::c_char,
         compz: *const ::std::os::raw::c_char,
@@ -816,8 +718,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgglse_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -833,8 +733,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggqrf_(
         n: *const ::std::os::raw::c_int,
         m: *const ::std::os::raw::c_int,
@@ -849,8 +747,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggrqf_(
         m: *const ::std::os::raw::c_int,
         p: *const ::std::os::raw::c_int,
@@ -865,8 +761,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgtcon_(
         norm: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -882,8 +776,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgtrfs_(
         trans: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -907,8 +799,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgtsv_(
         n: *const ::std::os::raw::c_int,
         nrhs: *const ::std::os::raw::c_int,
@@ -919,8 +809,6 @@ extern "C" {
         ldb: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgtsvx_(
         fact: *const ::std::os::raw::c_int,
         trans: *const ::std::os::raw::c_char,
@@ -946,8 +834,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgttrf_(
         n: *const ::std::os::raw::c_int,
         dl: *mut f64,
@@ -957,8 +843,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgttrs_(
         trans: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -973,8 +857,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dopgtr_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -986,8 +868,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dopmtr_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1004,8 +884,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorg2l_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1016,8 +894,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorg2r_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1028,8 +904,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorgbr_(
         vect: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -1043,8 +917,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorghr_(
         n: *const ::std::os::raw::c_int,
         ilo: *const ::std::os::raw::c_int,
@@ -1056,8 +928,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorgl2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1068,8 +938,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorglq_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1081,8 +949,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorgql_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1094,8 +960,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorgqr_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1107,8 +971,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorgr2_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1119,8 +981,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorgrq_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1132,8 +992,6 @@ extern "C" {
         lwork: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorgtr_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1145,8 +1003,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorm2l_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1163,8 +1019,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorm2r_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1181,8 +1035,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormbr_(
         vect: *const ::std::os::raw::c_char,
         side: *const ::std::os::raw::c_char,
@@ -1202,8 +1054,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormhr_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1222,8 +1072,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dorml2_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1240,8 +1088,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormlq_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1259,8 +1105,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormql_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1278,8 +1122,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormqr_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1297,8 +1139,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormr2_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1315,8 +1155,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormrq_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -1334,8 +1172,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormtr_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1354,8 +1190,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbcon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1369,8 +1203,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbequ_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1383,8 +1215,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbrfs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1405,8 +1235,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbstf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1416,8 +1244,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbsv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1430,8 +1256,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbsvx_(
         fact: *const ::std::os::raw::c_int,
         uplo: *const ::std::os::raw::c_char,
@@ -1457,8 +1281,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbtf2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1468,8 +1290,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbtrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1479,8 +1299,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbtrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1493,8 +1311,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpocon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1507,8 +1323,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpoequ_(
         n: *const ::std::os::raw::c_int,
         a: *const f64,
@@ -1518,8 +1332,6 @@ extern "C" {
         amax: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dporfs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1539,8 +1351,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dposv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1552,8 +1362,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dposvx_(
         fact: *const ::std::os::raw::c_int,
         uplo: *const ::std::os::raw::c_char,
@@ -1578,8 +1386,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpotf2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1588,8 +1394,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpotrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1598,8 +1402,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpotri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1608,8 +1410,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpotrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1621,8 +1421,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dppcon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1634,8 +1432,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dppequ_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1646,8 +1442,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpprfs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1665,8 +1459,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dppsv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1677,8 +1469,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dppsvx_(
         fact: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1702,8 +1492,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpptrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1711,8 +1499,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpptri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1720,8 +1506,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpptrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1732,8 +1516,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dptcon_(
         n: *const ::std::os::raw::c_int,
         d: *const f64,
@@ -1743,8 +1525,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpteqr_(
         compz: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1756,8 +1536,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dptrfs_(
         n: *const ::std::os::raw::c_int,
         nrhs: *const ::std::os::raw::c_int,
@@ -1774,8 +1552,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dptsv_(
         n: *const ::std::os::raw::c_int,
         nrhs: *const ::std::os::raw::c_int,
@@ -1785,8 +1561,6 @@ extern "C" {
         ldb: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dptsvx_(
         fact: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -1805,16 +1579,12 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpttrf_(
         n: *const ::std::os::raw::c_int,
         d: *mut f64,
         e: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpttrs_(
         n: *const ::std::os::raw::c_int,
         nrhs: *const ::std::os::raw::c_int,
@@ -1824,16 +1594,12 @@ extern "C" {
         ldb: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn drscl_(
         n: *const ::std::os::raw::c_int,
         da: *const f64,
         x: *mut f64,
         incx: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbev_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1849,8 +1615,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbevd_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1869,8 +1633,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbevx_(
         jobz: *const ::std::os::raw::c_char,
         range: *const ::std::os::raw::c_char,
@@ -1898,8 +1660,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbgst_(
         vect: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1917,8 +1677,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbgv_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1937,8 +1695,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbtrd_(
         vect: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1955,8 +1711,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspcon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -1969,8 +1723,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspev_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -1984,8 +1736,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspevd_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -2002,8 +1752,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspevx_(
         jobz: *const ::std::os::raw::c_char,
         range: *const ::std::os::raw::c_char,
@@ -2027,8 +1775,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspgst_(
         itype: *const ::std::os::raw::c_int,
         uplo: *const ::std::os::raw::c_char,
@@ -2038,8 +1784,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspgv_(
         itype: *const ::std::os::raw::c_int,
         jobz: *const ::std::os::raw::c_char,
@@ -2056,8 +1800,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsprfs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2076,8 +1818,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspsv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2089,8 +1829,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspsvx_(
         fact: *const ::std::os::raw::c_int,
         uplo: *const ::std::os::raw::c_char,
@@ -2111,8 +1849,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsptrd_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2123,8 +1859,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsptrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2133,8 +1867,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsptri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2144,8 +1876,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsptrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2157,8 +1887,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dstebz_(
         range: *const ::std::os::raw::c_char,
         order: *const ::std::os::raw::c_char,
@@ -2181,8 +1909,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dstedc_(
         compz: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2197,8 +1923,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dstein_(
         n: *const ::std::os::raw::c_int,
         d: *const f64,
@@ -2214,8 +1938,6 @@ extern "C" {
         ifail: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsteqr_(
         compz: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2227,16 +1949,12 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsterf_(
         n: *const ::std::os::raw::c_int,
         d: *mut f64,
         e: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dstev_(
         jobz: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2248,8 +1966,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dstevd_(
         jobz: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2264,8 +1980,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dstevx_(
         jobz: *const ::std::os::raw::c_char,
         range: *const ::std::os::raw::c_char,
@@ -2288,8 +2002,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsycon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2303,8 +2015,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyev_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -2318,8 +2028,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyevd_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -2335,8 +2043,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyevx_(
         jobz: *const ::std::os::raw::c_char,
         range: *const ::std::os::raw::c_char,
@@ -2362,8 +2068,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyevr_(
         jobz: *const ::std::os::raw::c_char,
         range: *const ::std::os::raw::c_char,
@@ -2390,8 +2094,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsygs2_(
         itype: *const ::std::os::raw::c_int,
         uplo: *const ::std::os::raw::c_char,
@@ -2403,8 +2105,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsygst_(
         itype: *const ::std::os::raw::c_int,
         uplo: *const ::std::os::raw::c_char,
@@ -2416,8 +2116,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsygv_(
         itype: *const ::std::os::raw::c_int,
         jobz: *const ::std::os::raw::c_char,
@@ -2434,8 +2132,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyrfs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2456,8 +2152,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsysv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2472,8 +2166,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsysvx_(
         fact: *const ::std::os::raw::c_int,
         uplo: *const ::std::os::raw::c_char,
@@ -2497,8 +2189,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsytd2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2510,8 +2200,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsytf2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2521,8 +2209,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsytrd_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2536,8 +2222,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsytrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2549,8 +2233,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsytri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2561,8 +2243,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsytrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2575,8 +2255,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtbcon_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -2593,8 +2271,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtbrfs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -2617,8 +2293,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtbtrs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -2635,8 +2309,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtgevc_(
         side: *const ::std::os::raw::c_char,
         howmny: *const ::std::os::raw::c_char,
@@ -2657,8 +2329,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtgsja_(
         jobu: *const ::std::os::raw::c_char,
         jobv: *const ::std::os::raw::c_char,
@@ -2689,8 +2359,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtpcon_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -2705,8 +2373,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtprfs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -2727,8 +2393,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtptri_(
         uplo: *const ::std::os::raw::c_char,
         diag: *const ::std::os::raw::c_char,
@@ -2738,8 +2402,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtptrs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -2753,8 +2415,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrcon_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -2770,8 +2430,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrevc_(
         side: *const ::std::os::raw::c_char,
         howmny: *const ::std::os::raw::c_char,
@@ -2790,8 +2448,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrexc_(
         compq: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -2805,8 +2461,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrrfs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -2828,8 +2482,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrsen_(
         job: *const ::std::os::raw::c_char,
         compq: *const ::std::os::raw::c_char,
@@ -2852,8 +2504,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrsna_(
         job: *const ::std::os::raw::c_char,
         howmny: *const ::std::os::raw::c_char,
@@ -2876,8 +2526,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrsyl_(
         trana: *const ::std::os::raw::c_char,
         tranb: *const ::std::os::raw::c_char,
@@ -2895,8 +2543,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrti2_(
         uplo: *const ::std::os::raw::c_char,
         diag: *const ::std::os::raw::c_char,
@@ -2907,8 +2553,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrtri_(
         uplo: *const ::std::os::raw::c_char,
         diag: *const ::std::os::raw::c_char,
@@ -2919,8 +2563,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrtrs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -2936,8 +2578,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dhgeqz_(
         job: *const ::std::os::raw::c_char,
         compq: *const ::std::os::raw::c_char,
@@ -2963,8 +2603,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dhsein_(
         side: *const ::std::os::raw::c_char,
         eigsrc: *const ::std::os::raw::c_char,
@@ -2989,8 +2627,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dhseqr_(
         job: *const ::std::os::raw::c_char,
         compz: *const ::std::os::raw::c_char,
@@ -3009,11 +2645,7 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlabad_(small: *mut f64, large: *mut f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlabrd_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -3029,8 +2661,6 @@ extern "C" {
         y: *mut f64,
         ldy: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlacon_(
         n: *const ::std::os::raw::c_int,
         v: *mut f64,
@@ -3039,8 +2669,6 @@ extern "C" {
         est: *mut f64,
         kase: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlacpy_(
         uplo: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -3051,8 +2679,6 @@ extern "C" {
         ldb: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dladiv_(
         a: *const f64,
         b: *const f64,
@@ -3061,11 +2687,7 @@ extern "C" {
         p: *mut f64,
         q: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlae2_(a: *const f64, b: *const f64, c: *const f64, rt1: *mut f64, rt2: *mut f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaebz_(
         ijob: *const ::std::os::raw::c_int,
         nitmax: *const ::std::os::raw::c_int,
@@ -3088,8 +2710,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed0_(
         icompq: *const ::std::os::raw::c_int,
         qsiz: *const ::std::os::raw::c_int,
@@ -3104,8 +2724,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed1_(
         n: *const ::std::os::raw::c_int,
         d: *mut f64,
@@ -3118,8 +2736,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed2_(
         k: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -3138,8 +2754,6 @@ extern "C" {
         coltyp: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed3_(
         k: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -3156,8 +2770,6 @@ extern "C" {
         s: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed4_(
         n: *const ::std::os::raw::c_int,
         i: *const ::std::os::raw::c_int,
@@ -3168,8 +2780,6 @@ extern "C" {
         dlam: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed5_(
         i: *const ::std::os::raw::c_int,
         d: *const f64,
@@ -3178,8 +2788,6 @@ extern "C" {
         rho: *const f64,
         dlam: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed6_(
         kniter: *const ::std::os::raw::c_int,
         orgati: *const ::std::os::raw::c_int,
@@ -3190,8 +2798,6 @@ extern "C" {
         tau: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed7_(
         icompq: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -3216,8 +2822,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed8_(
         icompq: *const ::std::os::raw::c_int,
         k: *const ::std::os::raw::c_int,
@@ -3242,8 +2846,6 @@ extern "C" {
         indx: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaed9_(
         k: *const ::std::os::raw::c_int,
         kstart: *const ::std::os::raw::c_int,
@@ -3259,8 +2861,6 @@ extern "C" {
         lds: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaeda_(
         n: *const ::std::os::raw::c_int,
         tlvls: *const ::std::os::raw::c_int,
@@ -3277,8 +2877,6 @@ extern "C" {
         ztemp: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaein_(
         rightv: *const ::std::os::raw::c_int,
         noinit: *const ::std::os::raw::c_int,
@@ -3297,8 +2895,6 @@ extern "C" {
         bignum: *const f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaev2_(
         a: *const f64,
         b: *const f64,
@@ -3308,8 +2904,6 @@ extern "C" {
         cs1: *mut f64,
         sn1: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaexc_(
         wantq: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -3323,8 +2917,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlag2_(
         a: *const f64,
         lda: *const ::std::os::raw::c_int,
@@ -3337,8 +2929,6 @@ extern "C" {
         wr2: *mut f64,
         wi: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlags2_(
         upper: *const ::std::os::raw::c_int,
         a1: *const f64,
@@ -3354,8 +2944,6 @@ extern "C" {
         csq: *mut f64,
         snq: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlagtf_(
         n: *const ::std::os::raw::c_int,
         a: *mut f64,
@@ -3367,8 +2955,6 @@ extern "C" {
         in_: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlagtm_(
         trans: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3384,8 +2970,6 @@ extern "C" {
         ldb: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlagts_(
         job: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -3398,8 +2982,6 @@ extern "C" {
         tol: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlahqr_(
         wantt: *const ::std::os::raw::c_int,
         wantz: *const ::std::os::raw::c_int,
@@ -3416,8 +2998,6 @@ extern "C" {
         ldz: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaic1_(
         job: *const ::std::os::raw::c_int,
         j: *const ::std::os::raw::c_int,
@@ -3429,8 +3009,6 @@ extern "C" {
         s: *mut f64,
         c: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaln2_(
         ltrans: *const ::std::os::raw::c_int,
         na: *const ::std::os::raw::c_int,
@@ -3451,11 +3029,7 @@ extern "C" {
         xnorm: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlamch_(cmach: *const ::std::os::raw::c_char, arg1: usize) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlamrg_(
         n1: *const ::std::os::raw::c_int,
         n2: *const ::std::os::raw::c_int,
@@ -3464,8 +3038,6 @@ extern "C" {
         dtrd2: *const ::std::os::raw::c_int,
         index: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlangb_(
         norm: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3476,8 +3048,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlange_(
         norm: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -3487,8 +3057,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlangt_(
         norm: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3497,8 +3065,6 @@ extern "C" {
         du: *const f64,
         arg1: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlanhs_(
         norm: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3507,8 +3073,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlansb_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -3520,8 +3084,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlansp_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -3531,8 +3093,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlanst_(
         norm: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3540,8 +3100,6 @@ extern "C" {
         e: *const f64,
         arg1: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlansy_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -3552,8 +3110,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlantb_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -3567,8 +3123,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlantp_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -3580,8 +3134,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlantr_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -3595,8 +3147,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlanv2_(
         a: *mut f64,
         b: *mut f64,
@@ -3609,8 +3159,6 @@ extern "C" {
         cs: *mut f64,
         sn: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlapll_(
         n: *const ::std::os::raw::c_int,
         x: *mut f64,
@@ -3619,8 +3167,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         ssmin: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlapmt_(
         forwrd: *const ::std::os::raw::c_int,
         m: *const ::std::os::raw::c_int,
@@ -3629,14 +3175,8 @@ extern "C" {
         ldx: *const ::std::os::raw::c_int,
         k: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlapy2_(x: *const f64, y: *const f64) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlapy3_(x: *const f64, y: *const f64, z: *const f64) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaqgb_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -3652,8 +3192,6 @@ extern "C" {
         equed: *const ::std::os::raw::c_char,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaqge_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -3667,8 +3205,6 @@ extern "C" {
         equed: *const ::std::os::raw::c_char,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaqsb_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3682,8 +3218,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaqsp_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3694,8 +3228,6 @@ extern "C" {
         equed: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaqsy_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3707,8 +3239,6 @@ extern "C" {
         equed: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaqtr_(
         ltran: *const ::std::os::raw::c_int,
         lreal: *const ::std::os::raw::c_int,
@@ -3722,8 +3252,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlar2v_(
         n: *const ::std::os::raw::c_int,
         x: *mut f64,
@@ -3734,8 +3262,6 @@ extern "C" {
         s: *const f64,
         incc: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarf_(
         side: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -3748,8 +3274,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarfb_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -3771,8 +3295,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarfg_(
         n: *const ::std::os::raw::c_int,
         alpha: *const f64,
@@ -3780,8 +3302,6 @@ extern "C" {
         incx: *const ::std::os::raw::c_int,
         tau: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarft_(
         direct: *const ::std::os::raw::c_char,
         storev: *const ::std::os::raw::c_char,
@@ -3795,8 +3315,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarfx_(
         side: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -3808,8 +3326,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlargv_(
         n: *const ::std::os::raw::c_int,
         x: *mut f64,
@@ -3819,19 +3335,13 @@ extern "C" {
         c: *mut f64,
         incc: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarnv_(
         idist: *const ::std::os::raw::c_int,
         iseed: *mut ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
         x: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlartg_(f: *const f64, g: *const f64, cs: *mut f64, sn: *mut f64, r: *mut f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlartv_(
         n: *const ::std::os::raw::c_int,
         x: *mut f64,
@@ -3842,14 +3352,8 @@ extern "C" {
         s: *const f64,
         incc: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaruv_(iseed: *mut ::std::os::raw::c_int, n: *const ::std::os::raw::c_int, x: *mut f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlas2_(f: *const f64, g: *const f64, h: *const f64, ssmin: *mut f64, ssmax: *mut f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlascl_(
         type_: *const ::std::os::raw::c_char,
         kl: *const ::std::os::raw::c_int,
@@ -3863,8 +3367,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaset_(
         uplo: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -3875,8 +3377,6 @@ extern "C" {
         lda: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasq1_(
         n: *const ::std::os::raw::c_int,
         d: *mut f64,
@@ -3884,8 +3384,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasq2_(
         m: *const ::std::os::raw::c_int,
         q: *mut f64,
@@ -3899,8 +3397,6 @@ extern "C" {
         kend: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasq3_(
         n: *mut ::std::os::raw::c_int,
         q: *mut f64,
@@ -3917,8 +3413,6 @@ extern "C" {
         tol2: *const f64,
         small2: *const f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasq4_(
         n: *const ::std::os::raw::c_int,
         q: *const f64,
@@ -3926,8 +3420,6 @@ extern "C" {
         tau: *mut f64,
         sup: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasr_(
         side: *const ::std::os::raw::c_char,
         pivot: *const ::std::os::raw::c_char,
@@ -3942,8 +3434,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasrt_(
         id: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -3951,8 +3441,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlassq_(
         n: *const ::std::os::raw::c_int,
         x: *const f64,
@@ -3960,8 +3448,6 @@ extern "C" {
         scale: *mut f64,
         sumsq: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasv2_(
         f: *const f64,
         g: *const f64,
@@ -3973,8 +3459,6 @@ extern "C" {
         snl: *mut f64,
         csl: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaswp_(
         n: *const ::std::os::raw::c_int,
         a: *mut f64,
@@ -3984,8 +3468,6 @@ extern "C" {
         ipiv: *const ::std::os::raw::c_int,
         incx: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasy2_(
         ltranl: *const ::std::os::raw::c_int,
         ltranr: *const ::std::os::raw::c_int,
@@ -4004,8 +3486,6 @@ extern "C" {
         xnorm: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasyf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4019,8 +3499,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlatbs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -4039,8 +3517,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlatps_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -4057,8 +3533,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlatrd_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4071,8 +3545,6 @@ extern "C" {
         ldw: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlatrs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -4090,8 +3562,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlauu2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4100,8 +3570,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlauum_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4110,15 +3578,11 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn izmax1_(
         n: *const ::std::os::raw::c_int,
         cx: *mut Rcomplex,
         incx: *const ::std::os::raw::c_int,
     ) -> *mut ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgecon_(
         norm: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4131,8 +3595,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgesv_(
         n: *const ::std::os::raw::c_int,
         nrhs: *const ::std::os::raw::c_int,
@@ -4143,8 +3605,6 @@ extern "C" {
         ldb: *const ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgeqp3_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -4157,8 +3617,6 @@ extern "C" {
         rwork: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zunmqr_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -4176,8 +3634,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztrtrs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -4193,8 +3649,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgesvd_(
         jobu: *const ::std::os::raw::c_char,
         jobvt: *const ::std::os::raw::c_char,
@@ -4214,8 +3668,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zheev_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -4230,8 +3682,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgeev_(
         jobvl: *const ::std::os::raw::c_char,
         jobvr: *const ::std::os::raw::c_char,
@@ -4250,8 +3700,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlacn2_(
         n: *const ::std::os::raw::c_int,
         v: *mut Rcomplex,
@@ -4260,8 +3708,6 @@ extern "C" {
         kase: *mut ::std::os::raw::c_int,
         isave: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlansp_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -4271,8 +3717,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlansy_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -4283,8 +3727,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlantr_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -4298,15 +3740,11 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dzsum1_(
         n: *const ::std::os::raw::c_int,
         CX: *mut Rcomplex,
         incx: *const ::std::os::raw::c_int,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpotrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4315,8 +3753,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpotrf2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4325,8 +3761,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpotri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4335,8 +3769,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpotrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4348,8 +3780,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zppcon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4361,8 +3791,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpptrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4370,8 +3798,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpptri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4379,8 +3805,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpptrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4391,8 +3815,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpstrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -4405,8 +3827,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dbdsdc_(
         uplo: *const ::std::os::raw::c_char,
         compq: *const ::std::os::raw::c_char,
@@ -4425,8 +3845,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgelsd_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -4443,8 +3861,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgesc2_(
         n: *mut ::std::os::raw::c_int,
         a: *mut f64,
@@ -4454,8 +3870,6 @@ extern "C" {
         jpiv: *mut ::std::os::raw::c_int,
         scale: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgesdd_(
         jobz: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -4473,8 +3887,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgetc2_(
         n: *mut ::std::os::raw::c_int,
         a: *mut f64,
@@ -4483,8 +3895,6 @@ extern "C" {
         jpiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggesx_(
         jobvsl: *const ::std::os::raw::c_char,
         jobvsr: *const ::std::os::raw::c_char,
@@ -4517,8 +3927,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggev_(
         jobvl: *const ::std::os::raw::c_char,
         jobvr: *const ::std::os::raw::c_char,
@@ -4540,8 +3948,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggevx_(
         balanc: *const ::std::os::raw::c_char,
         jobvl: *const ::std::os::raw::c_char,
@@ -4577,8 +3983,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgtts2_(
         itrans: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -4591,8 +3995,6 @@ extern "C" {
         b: *mut f64,
         ldb: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlagv2_(
         a: *mut f64,
         lda: *mut ::std::os::raw::c_int,
@@ -4606,8 +4008,6 @@ extern "C" {
         csr: *mut f64,
         snr: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlals0_(
         icompq: *mut ::std::os::raw::c_int,
         nl: *mut ::std::os::raw::c_int,
@@ -4634,8 +4034,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlalsa_(
         icompq: *mut ::std::os::raw::c_int,
         smlsiz: *mut ::std::os::raw::c_int,
@@ -4664,8 +4062,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlalsd_(
         uplo: *const ::std::os::raw::c_char,
         smlsiz: *mut ::std::os::raw::c_int,
@@ -4682,16 +4078,12 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlamc1_(
         beta: *mut ::std::os::raw::c_int,
         t: *mut ::std::os::raw::c_int,
         rnd: *mut ::std::os::raw::c_int,
         ieee1: *mut *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlamc2_(
         beta: *mut ::std::os::raw::c_int,
         t: *mut ::std::os::raw::c_int,
@@ -4702,18 +4094,12 @@ extern "C" {
         emax: *mut ::std::os::raw::c_int,
         rmax: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlamc3_(a: *mut f64, b: *mut f64) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlamc4_(
         emin: *mut ::std::os::raw::c_int,
         start: *mut f64,
         base: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlamc5_(
         beta: *mut ::std::os::raw::c_int,
         p: *mut ::std::os::raw::c_int,
@@ -4722,8 +4108,6 @@ extern "C" {
         emax: *mut ::std::os::raw::c_int,
         rmax: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaqp2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -4736,8 +4120,6 @@ extern "C" {
         vn2: *mut f64,
         work: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlaqps_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -4754,8 +4136,6 @@ extern "C" {
         f: *mut f64,
         ldf: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlar1v_(
         n: *mut ::std::os::raw::c_int,
         b1: *mut ::std::os::raw::c_int,
@@ -4773,8 +4153,6 @@ extern "C" {
         isuppz: *mut ::std::os::raw::c_int,
         work: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarrb_(
         n: *mut ::std::os::raw::c_int,
         d: *mut f64,
@@ -4792,8 +4170,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarre_(
         n: *mut ::std::os::raw::c_int,
         d: *mut f64,
@@ -4808,8 +4184,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarrf_(
         n: *mut ::std::os::raw::c_int,
         d: *mut f64,
@@ -4825,8 +4199,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarrv_(
         n: *mut ::std::os::raw::c_int,
         d: *mut f64,
@@ -4844,8 +4216,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarz_(
         side: *const ::std::os::raw::c_char,
         m: *mut ::std::os::raw::c_int,
@@ -4859,8 +4229,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarzb_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -4883,8 +4251,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlarzt_(
         direct: *const ::std::os::raw::c_char,
         storev: *const ::std::os::raw::c_char,
@@ -4898,8 +4264,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd0_(
         n: *mut ::std::os::raw::c_int,
         sqre: *mut ::std::os::raw::c_int,
@@ -4914,8 +4278,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd1_(
         nl: *mut ::std::os::raw::c_int,
         nr: *mut ::std::os::raw::c_int,
@@ -4932,8 +4294,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd2_(
         nl: *mut ::std::os::raw::c_int,
         nr: *mut ::std::os::raw::c_int,
@@ -4959,8 +4319,6 @@ extern "C" {
         coltyp: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd3_(
         nl: *mut ::std::os::raw::c_int,
         nr: *mut ::std::os::raw::c_int,
@@ -4983,8 +4341,6 @@ extern "C" {
         z: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd4_(
         n: *mut ::std::os::raw::c_int,
         i: *mut ::std::os::raw::c_int,
@@ -4996,8 +4352,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd5_(
         i: *mut ::std::os::raw::c_int,
         d: *mut f64,
@@ -5007,8 +4361,6 @@ extern "C" {
         dsigma: *mut f64,
         work: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd6_(
         icompq: *mut ::std::os::raw::c_int,
         nl: *mut ::std::os::raw::c_int,
@@ -5037,8 +4389,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd7_(
         icompq: *mut ::std::os::raw::c_int,
         nl: *mut ::std::os::raw::c_int,
@@ -5068,8 +4418,6 @@ extern "C" {
         s: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd8_(
         icompq: *mut ::std::os::raw::c_int,
         k: *mut ::std::os::raw::c_int,
@@ -5084,8 +4432,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasd9_(
         icompq: *mut ::std::os::raw::c_int,
         ldu: *mut ::std::os::raw::c_int,
@@ -5100,8 +4446,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasda_(
         icompq: *mut ::std::os::raw::c_int,
         smlsiz: *mut ::std::os::raw::c_int,
@@ -5128,8 +4472,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasdq_(
         uplo: *const ::std::os::raw::c_char,
         sqre: *mut ::std::os::raw::c_int,
@@ -5149,8 +4491,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasdt_(
         n: *mut ::std::os::raw::c_int,
         lvl: *mut ::std::os::raw::c_int,
@@ -5160,8 +4500,6 @@ extern "C" {
         ndimr: *mut ::std::os::raw::c_int,
         msub: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasq5_(
         i0: *mut ::std::os::raw::c_int,
         n0: *mut ::std::os::raw::c_int,
@@ -5176,8 +4514,6 @@ extern "C" {
         dnm2: *mut f64,
         ieee: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlasq6_(
         i0: *mut ::std::os::raw::c_int,
         n0: *mut ::std::os::raw::c_int,
@@ -5190,8 +4526,6 @@ extern "C" {
         dnm1: *mut f64,
         dnm2: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlatdf_(
         ijob: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5203,8 +4537,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         jpiv: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlatrz_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5214,8 +4546,6 @@ extern "C" {
         tau: *mut f64,
         work: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormr3_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -5233,8 +4563,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dormrz_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -5253,8 +4581,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dptts2_(
         n: *mut ::std::os::raw::c_int,
         nrhs: *mut ::std::os::raw::c_int,
@@ -5263,8 +4589,6 @@ extern "C" {
         b: *mut f64,
         ldb: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbgvd_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -5286,8 +4610,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbgvx_(
         jobz: *const ::std::os::raw::c_char,
         range: *const ::std::os::raw::c_char,
@@ -5318,8 +4640,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspgvd_(
         itype: *mut ::std::os::raw::c_int,
         jobz: *const ::std::os::raw::c_char,
@@ -5338,8 +4658,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspgvx_(
         itype: *mut ::std::os::raw::c_int,
         jobz: *const ::std::os::raw::c_char,
@@ -5365,8 +4683,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dstegr_(
         jobz: *const ::std::os::raw::c_char,
         range: *const ::std::os::raw::c_char,
@@ -5391,8 +4707,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dstevr_(
         jobz: *const ::std::os::raw::c_char,
         range: *const ::std::os::raw::c_char,
@@ -5417,8 +4731,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsygvd_(
         itype: *mut ::std::os::raw::c_int,
         jobz: *const ::std::os::raw::c_char,
@@ -5437,8 +4749,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsygvx_(
         itype: *mut ::std::os::raw::c_int,
         jobz: *const ::std::os::raw::c_char,
@@ -5467,8 +4777,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtgex2_(
         wantq: *const ::std::os::raw::c_int,
         wantz: *const ::std::os::raw::c_int,
@@ -5488,8 +4796,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtgexc_(
         wantq: *mut ::std::os::raw::c_int,
         wantz: *mut ::std::os::raw::c_int,
@@ -5508,8 +4814,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtgsen_(
         ijob: *mut ::std::os::raw::c_int,
         wantq: *const ::std::os::raw::c_int,
@@ -5537,8 +4841,6 @@ extern "C" {
         liwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtgsna_(
         job: *const ::std::os::raw::c_char,
         howmny: *const ::std::os::raw::c_char,
@@ -5563,8 +4865,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtgsy2_(
         trans: *const ::std::os::raw::c_char,
         ijob: *mut ::std::os::raw::c_int,
@@ -5590,8 +4890,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtgsyl_(
         trans: *const ::std::os::raw::c_char,
         ijob: *mut ::std::os::raw::c_int,
@@ -5617,8 +4915,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtzrzf_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5629,8 +4925,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpstrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -5643,16 +4937,12 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn lsame_(
         ca: *const ::std::os::raw::c_char,
         cb: *const ::std::os::raw::c_char,
         arg1: usize,
         arg2: usize,
     ) -> *mut ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zbdsqr_(
         uplo: *const ::std::os::raw::c_char,
         n: *mut ::std::os::raw::c_int,
@@ -5671,8 +4961,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zdrot_(
         n: *const ::std::os::raw::c_int,
         cx: *const Rcomplex,
@@ -5682,8 +4970,6 @@ extern "C" {
         c: *const f64,
         s: *const f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgebak_(
         job: *const ::std::os::raw::c_char,
         side: *const ::std::os::raw::c_char,
@@ -5698,8 +4984,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgebal_(
         job: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -5711,8 +4995,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgebd2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5725,8 +5007,6 @@ extern "C" {
         work: *mut Rcomplex,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgebrd_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5740,8 +5020,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgehd2_(
         n: *mut ::std::os::raw::c_int,
         ilo: *mut ::std::os::raw::c_int,
@@ -5752,8 +5030,6 @@ extern "C" {
         work: *mut Rcomplex,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgehrd_(
         n: *mut ::std::os::raw::c_int,
         ilo: *mut ::std::os::raw::c_int,
@@ -5765,8 +5041,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgelq2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5776,8 +5050,6 @@ extern "C" {
         work: *mut Rcomplex,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgelqf_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5788,8 +5060,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgeqr2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5799,8 +5069,6 @@ extern "C" {
         work: *mut Rcomplex,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgeqrf_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5811,8 +5079,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgetf2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5821,8 +5087,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgetrf_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5831,8 +5095,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgetrf2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5841,8 +5103,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgetri_(
         n: *mut ::std::os::raw::c_int,
         a: *mut Rcomplex,
@@ -5852,8 +5112,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgetrs_(
         trans: *const ::std::os::raw::c_char,
         n: *mut ::std::os::raw::c_int,
@@ -5866,8 +5124,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhetd2_(
         uplo: *const ::std::os::raw::c_char,
         n: *mut ::std::os::raw::c_int,
@@ -5879,8 +5135,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhetrd_(
         uplo: *const ::std::os::raw::c_char,
         n: *mut ::std::os::raw::c_int,
@@ -5894,8 +5148,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhseqr_(
         job: *const ::std::os::raw::c_char,
         compz: *const ::std::os::raw::c_char,
@@ -5913,8 +5165,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlabrd_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -5930,15 +5180,11 @@ extern "C" {
         y: *mut Rcomplex,
         ldy: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlacgv_(
         n: *mut ::std::os::raw::c_int,
         x: *mut Rcomplex,
         incx: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlacpy_(
         uplo: *const ::std::os::raw::c_char,
         m: *mut ::std::os::raw::c_int,
@@ -5949,8 +5195,6 @@ extern "C" {
         ldb: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlahqr_(
         wantt: *mut ::std::os::raw::c_int,
         wantz: *mut ::std::os::raw::c_int,
@@ -5966,8 +5210,6 @@ extern "C" {
         ldz: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlange_(
         norm: *const ::std::os::raw::c_char,
         m: *mut ::std::os::raw::c_int,
@@ -5977,8 +5219,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlanhe_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -5989,8 +5229,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlanhs_(
         norm: *const ::std::os::raw::c_char,
         n: *mut ::std::os::raw::c_int,
@@ -5999,8 +5237,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlantp_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -6012,8 +5248,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlaqp2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6026,8 +5260,6 @@ extern "C" {
         vn2: *mut f64,
         work: *mut Rcomplex,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlaqps_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6044,8 +5276,6 @@ extern "C" {
         f: *mut Rcomplex,
         ldf: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlarf_(
         side: *const ::std::os::raw::c_char,
         m: *mut ::std::os::raw::c_int,
@@ -6058,8 +5288,6 @@ extern "C" {
         work: *mut Rcomplex,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlarfb_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -6081,8 +5309,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlarfg_(
         n: *mut ::std::os::raw::c_int,
         alpha: *mut Rcomplex,
@@ -6090,8 +5316,6 @@ extern "C" {
         incx: *mut ::std::os::raw::c_int,
         tau: *mut Rcomplex,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlarft_(
         direct: *const ::std::os::raw::c_char,
         storev: *const ::std::os::raw::c_char,
@@ -6105,8 +5329,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlarfx_(
         side: *const ::std::os::raw::c_char,
         m: *mut ::std::os::raw::c_int,
@@ -6118,8 +5340,6 @@ extern "C" {
         work: *mut Rcomplex,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlascl_(
         type_: *const ::std::os::raw::c_char,
         kl: *mut ::std::os::raw::c_int,
@@ -6133,8 +5353,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlaset_(
         uplo: *const ::std::os::raw::c_char,
         m: *mut ::std::os::raw::c_int,
@@ -6145,8 +5363,6 @@ extern "C" {
         lda: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlasr_(
         side: *const ::std::os::raw::c_char,
         pivot: *const ::std::os::raw::c_char,
@@ -6161,8 +5377,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlassq_(
         n: *mut ::std::os::raw::c_int,
         x: *mut Rcomplex,
@@ -6170,8 +5384,6 @@ extern "C" {
         scale: *mut f64,
         sumsq: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlaswp_(
         n: *mut ::std::os::raw::c_int,
         a: *mut Rcomplex,
@@ -6181,8 +5393,6 @@ extern "C" {
         ipiv: *mut ::std::os::raw::c_int,
         incx: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlatrd_(
         uplo: *const ::std::os::raw::c_char,
         n: *mut ::std::os::raw::c_int,
@@ -6195,8 +5405,6 @@ extern "C" {
         ldw: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlatrs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -6214,8 +5422,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsteqr_(
         compz: *const ::std::os::raw::c_char,
         n: *mut ::std::os::raw::c_int,
@@ -6227,8 +5433,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zpocon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6241,8 +5445,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zspcon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6254,8 +5456,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsptrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6264,8 +5464,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsptri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6275,8 +5473,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsptrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6288,8 +5484,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsycon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6302,8 +5496,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsymv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6317,8 +5509,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsytrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6330,8 +5520,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsytri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6342,8 +5530,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsytrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6356,8 +5542,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztpcon_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -6372,8 +5556,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztptri_(
         uplo: *const ::std::os::raw::c_char,
         diag: *const ::std::os::raw::c_char,
@@ -6383,8 +5565,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztptrs_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -6399,8 +5579,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztrtri_(
         uplo: *const ::std::os::raw::c_char,
         diag: *const ::std::os::raw::c_char,
@@ -6411,8 +5589,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztrcon_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -6428,8 +5604,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztrevc_(
         side: *const ::std::os::raw::c_char,
         howmny: *const ::std::os::raw::c_char,
@@ -6449,8 +5623,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zung2l_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6461,8 +5633,6 @@ extern "C" {
         work: *mut Rcomplex,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zung2r_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6473,8 +5643,6 @@ extern "C" {
         work: *mut Rcomplex,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zungbr_(
         vect: *const ::std::os::raw::c_char,
         m: *mut ::std::os::raw::c_int,
@@ -6488,8 +5656,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zunghr_(
         n: *mut ::std::os::raw::c_int,
         ilo: *mut ::std::os::raw::c_int,
@@ -6501,8 +5667,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zungl2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6513,8 +5677,6 @@ extern "C" {
         work: *mut Rcomplex,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zunglq_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6526,8 +5688,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zungql_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6539,8 +5699,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zungqr_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6552,8 +5710,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zungr2_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6564,8 +5720,6 @@ extern "C" {
         work: *mut Rcomplex,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zungrq_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6577,8 +5731,6 @@ extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zungtr_(
         uplo: *const ::std::os::raw::c_char,
         n: *mut ::std::os::raw::c_int,
@@ -6590,8 +5742,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zunm2r_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -6608,8 +5758,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zunmbr_(
         vect: *const ::std::os::raw::c_char,
         side: *const ::std::os::raw::c_char,
@@ -6629,8 +5777,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zunml2_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -6647,8 +5793,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zunmlq_(
         side: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -6666,8 +5810,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgesdd_(
         jobz: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -6686,8 +5828,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgelsd_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6705,8 +5845,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlanhp_(
         norm: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -6716,8 +5854,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhpcon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6729,8 +5865,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhptrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6739,8 +5873,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhptri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6750,8 +5882,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhptrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6763,8 +5893,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhecon_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6777,8 +5905,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhetrf_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6790,8 +5916,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhetri_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6802,8 +5926,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhetrs_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -6816,8 +5938,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgees_(
         jobvs: *const ::std::os::raw::c_char,
         sort: *const ::std::os::raw::c_char,
@@ -6839,8 +5959,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhpev_(
         jobz: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -6855,8 +5973,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgegv_(
         jobvl: *const ::std::os::raw::c_char,
         jobvr: *const ::std::os::raw::c_char,
@@ -6878,8 +5994,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeqpf_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -6890,8 +6004,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggsvd_(
         jobu: *const ::std::os::raw::c_char,
         jobv: *const ::std::os::raw::c_char,
@@ -6920,8 +6032,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtzrqf_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -6930,8 +6040,6 @@ extern "C" {
         tau: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlahrd_(
         n: *const ::std::os::raw::c_int,
         k: *const ::std::os::raw::c_int,
@@ -6944,8 +6052,6 @@ extern "C" {
         y: *mut f64,
         ldy: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dlatzm_(
         side: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -6959,8 +6065,6 @@ extern "C" {
         work: *mut f64,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgegs_(
         jobvsl: *const ::std::os::raw::c_char,
         jobvsr: *const ::std::os::raw::c_char,
@@ -6982,8 +6086,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgelsx_(
         m: *mut ::std::os::raw::c_int,
         n: *mut ::std::os::raw::c_int,
@@ -6998,8 +6100,6 @@ extern "C" {
         work: *mut f64,
         info: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dggsvp_(
         jobu: *const ::std::os::raw::c_char,
         jobv: *const ::std::os::raw::c_char,
@@ -7029,8 +6129,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zlahrd_(
         n: *mut ::std::os::raw::c_int,
         k: *mut ::std::os::raw::c_int,

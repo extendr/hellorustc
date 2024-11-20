@@ -8,8 +8,6 @@
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " PARSE_NULL will not be returned by R_ParseVector"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum ParseStatus {
     PARSE_NULL = 0,
@@ -19,8 +17,6 @@ pub enum ParseStatus {
     PARSE_EOF = 4,
 }
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ParseVector(
         arg1: SEXP,
         arg2: ::std::os::raw::c_int,

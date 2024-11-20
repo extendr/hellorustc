@@ -22,7 +22,7 @@ else
 endif
 
 RUSTC_FLAGS = \
---print native-static-libs \
+	--print native-static-libs \
 	$(TARGET) \
 	$(RUSTC_LINKER) \
 	$(LIBGCC_EH_FLAG) \
@@ -41,10 +41,11 @@ RUSTC_FLAGS = \
 r_blocked_items = --blocklist-item="VECTOR_PTR|SEXPREC"
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
 RUSTC_VERSION = `rustc --version`
-ATTRIBUTE_CUSTOM = --with-attribute-custom="$(NONAPI)=\#[cfg(feature = \"nonapi\")]" \
-	--with-attribute-custom=".*=\#[cfg(feature = \"$(addprefix r_,$(subst .,_,$(R_VERSION)))\")]" \
-	--with-attribute-custom=".*=\#[cfg(target_family = \"$(R_OSTYPE)\")]" \
+ATTRIBUTE_CUSTOM = \
+	--with-attribute-custom="$(NONAPI)=\#[cfg(feature = \"nonapi\")]" \
 	$()
+# --with-attribute-custom=".*=\#[cfg(feature = \"$(addprefix r_,$(subst .,_,$(R_VERSION)))\")]" \
+# --with-attribute-custom=".*=\#[cfg(target_family = \"$(R_OSTYPE)\")]" \
 
 bindgen_args = \
 	--raw-line "/* OS: ${R_OSTYPE} */"  \
@@ -53,7 +54,7 @@ bindgen_args = \
 	--raw-line "/* R version: $(R_VERSION) */" \
 	--enable-function-attribute-detection \
 	--no-layout-tests \
-$(ATTRIBUTE_CUSTOM) \
+	$(ATTRIBUTE_CUSTOM) \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
 	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
 bindgen_clang_args = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINES) \
@@ -68,6 +69,7 @@ LIBGCC_EH_RECIPE_SETUP:
 	@$(LIBGCC_EH_RECIPE)
 
 all_r_bindings:
+	$(ECHO) "NONAPI = $(NONAPI)"
 	@mkdir -p $(BINDINGS_DIR)
 	@for header in $(ALL_R_HEADERS); do \
 		output=$(BINDINGS_DIR)/$$(echo $$header | sed "s|$(R_INCLUDE_DIR)/||;s|.h$$|.rs|"); \
@@ -78,7 +80,7 @@ all_r_bindings:
 	@echo "All bindings have been generated."
 
 %.o: %.rs
-		@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
+	@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
 
 # User-defined variables
 OBJECTS = rust_add.o hello.o
@@ -89,6 +91,11 @@ rust_analyzer_dummy: all_r_bindings
 	mkdir -p dummy/bindings
 	cp -r bindings/ dummy/bindings
 
-# clean: shlib-clean
+# OBJECTS_BASENAME = $(basename $(OBJECTS))
 
-# TODO: add nonapi = Rscript -e 'cat(tools:::nonAPI, sep = "\n")' | tr -d '\r' | sort -u | tee ./nonAPI.txt
+# clean: shlib-clean
+# 	@rm -f \
+# 	$(addsuffix .so, $(OBJECTS_BASENAME)) \
+# 	$(addsuffix .dll, $(OBJECTS_BASENAME)) \
+# 	$(addsuffix .dylib, $(addprefix lib, $(OBJECTS_BASENAME))) \
+# 	$(addsuffix .d, $(OBJECTS_BASENAME))

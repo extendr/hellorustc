@@ -6,19 +6,9 @@
 /* R version: 4.4.1 */
 
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_error(arg1: *const ::std::os::raw::c_char, ...) -> !;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn UNIMPLEMENTED(arg1: *const ::std::os::raw::c_char) -> !;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn WrongArgCount(arg1: *const ::std::os::raw::c_char) -> !;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_warning(arg1: *const ::std::os::raw::c_char, ...);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ShowMessage(s: *const ::std::os::raw::c_char);
 }

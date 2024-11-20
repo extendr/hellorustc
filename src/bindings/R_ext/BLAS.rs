@@ -6,15 +6,11 @@
 /* R version: 4.4.1 */
 
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dasum_(
         n: *const ::std::os::raw::c_int,
         dx: *const f64,
         incx: *const ::std::os::raw::c_int,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn daxpy_(
         n: *const ::std::os::raw::c_int,
         da: *const f64,
@@ -23,8 +19,6 @@ extern "C" {
         dy: *mut f64,
         incy: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dcopy_(
         n: *const ::std::os::raw::c_int,
         dx: *const f64,
@@ -32,8 +26,6 @@ extern "C" {
         dy: *mut f64,
         incy: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ddot_(
         n: *const ::std::os::raw::c_int,
         dx: *const f64,
@@ -41,15 +33,11 @@ extern "C" {
         dy: *const f64,
         incy: *const ::std::os::raw::c_int,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dnrm2_(
         n: *const ::std::os::raw::c_int,
         dx: *const f64,
         incx: *const ::std::os::raw::c_int,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn drot_(
         n: *const ::std::os::raw::c_int,
         dx: *mut f64,
@@ -59,11 +47,7 @@ extern "C" {
         c: *const f64,
         s: *const f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn drotg_(a: *const f64, b: *const f64, c: *mut f64, s: *mut f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn drotm_(
         n: *const ::std::os::raw::c_int,
         dx: *mut f64,
@@ -72,8 +56,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         dparam: *const f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn drotmg_(
         dd1: *const f64,
         dd2: *const f64,
@@ -81,16 +63,12 @@ extern "C" {
         dy1: *const f64,
         param: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dscal_(
         n: *const ::std::os::raw::c_int,
         alpha: *const f64,
         dx: *mut f64,
         incx: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dswap_(
         n: *const ::std::os::raw::c_int,
         dx: *mut f64,
@@ -98,15 +76,11 @@ extern "C" {
         dy: *mut f64,
         incy: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn idamax_(
         n: *const ::std::os::raw::c_int,
         dx: *const f64,
         incx: *const ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbmv_(
         trans: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -123,8 +97,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgemv_(
         trans: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -139,8 +111,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsbmv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -155,8 +125,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspmv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -169,8 +137,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsymv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -184,8 +150,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtbmv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -200,8 +164,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtpmv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -214,8 +176,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrmv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -229,8 +189,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtbsv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -245,8 +203,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtpsv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -259,8 +215,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrsv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -274,8 +228,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dger_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -287,8 +239,6 @@ extern "C" {
         a: *mut f64,
         lda: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyr_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -299,8 +249,6 @@ extern "C" {
         lda: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspr_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -310,8 +258,6 @@ extern "C" {
         ap: *mut f64,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyr2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -324,8 +270,6 @@ extern "C" {
         lda: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspr2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -337,8 +281,6 @@ extern "C" {
         ap: *mut f64,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgemm_(
         transa: *const ::std::os::raw::c_char,
         transb: *const ::std::os::raw::c_char,
@@ -356,8 +298,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrsm_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -375,8 +315,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrmm_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -394,8 +332,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsymm_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -412,8 +348,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyrk_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -428,8 +362,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsyr2k_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -446,32 +378,22 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dcabs1_(z: *const Rcomplex) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dzasum_(
         n: *const ::std::os::raw::c_int,
         zx: *const Rcomplex,
         incx: *const ::std::os::raw::c_int,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dznrm2_(
         n: *const ::std::os::raw::c_int,
         x: *const Rcomplex,
         incx: *const ::std::os::raw::c_int,
     ) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn izamax_(
         n: *const ::std::os::raw::c_int,
         zx: *const Rcomplex,
         incx: *const ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zaxpy_(
         n: *const ::std::os::raw::c_int,
         za: *const Rcomplex,
@@ -480,8 +402,6 @@ extern "C" {
         zy: *const Rcomplex,
         incy: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zcopy_(
         n: *const ::std::os::raw::c_int,
         zx: *const Rcomplex,
@@ -489,8 +409,6 @@ extern "C" {
         zy: *const Rcomplex,
         incy: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zdotc_(
         n: *const ::std::os::raw::c_int,
         zx: *const Rcomplex,
@@ -498,8 +416,6 @@ extern "C" {
         zy: *const Rcomplex,
         incy: *const ::std::os::raw::c_int,
     ) -> Rcomplex;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zdotu_(
         n: *const ::std::os::raw::c_int,
         zx: *const Rcomplex,
@@ -507,8 +423,6 @@ extern "C" {
         zy: *const Rcomplex,
         incy: *const ::std::os::raw::c_int,
     ) -> Rcomplex;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zdrot_(
         n: *const ::std::os::raw::c_int,
         zx: *const Rcomplex,
@@ -518,16 +432,12 @@ extern "C" {
         c: *const f64,
         s: *const f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zdscal_(
         n: *const ::std::os::raw::c_int,
         da: *const f64,
         zx: *mut Rcomplex,
         incx: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgbmv_(
         trans: *const ::std::os::raw::c_char,
         m: *mut ::std::os::raw::c_int,
@@ -544,8 +454,6 @@ extern "C" {
         incy: *mut ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgemm_(
         transa: *const ::std::os::raw::c_char,
         transb: *const ::std::os::raw::c_char,
@@ -563,8 +471,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgemv_(
         trans: *const ::std::os::raw::c_char,
         m: *const ::std::os::raw::c_int,
@@ -579,8 +485,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgerc_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -592,8 +496,6 @@ extern "C" {
         a: *mut Rcomplex,
         lda: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zgeru_(
         m: *const ::std::os::raw::c_int,
         n: *const ::std::os::raw::c_int,
@@ -605,8 +507,6 @@ extern "C" {
         a: *mut Rcomplex,
         lda: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhbmv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -621,8 +521,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhemm_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -639,8 +537,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhemv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -654,8 +550,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zher_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -666,8 +560,6 @@ extern "C" {
         lda: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zher2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -680,8 +572,6 @@ extern "C" {
         lda: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zher2k_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -698,8 +588,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zherk_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -714,8 +602,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhpmv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -728,8 +614,6 @@ extern "C" {
         incy: *const ::std::os::raw::c_int,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhpr_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -739,8 +623,6 @@ extern "C" {
         ap: *mut Rcomplex,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zhpr2_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
@@ -752,19 +634,13 @@ extern "C" {
         ap: *mut Rcomplex,
         arg1: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zrotg_(ca: *const Rcomplex, cb: *const Rcomplex, c: *mut f64, s: *mut Rcomplex);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zscal_(
         n: *const ::std::os::raw::c_int,
         za: *const Rcomplex,
         zx: *mut Rcomplex,
         incx: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zswap_(
         n: *const ::std::os::raw::c_int,
         zx: *mut Rcomplex,
@@ -772,8 +648,6 @@ extern "C" {
         zy: *mut Rcomplex,
         incy: *const ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsymm_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -790,8 +664,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsyr2k_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -808,8 +680,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zsyrk_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -824,8 +694,6 @@ extern "C" {
         arg1: usize,
         arg2: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztbmv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -840,8 +708,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztbsv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -856,8 +722,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztpmv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -870,8 +734,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztpsv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -884,8 +746,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztrmm_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -903,8 +763,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztrmv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -918,8 +776,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztrsm_(
         side: *const ::std::os::raw::c_char,
         uplo: *const ::std::os::raw::c_char,
@@ -937,8 +793,6 @@ extern "C" {
         arg3: usize,
         arg4: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ztrsv_(
         uplo: *const ::std::os::raw::c_char,
         trans: *const ::std::os::raw::c_char,
@@ -952,8 +806,6 @@ extern "C" {
         arg2: usize,
         arg3: usize,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn zspmv_(
         uplo: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,

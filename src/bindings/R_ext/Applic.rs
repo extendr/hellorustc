@@ -45,8 +45,6 @@ pub type d2fcn_p = ::std::option::Option<
     ),
 >;
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " vectorizing function   f(x[1:n], ...) -> x[]  {overwriting x[]}."]
     pub fn Rdqags(
         f: integr_fn,
@@ -65,8 +63,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         work: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rdqagi(
         f: integr_fn,
         ex: *mut ::std::os::raw::c_void,
@@ -84,8 +80,6 @@ extern "C" {
         iwork: *mut ::std::os::raw::c_int,
         work: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn vmmin(
         n: ::std::os::raw::c_int,
         b: *mut f64,
@@ -103,8 +97,6 @@ extern "C" {
         grcount: *mut ::std::os::raw::c_int,
         fail: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn nmmin(
         n: ::std::os::raw::c_int,
         Bvec: *mut f64,
@@ -122,8 +114,6 @@ extern "C" {
         fncount: *mut ::std::os::raw::c_int,
         maxit: ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn cgmin(
         n: ::std::os::raw::c_int,
         Bvec: *mut f64,
@@ -141,8 +131,6 @@ extern "C" {
         grcount: *mut ::std::os::raw::c_int,
         maxit: ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn lbfgsb(
         n: ::std::os::raw::c_int,
         m: ::std::os::raw::c_int,
@@ -164,8 +152,6 @@ extern "C" {
         trace: ::std::os::raw::c_int,
         nREPORT: ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn samin(
         n: ::std::os::raw::c_int,
         pb: *mut f64,
@@ -177,8 +163,6 @@ extern "C" {
         trace: ::std::os::raw::c_int,
         ex: *mut ::std::os::raw::c_void,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " ../../appl/interv.c: first also in Applic.h"]
     pub fn findInterval(
         xt: *mut f64,
@@ -189,8 +173,6 @@ extern "C" {
         ilo: ::std::os::raw::c_int,
         mflag: *mut ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrqty_(
         x: *mut f64,
         n: *mut ::std::os::raw::c_int,
@@ -200,8 +182,6 @@ extern "C" {
         ny: *mut ::std::os::raw::c_int,
         qty: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrqy_(
         x: *mut f64,
         n: *mut ::std::os::raw::c_int,
@@ -211,8 +191,6 @@ extern "C" {
         ny: *mut ::std::os::raw::c_int,
         qy: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrcf_(
         x: *mut f64,
         n: *mut ::std::os::raw::c_int,
@@ -224,8 +202,6 @@ extern "C" {
         info: *mut ::std::os::raw::c_int,
     );
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrrsd_(
         x: *mut f64,
         n: *mut ::std::os::raw::c_int,
@@ -236,8 +212,6 @@ extern "C" {
         rsd: *mut f64,
     );
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrxb_(
         x: *mut f64,
         n: *mut ::std::os::raw::c_int,
@@ -247,8 +221,6 @@ extern "C" {
         ny: *mut ::std::os::raw::c_int,
         xb: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " appl/pretty.c: for use in engine.c and util.c"]
     pub fn R_pretty(
         lo: *mut f64,
@@ -261,8 +233,6 @@ extern "C" {
         return_bounds: ::std::os::raw::c_int,
     ) -> f64;
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn fdhess(
         n: ::std::os::raw::c_int,
         x: *mut f64,
@@ -276,8 +246,6 @@ extern "C" {
         ndigit: ::std::os::raw::c_int,
         typx: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Also used in packages nlme, pcaPP"]
     pub fn optif9(
         nr: ::std::os::raw::c_int,
@@ -308,8 +276,6 @@ extern "C" {
         wrk: *mut f64,
         itncnt: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrdc2_(
         x: *mut f64,
         ldx: *mut ::std::os::raw::c_int,
@@ -321,8 +287,6 @@ extern "C" {
         pivot: *mut ::std::os::raw::c_int,
         work: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrls_(
         x: *mut f64,
         n: *mut ::std::os::raw::c_int,

@@ -6,16 +6,8 @@
 /* R version: 4.4.1 */
 
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rprintf(arg1: *const ::std::os::raw::c_char, ...);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REprintf(arg1: *const ::std::os::raw::c_char, ...);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rvprintf(arg1: *const ::std::os::raw::c_char, arg2: va_list);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REvprintf(arg1: *const ::std::os::raw::c_char, arg2: va_list);
 }

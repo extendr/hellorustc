@@ -20,15 +20,11 @@ pub type R_outpstream_t = *mut R_outpstream_st;
 pub type R_inpstream_t = *mut R_inpstream_st;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct R_allocator {
     _unused: [u8; 0],
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct R_outpstream_st {
     pub data: R_pstream_data_t,
     pub type_: R_pstream_format_t,
@@ -49,8 +45,6 @@ pub struct R_outpstream_st {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct R_inpstream_st {
     pub data: R_pstream_data_t,
     pub type_: R_pstream_format_t,
@@ -73,67 +67,27 @@ pub struct R_inpstream_st {
 #[doc = " try to allow some type checking"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct R_hashtab_type {
     pub cell: SEXP,
 }
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const R_LEN_T_MAX: u32 = 2147483647;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const R_XLEN_T_MAX: u64 = 4503599627370496;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const R_SHORT_LEN_MAX: u32 = 2147483647;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const R_PRIdXLEN_T: &[u8; 3] = b"td\0";
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const TYPE_BITS: u32 = 5;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const MAX_NUM_SEXPTYPE: u32 = 32;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const NAMEDMAX: u32 = 7;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const R_XDR_DOUBLE_SIZE: u32 = 8;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const R_XDR_INTEGER_SIZE: u32 = 4;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const R_CODESET_MAX: u32 = 63;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const IDENT_NUM_AS_BITS: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const IDENT_NA_AS_BITS: u32 = 2;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const IDENT_ATTR_BY_ORDER: u32 = 4;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const IDENT_USE_BYTECODE: u32 = 8;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const IDENT_USE_CLOENV: u32 = 16;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const IDENT_USE_SRCREF: u32 = 32;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const IDENT_EXTPTR_AS_REF: u32 = 64;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const HT_TYPE_IDENTICAL: u32 = 0;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const HT_TYPE_ADDRESS: u32 = 1;
 pub const SORTED_DECR_NA_1ST: _bindgen_ty_1 = _bindgen_ty_1::SORTED_DECR_NA_1ST;
 pub const SORTED_DECR: _bindgen_ty_1 = _bindgen_ty_1::SORTED_DECR;
@@ -144,8 +98,6 @@ pub const KNOWN_UNSORTED: _bindgen_ty_1 = _bindgen_ty_1::KNOWN_UNSORTED;
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = "------ enum_SEXPTYPE -----"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum SEXPTYPE {
     #[doc = " nil = NULL"]
@@ -206,8 +158,6 @@ pub enum SEXPTYPE {
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " ../main/character.c :"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum nchar_type {
     Bytes = 0,
@@ -217,8 +167,6 @@ pub enum nchar_type {
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " cetype_t is an identifier reseved by POSIX, but it is\nwell established as public.  Could remap by a #define though"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum cetype_t {
     CE_NATIVE = 0,
@@ -230,8 +178,6 @@ pub enum cetype_t {
 }
 #[repr(u32)]
 #[non_exhaustive]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum R_pstream_format_t {
     R_pstream_any_format = 0,
@@ -243,8 +189,6 @@ pub enum R_pstream_format_t {
 #[repr(i32)]
 #[non_exhaustive]
 #[doc = " ALTREP sorting support"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum _bindgen_ty_1 {
     SORTED_DECR_NA_1ST = -2,
@@ -256,699 +200,295 @@ pub enum _bindgen_ty_1 {
     KNOWN_UNSORTED = 0,
 }
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_CHAR(x: SEXP) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Various tests with macro versions in the internal headers"]
     pub fn Rf_isNull(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isSymbol(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isLogical(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isReal(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isComplex(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isExpression(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isEnvironment(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isString(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isObject(s: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " General Cons Cell Attributes"]
     pub fn ATTRIB(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn OBJECT(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn MARK(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn TYPEOF(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn NAMED(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REFCNT(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_ATTRIB(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn DUPLICATE_ATTRIB(to: SEXP, from: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SHALLOW_DUPLICATE_ATTRIB(to: SEXP, from: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn MARK_NOT_MUTABLE(x: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " S4 object testing"]
     pub fn IS_S4_OBJECT(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Vector Access Functions"]
     pub fn LENGTH(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn XLENGTH(x: SEXP) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn TRUELENGTH(x: SEXP) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn IS_LONG_VEC(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LEVELS(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LOGICAL(x: SEXP) -> *mut ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn INTEGER(x: SEXP) -> *mut ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RAW(x: SEXP) -> *mut Rbyte;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REAL(x: SEXP) -> *mut f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn COMPLEX(x: SEXP) -> *mut Rcomplex;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LOGICAL_RO(x: SEXP) -> *const ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn INTEGER_RO(x: SEXP) -> *const ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RAW_RO(x: SEXP) -> *const Rbyte;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REAL_RO(x: SEXP) -> *const f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn COMPLEX_RO(x: SEXP) -> *const Rcomplex;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = "SEXP (STRING_ELT)(SEXP x, R_xlen_t i);"]
     pub fn VECTOR_ELT(x: SEXP, i: R_xlen_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_STRING_ELT(x: SEXP, i: R_xlen_t, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_VECTOR_ELT(x: SEXP, i: R_xlen_t, v: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn STRING_PTR(x: SEXP) -> *mut SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn STRING_PTR_RO(x: SEXP) -> *const SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn INTEGER_GET_REGION(
         sx: SEXP,
         i: R_xlen_t,
         n: R_xlen_t,
         buf: *mut ::std::os::raw::c_int,
     ) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REAL_GET_REGION(sx: SEXP, i: R_xlen_t, n: R_xlen_t, buf: *mut f64) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LOGICAL_GET_REGION(
         sx: SEXP,
         i: R_xlen_t,
         n: R_xlen_t,
         buf: *mut ::std::os::raw::c_int,
     ) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn COMPLEX_GET_REGION(sx: SEXP, i: R_xlen_t, n: R_xlen_t, buf: *mut Rcomplex) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RAW_GET_REGION(sx: SEXP, i: R_xlen_t, n: R_xlen_t, buf: *mut Rbyte) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " metadata access"]
     pub fn INTEGER_IS_SORTED(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn INTEGER_NO_NA(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REAL_IS_SORTED(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REAL_NO_NA(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LOGICAL_IS_SORTED(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LOGICAL_NO_NA(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn STRING_IS_SORTED(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn STRING_NO_NA(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn TAG(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CDR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CAAR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CDAR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CADR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CDDR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CDDDR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CADDR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CADDDR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CAD4R(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CAD5R(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn MISSING(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_TAG(x: SEXP, y: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SETCAR(x: SEXP, y: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SETCDR(x: SEXP, y: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SETCADR(x: SEXP, y: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SETCADDR(x: SEXP, y: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SETCADDDR(x: SEXP, y: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SETCAD4R(e: SEXP, y: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Closure Access Functions"]
     pub fn FORMALS(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn BODY(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CLOENV(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RDEBUG(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RSTEP(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RTRACE(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_RDEBUG(x: SEXP, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_RSTEP(x: SEXP, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_RTRACE(x: SEXP, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_FORMALS(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_BODY(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_CLOENV(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Symbol Access Functions"]
     pub fn PRINTNAME(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SYMVALUE(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn INTERNAL(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn DDVAL(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Environment Access Functions"]
     pub fn FRAME(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ENCLOS(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn HASHTAB(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ENVFLAGS(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Promise Access Functions"]
     pub fn PRCODE(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn PRENV(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn PRVALUE(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn PRSEEN(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " External pointer access macros"]
     pub fn EXTPTR_PROT(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn EXTPTR_TAG(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn EXTPTR_PTR(arg1: SEXP) -> *mut ::std::os::raw::c_void;
     #[doc = " The \"global\" environment"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_GlobalEnv: SEXP;
     #[doc = " An empty environment at the root of the\nenvironment tree"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_EmptyEnv: SEXP;
     #[doc = " The base environment; formerly R_NilValue"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_BaseEnv: SEXP;
     #[doc = " The (fake) namespace for base"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_BaseNamespace: SEXP;
     #[doc = " Registry for registered namespaces"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NamespaceRegistry: SEXP;
     #[doc = " Current srcref, for debuggers"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_Srcref: SEXP;
     #[doc = " The nil object"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NilValue: SEXP;
     #[doc = " Unbound marker"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_UnboundValue: SEXP;
     #[doc = " Missing argument marker"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_MissingArg: SEXP;
     #[doc = " To be found in BC interp. state\n(marker)"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_InBCInterpreter: SEXP;
     #[doc = " Use current expression (marker)"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_CurrentExpression: SEXP;
     #[doc = " Marker for restarted function calls"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_RestartToken: SEXP;
     #[doc = " \"as.character\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_AsCharacterSymbol: SEXP;
     #[doc = " \"@\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_AtsignSymbol: SEXP;
     #[doc = " <-- backcompatible version of:"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_baseSymbol: SEXP;
     #[doc = " \"base\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_BaseSymbol: SEXP;
     #[doc = " \"{\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_BraceSymbol: SEXP;
     #[doc = " \"[[\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_Bracket2Symbol: SEXP;
     #[doc = " \"[\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_BracketSymbol: SEXP;
     #[doc = " \"class\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_ClassSymbol: SEXP;
     #[doc = " \".Device\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_DeviceSymbol: SEXP;
     #[doc = " \"dimnames\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_DimNamesSymbol: SEXP;
     #[doc = " \"dim\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_DimSymbol: SEXP;
     #[doc = " \"$\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_DollarSymbol: SEXP;
     #[doc = " \"...\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_DotsSymbol: SEXP;
     #[doc = " \"::\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_DoubleColonSymbol: SEXP;
     #[doc = " \"drop\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_DropSymbol: SEXP;
     #[doc = " \"eval\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_EvalSymbol: SEXP;
     #[doc = " \"function\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_FunctionSymbol: SEXP;
     #[doc = " \".Last.value\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_LastvalueSymbol: SEXP;
     #[doc = " \"levels\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_LevelsSymbol: SEXP;
     #[doc = " \"mode\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_ModeSymbol: SEXP;
     #[doc = " \"na.rm\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NaRmSymbol: SEXP;
     #[doc = " \"name\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NameSymbol: SEXP;
     #[doc = " \"names\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NamesSymbol: SEXP;
     #[doc = " \".__NAMESPACE__.\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NamespaceEnvSymbol: SEXP;
     #[doc = " \"package\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_PackageSymbol: SEXP;
     #[doc = " \"previous\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_PreviousSymbol: SEXP;
     #[doc = " \"quote\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_QuoteSymbol: SEXP;
     #[doc = " \"row.names\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_RowNamesSymbol: SEXP;
     #[doc = " \".Random.seed\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_SeedsSymbol: SEXP;
     #[doc = " \"sort.list\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_SortListSymbol: SEXP;
     #[doc = " \"source\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_SourceSymbol: SEXP;
     #[doc = " \"spec\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_SpecSymbol: SEXP;
     #[doc = " \":::\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_TripleColonSymbol: SEXP;
     #[doc = " \"tsp\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_TspSymbol: SEXP;
     #[doc = " \".defined\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_dot_defined: SEXP;
     #[doc = " \".Method\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_dot_Method: SEXP;
     #[doc = " \".packageName\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_dot_packageName: SEXP;
     #[doc = " \".target\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_dot_target: SEXP;
     #[doc = " \".Generic\""]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_dot_Generic: SEXP;
     #[doc = " NA_STRING as a CHARSXP"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NaString: SEXP;
     #[doc = " \"\" as a CHARSXP"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_BlankString: SEXP;
     #[doc = " \"\" as a STRSXP"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_BlankScalarString: SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " srcref related functions"]
     pub fn R_GetCurrentSrcref(arg1: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_GetSrcFilename(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Type Coercions of all kinds"]
     pub fn Rf_asChar(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_coerceVector(arg1: SEXP, arg2: SEXPTYPE) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_PairToVectorList(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_VectorToPairList(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_asCharacterFactor(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_asLogical(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_asInteger(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_asReal(x: SEXP) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_asComplex(x: SEXP) -> Rcomplex;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Other Internally Used Functions, excluding those which are inline-able"]
     pub fn Rf_acopy_string(arg1: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_alloc3DArray(
         arg1: SEXPTYPE,
         arg2: ::std::os::raw::c_int,
         arg3: ::std::os::raw::c_int,
         arg4: ::std::os::raw::c_int,
     ) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_allocArray(arg1: SEXPTYPE, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_allocMatrix(
         arg1: SEXPTYPE,
         arg2: ::std::os::raw::c_int,
         arg3: ::std::os::raw::c_int,
     ) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_allocLang(arg1: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_allocList(arg1: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_allocS4Object() -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_allocSExp(arg1: SEXPTYPE) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_allocVector3(arg1: SEXPTYPE, arg2: R_xlen_t, arg3: *mut R_allocator_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_any_duplicated(x: SEXP, from_last: Rboolean) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_any_duplicated3(x: SEXP, incomp: SEXP, from_last: Rboolean) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_classgets(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_cons(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_copyMatrix(arg1: SEXP, arg2: SEXP, arg3: Rboolean);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_copyListMatrix(arg1: SEXP, arg2: SEXP, arg3: Rboolean);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_copyMostAttrib(arg1: SEXP, arg2: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_copyVector(arg1: SEXP, arg2: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_defineVar(arg1: SEXP, arg2: SEXP, arg3: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_dimgets(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_dimnamesgets(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_duplicate(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_shallow_duplicate(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_duplicate_attr(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_shallow_duplicate_attr(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lazy_duplicate(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " the next really should not be here and is also in Defn.h"]
     pub fn Rf_duplicated(arg1: SEXP, arg2: Rboolean) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_eval(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_findFun(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_findVar(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_findVarInFrame(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_findVarInFrame3(arg1: SEXP, arg2: SEXP, arg3: Rboolean) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_existsVarInFrame(arg1: SEXP, arg2: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_removeVarFromFrame(arg1: SEXP, arg2: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_getAttrib(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_GetArrayDimnames(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_GetColNames(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_GetMatrixDimnames(
         arg1: SEXP,
         arg2: *mut SEXP,
@@ -956,86 +496,32 @@ extern "C" {
         arg4: *mut *const ::std::os::raw::c_char,
         arg5: *mut *const ::std::os::raw::c_char,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_GetOption(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_GetOption1(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_GetOptionDigits() -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_GetOptionWidth() -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_GetRowNames(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_gsetVar(arg1: SEXP, arg2: SEXP, arg3: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_install(arg1: *const ::std::os::raw::c_char) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_installChar(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_installNoTrChar(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_installTrChar(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isOrdered(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isUnordered(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isUnsorted(arg1: SEXP, arg2: Rboolean) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_isTRUE(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lengthgets(arg1: SEXP, arg2: R_len_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_xlengthgets(arg1: SEXP, arg2: R_xlen_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_lsInternal(arg1: SEXP, arg2: Rboolean) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_lsInternal3(arg1: SEXP, arg2: Rboolean, arg3: Rboolean) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_match(arg1: SEXP, arg2: SEXP, arg3: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_namesgets(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_mkChar(arg1: *const ::std::os::raw::c_char) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_mkCharLen(arg1: *const ::std::os::raw::c_char, arg2: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_NonNullStringMatch(arg1: SEXP, arg2: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_ncols(arg1: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_nrows(arg1: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_nthcdr(arg1: SEXP, arg2: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_nchar(
         string: SEXP,
         type_: nchar_type,
@@ -1043,200 +529,88 @@ extern "C" {
         keepNA: Rboolean,
         msg_name: *const ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ParseEvalString(arg1: *const ::std::os::raw::c_char, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ParseString(arg1: *const ::std::os::raw::c_char) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_PrintValue(arg1: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_setAttrib(arg1: SEXP, arg2: SEXP, arg3: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_setVar(arg1: SEXP, arg2: SEXP, arg3: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_str2type(arg1: *const ::std::os::raw::c_char) -> SEXPTYPE;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_StringBlank(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_substitute(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_topenv(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_translateChar(arg1: SEXP) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_translateCharUTF8(arg1: SEXP) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_type2char(arg1: SEXPTYPE) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_typeToChar(arg1: SEXP) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_type2rstr(arg1: SEXPTYPE) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_type2str(arg1: SEXPTYPE) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_type2str_nowarn(arg1: SEXPTYPE) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_unprotect_ptr(arg1: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_tryEval(arg1: SEXP, arg2: SEXP, arg3: *mut ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_tryEvalSilent(arg1: SEXP, arg2: SEXP, arg3: *mut ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_GetCurrentEnv() -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isS4(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_asS4(arg1: SEXP, arg2: Rboolean, arg3: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_S3Class(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isBasicClass(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_getCharCE(arg1: SEXP) -> cetype_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_mkCharCE(arg1: *const ::std::os::raw::c_char, arg2: cetype_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_mkCharLenCE(
         arg1: *const ::std::os::raw::c_char,
         arg2: ::std::os::raw::c_int,
         arg3: cetype_t,
     ) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_reEnc(
         x: *const ::std::os::raw::c_char,
         ce_in: cetype_t,
         ce_out: cetype_t,
         subst: ::std::os::raw::c_int,
     ) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_reEnc3(
         x: *const ::std::os::raw::c_char,
         fromcode: *const ::std::os::raw::c_char,
         tocode: *const ::std::os::raw::c_char,
         subst: ::std::os::raw::c_int,
     ) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Calling a function with arguments evaluated"]
     pub fn R_forceAndCall(e: SEXP, n: ::std::os::raw::c_int, rho: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " External pointer interface"]
     pub fn R_MakeExternalPtr(p: *mut ::std::os::raw::c_void, tag: SEXP, prot: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ExternalPtrAddr(s: SEXP) -> *mut ::std::os::raw::c_void;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ExternalPtrTag(s: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ExternalPtrProtected(s: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ClearExternalPtr(s: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_SetExternalPtrAddr(s: SEXP, p: *mut ::std::os::raw::c_void);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_SetExternalPtrTag(s: SEXP, tag: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_SetExternalPtrProtected(s: SEXP, p: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Added in R 3.4.0"]
     pub fn R_MakeExternalPtrFn(p: DL_FUNC, tag: SEXP, prot: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ExternalPtrAddrFn(s: SEXP) -> DL_FUNC;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_RegisterFinalizer(s: SEXP, fun: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_RegisterCFinalizer(s: SEXP, fun: R_CFinalizer_t);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_RegisterFinalizerEx(s: SEXP, fun: SEXP, onexit: Rboolean);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_RegisterCFinalizerEx(s: SEXP, fun: R_CFinalizer_t, onexit: Rboolean);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_RunPendingFinalizers();
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Weak reference interface"]
     pub fn R_MakeWeakRef(key: SEXP, val: SEXP, fin: SEXP, onexit: Rboolean) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_MakeWeakRefC(key: SEXP, val: SEXP, fin: R_CFinalizer_t, onexit: Rboolean) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_WeakRefKey(w: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_WeakRefValue(w: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_RunWeakRefFinalizer(w: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_PromiseExpr(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ClosureExpr(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_BytecodeExpr(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Protected evaluation"]
     pub fn R_ToplevelExec(
         fun: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
         data: *mut ::std::os::raw::c_void,
     ) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ExecWithCleanup(
         fun: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void) -> SEXP>,
         data: *mut ::std::os::raw::c_void,
         cleanfun: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
         cleandata: *mut ::std::os::raw::c_void,
     ) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_tryCatch(
         arg1: ::std::option::Option<
             unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void) -> SEXP,
@@ -1250,8 +624,6 @@ extern "C" {
         arg6: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
         arg7: *mut ::std::os::raw::c_void,
     ) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_tryCatchError(
         arg1: ::std::option::Option<
             unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void) -> SEXP,
@@ -1262,8 +634,6 @@ extern "C" {
         >,
         arg4: *mut ::std::os::raw::c_void,
     ) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_withCallingErrorHandler(
         arg1: ::std::option::Option<
             unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void) -> SEXP,
@@ -1274,14 +644,8 @@ extern "C" {
         >,
         arg4: *mut ::std::os::raw::c_void,
     ) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_MakeUnwindCont() -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ContinueUnwind(cont: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_UnwindProtect(
         fun: ::std::option::Option<unsafe extern "C" fn(data: *mut ::std::os::raw::c_void) -> SEXP>,
         data: *mut ::std::os::raw::c_void,
@@ -1291,79 +655,31 @@ extern "C" {
         cleandata: *mut ::std::os::raw::c_void,
         cont: SEXP,
     ) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Environment and Binding Features"]
     pub fn R_NewEnv(arg1: SEXP, arg2: ::std::os::raw::c_int, arg3: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_IsPackageEnv(rho: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_PackageEnvName(rho: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_FindPackageEnv(info: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_IsNamespaceEnv(rho: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_NamespaceEnvSpec(rho: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_FindNamespace(info: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_LockEnvironment(env: SEXP, bindings: Rboolean);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_EnvironmentIsLocked(env: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_LockBinding(sym: SEXP, env: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_unLockBinding(sym: SEXP, env: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_MakeActiveBinding(sym: SEXP, fun: SEXP, env: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_BindingIsLocked(sym: SEXP, env: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_BindingIsActive(sym: SEXP, env: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ActiveBindingFunction(sym: SEXP, env: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_HasFancyBindings(rho: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " ../main/errors.c : */\n/* needed for R_load/savehistory handling in front ends"]
     pub fn Rf_errorcall(arg1: SEXP, arg2: *const ::std::os::raw::c_char, ...);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_warningcall(arg1: SEXP, arg2: *const ::std::os::raw::c_char, ...);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_warningcall_immediate(arg1: SEXP, arg2: *const ::std::os::raw::c_char, ...);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_XDREncodeDouble(d: f64, buf: *mut ::std::os::raw::c_void);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_XDRDecodeDouble(buf: *mut ::std::os::raw::c_void) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_XDREncodeInteger(i: ::std::os::raw::c_int, buf: *mut ::std::os::raw::c_void);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_XDRDecodeInteger(buf: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_InitInPStream(
         stream: R_inpstream_t,
         data: R_pstream_data_t,
@@ -1381,8 +697,6 @@ extern "C" {
         phook: ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP) -> SEXP>,
         pdata: SEXP,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_InitOutPStream(
         stream: R_outpstream_t,
         data: R_pstream_data_t,
@@ -1401,8 +715,6 @@ extern "C" {
         phook: ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP) -> SEXP>,
         pdata: SEXP,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_InitFileInPStream(
         stream: R_inpstream_t,
         fp: *mut FILE,
@@ -1410,8 +722,6 @@ extern "C" {
         phook: ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP) -> SEXP>,
         pdata: SEXP,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_InitFileOutPStream(
         stream: R_outpstream_t,
         fp: *mut FILE,
@@ -1420,103 +730,47 @@ extern "C" {
         phook: ::std::option::Option<unsafe extern "C" fn(arg1: SEXP, arg2: SEXP) -> SEXP>,
         pdata: SEXP,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_Serialize(s: SEXP, ops: R_outpstream_t);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_Unserialize(ips: R_inpstream_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_SerializeInfo(ips: R_inpstream_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " slot management (in attrib.c)"]
     pub fn R_do_slot(obj: SEXP, name: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_do_slot_assign(obj: SEXP, name: SEXP, value: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_has_slot(obj: SEXP, name: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " S3-S4 class (inheritance), attrib.c"]
     pub fn R_S4_extends(klass: SEXP, useTable: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " class definition, new objects (objects.c)"]
     pub fn R_do_MAKE_CLASS(what: *const ::std::os::raw::c_char) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_getClassDef(what: *const ::std::os::raw::c_char) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_getClassDef_R(what: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_has_methods_attached() -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_isVirtualClass(class_def: SEXP, env: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_extends(class1: SEXP, class2: SEXP, env: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_do_new_object(class_def: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " supporting  a C-level version of  is(., .) :"]
     pub fn R_check_class_and_super(
         x: SEXP,
         valid: *mut *const ::std::os::raw::c_char,
         rho: SEXP,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_check_class_etc(
         x: SEXP,
         valid: *mut *const ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " preserve objects across GCs"]
     pub fn R_PreserveObject(arg1: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ReleaseObject(arg1: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_NewPreciousMSet(arg1: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_PreserveInMSet(x: SEXP, mset: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ReleaseFromMSet(x: SEXP, mset: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ReleaseMSet(mset: SEXP, keepSize: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Shutdown actions"]
     pub fn R_dot_Last();
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_RunExitFinalizers();
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_system(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_compute_identical(arg1: SEXP, arg2: SEXP, arg3: ::std::os::raw::c_int) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_body_no_src(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " C version of R's  indx <- order(..., na.last, decreasing) :\ne.g.  arglist = Rf_lang2(x,y)  or  Rf_lang3(x,y,z)"]
     pub fn R_orderVector(
         indx: *mut ::std::os::raw::c_int,
@@ -1525,8 +779,6 @@ extern "C" {
         nalast: Rboolean,
         decreasing: Rboolean,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " C version of R's  indx <- order(x, na.last, decreasing) :"]
     pub fn R_orderVector1(
         indx: *mut ::std::os::raw::c_int,
@@ -1535,321 +787,119 @@ extern "C" {
         nalast: Rboolean,
         decreasing: Rboolean,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = "These are the public inlinable functions that are provided in\nRinlinedfuns.h It is *essential* that these do not appear in any\nother header file, with or without the Rf_ prefix."]
     pub fn Rf_allocVector(arg1: SEXPTYPE, arg2: R_xlen_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_conformable(arg1: SEXP, arg2: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_elt(arg1: SEXP, arg2: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_inherits(arg1: SEXP, arg2: *const ::std::os::raw::c_char) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isArray(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isFactor(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isFrame(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isFunction(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isInteger(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isLanguage(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isList(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isMatrix(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isNewList(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isNumber(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isNumeric(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isPairList(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isPrimitive(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isTs(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isUserBinop(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isValidString(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isValidStringF(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isVector(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isVectorAtomic(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isVectorList(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_isVectorizable(arg1: SEXP) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lang1(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lang2(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lang3(arg1: SEXP, arg2: SEXP, arg3: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lang4(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lang5(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP, arg5: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lang6(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP, arg5: SEXP, arg6: SEXP)
         -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lastElt(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_lcons(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_length(arg1: SEXP) -> R_len_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_list1(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_list2(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_list3(arg1: SEXP, arg2: SEXP, arg3: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_list4(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_list5(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP, arg5: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_list6(arg1: SEXP, arg2: SEXP, arg3: SEXP, arg4: SEXP, arg5: SEXP, arg6: SEXP)
         -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_listAppend(arg1: SEXP, arg2: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_mkNamed(arg1: SEXPTYPE, arg2: *mut *const ::std::os::raw::c_char) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_mkString(arg1: *const ::std::os::raw::c_char) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_nlevels(arg1: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_stringPositionTr(
         arg1: SEXP,
         arg2: *const ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_ScalarComplex(arg1: Rcomplex) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_ScalarInteger(arg1: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_ScalarLogical(arg1: ::std::os::raw::c_int) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_ScalarRaw(arg1: Rbyte) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_ScalarReal(arg1: f64) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_ScalarString(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_xlength(arg1: SEXP) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn XTRUELENGTH(x: SEXP) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LENGTH_EX(
         x: SEXP,
         file: *const ::std::os::raw::c_char,
         line: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn XLENGTH_EX(x: SEXP) -> R_xlen_t;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_protect(arg1: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_unprotect(arg1: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_ProtectWithIndex(arg1: SEXP, arg2: *mut PROTECT_INDEX);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_Reprotect(arg1: SEXP, arg2: PROTECT_INDEX);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn CAR(e: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn DATAPTR(x: SEXP) -> *mut ::std::os::raw::c_void;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn DATAPTR_RO(x: SEXP) -> *const ::std::os::raw::c_void;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn DATAPTR_OR_NULL(x: SEXP) -> *const ::std::os::raw::c_void;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LOGICAL_OR_NULL(x: SEXP) -> *const ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn INTEGER_OR_NULL(x: SEXP) -> *const ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REAL_OR_NULL(x: SEXP) -> *const f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn COMPLEX_OR_NULL(x: SEXP) -> *const Rcomplex;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RAW_OR_NULL(x: SEXP) -> *const Rbyte;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn INTEGER_ELT(x: SEXP, i: R_xlen_t) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REAL_ELT(x: SEXP, i: R_xlen_t) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LOGICAL_ELT(x: SEXP, i: R_xlen_t) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn COMPLEX_ELT(x: SEXP, i: R_xlen_t) -> Rcomplex;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RAW_ELT(x: SEXP, i: R_xlen_t) -> Rbyte;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn STRING_ELT(x: SEXP, i: R_xlen_t) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_LOGICAL_ELT(x: SEXP, i: R_xlen_t, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_INTEGER_ELT(x: SEXP, i: R_xlen_t, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_REAL_ELT(x: SEXP, i: R_xlen_t, v: f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_COMPLEX_ELT(x: SEXP, i: R_xlen_t, v: Rcomplex);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_RAW_ELT(x: SEXP, i: R_xlen_t, v: Rbyte);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " ALTREP support"]
     pub fn ALTREP_CLASS(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_altrep_data1(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_altrep_data2(x: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_set_altrep_data1(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_set_altrep_data2(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn LOGICAL0(x: SEXP) -> *mut ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn INTEGER0(x: SEXP) -> *mut ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn REAL0(x: SEXP) -> *mut f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn COMPLEX0(x: SEXP) -> *mut Rcomplex;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn RAW0(x: SEXP) -> *mut Rbyte;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn ALTREP(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " public C interface"]
     pub fn R_asHashtable(h: SEXP) -> R_hashtab_type;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_HashtabSEXP(h: R_hashtab_type) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_isHashtable(h: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_mkhashtab(type_: ::std::os::raw::c_int, arg1: ::std::os::raw::c_int)
         -> R_hashtab_type;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_gethash(h: R_hashtab_type, key: SEXP, nomatch: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_sethash(h: R_hashtab_type, key: SEXP, value: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_remhash(h: R_hashtab_type, key: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_numhash(h: R_hashtab_type) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_typhash(h: R_hashtab_type) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_maphash(h: R_hashtab_type, FUN: SEXP) -> SEXP;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_maphashC(
         h: R_hashtab_type,
         FUN: ::std::option::Option<
@@ -1857,79 +907,33 @@ extern "C" {
         >,
         data: *mut ::std::os::raw::c_void,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_clrhash(h: R_hashtab_type);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Rest of this file\nStuff that is not API and probably should not be but is getting used."]
     pub fn SET_TYPEOF(x: SEXP, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_OBJECT(x: SEXP, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_S4_OBJECT(x: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn UNSET_S4_OBJECT(x: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_curErrorBuf() -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn IS_SCALAR(x: SEXP, type_: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_psmatch(
         arg1: *const ::std::os::raw::c_char,
         arg2: *const ::std::os::raw::c_char,
         arg3: Rboolean,
     ) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SETLENGTH(x: SEXP, v: R_xlen_t);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_TRUELENGTH(x: SEXP, v: R_xlen_t);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SETLEVELS(x: SEXP, v: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_ENVFLAGS(x: SEXP, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_FRAME(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_ENCLOS(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_HASHTAB(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_PRENV(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_PRVALUE(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_PRCODE(x: SEXP, v: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn STDVEC_DATAPTR(x: SEXP) -> *mut ::std::os::raw::c_void;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn IS_GROWABLE(x: SEXP) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_GROWABLE_BIT(x: SEXP);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn SET_NAMED(x: SEXP, v: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " used by BIOC::matter; mightbe reasonable to include in API"]
     pub fn R_tryWrap(arg1: SEXP) -> SEXP;
 }

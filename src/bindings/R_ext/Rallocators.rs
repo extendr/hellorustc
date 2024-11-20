@@ -13,8 +13,6 @@ pub type custom_free_t = ::std::option::Option<
 >;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct R_allocator {
     #[doc = " malloc equivalent"]
     pub mem_alloc: custom_alloc_t,

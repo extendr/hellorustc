@@ -12,8 +12,6 @@ pub struct __BindgenBitfieldUnit<Storage> {
     storage: Storage,
 }
 #[repr(C)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct structRstart {
     pub R_Quiet: Rboolean,
     pub R_NoEcho: Rboolean,
@@ -33,14 +31,10 @@ pub struct structRstart {
     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 4usize]>,
     pub nconnections: ::std::os::raw::c_int,
 }
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const RSTART_VERSION: u32 = 1;
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " Startup Actions"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum SA_TYPE {
     #[doc = " = 0"]
@@ -271,46 +265,28 @@ impl structRstart {
 }
 extern "C" {
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_DefParams(arg1: Rstart);
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_DefParamsEx(arg1: Rstart, arg2: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " New code should always use R_DefParamsEx(Rstart, RSTART_VERSION) to\ninform R about the version of the structure used. R_DefParams(Rstart)\nonly supports version 0 of the structure."]
     pub fn R_SetParams(arg1: Rstart);
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_DefCallbacks(arg1: Rstart, arg2: ::std::os::raw::c_int);
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_SetWin32(arg1: Rstart);
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_SizeFromEnv(arg1: Rstart);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_common_command_line(
         arg1: *mut ::std::os::raw::c_int,
         arg2: *mut *mut ::std::os::raw::c_char,
         arg3: Rstart,
     );
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_set_command_line_arguments(
         argc: ::std::os::raw::c_int,
         argv: *mut *mut ::std::os::raw::c_char,
     );
     #[cfg(feature = "nonapi")]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn setup_Rmainloop();
 }

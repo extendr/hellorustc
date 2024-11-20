@@ -9,8 +9,6 @@
 pub type DevDesc = _DevDesc;
 pub type pDevDesc = *mut DevDesc;
 #[repr(C)]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub struct _DevDesc {
     #[doc = " left raster coordinate"]
     pub left: f64,
@@ -266,23 +264,13 @@ pub struct _DevDesc {
     #[doc = " Area for future expansion.\nBy zeroing this, devices are more likely to work if loaded\ninto a later version of R than that they were compiled under."]
     pub reserved: [::std::os::raw::c_char; 64usize],
 }
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const R_USE_PROTOTYPES: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const leftButton: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const middleButton: u32 = 2;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const rightButton: u32 = 4;
 #[repr(i32)]
 #[non_exhaustive]
 #[doc = " These give the indices of some known keys"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum R_KeyName {
     knUNKNOWN = -1,
@@ -312,8 +300,6 @@ pub enum R_KeyName {
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " These are the three possible mouse events"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum R_MouseEvent {
     meMouseDown = 0,
@@ -321,42 +307,18 @@ pub enum R_MouseEvent {
     meMouseMove = 2,
 }
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_ndevNumber(arg1: pDevDesc) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_NumDevices() -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Check for an available device slot"]
     pub fn R_CheckDeviceAvailable();
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_CheckDeviceAvailableBool() -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_curDevice() -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_nextDevice(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_prevDevice(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_selectDevice(arg1: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_killDevice(arg1: ::std::os::raw::c_int);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_NoDevices() -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_NewFrameConfirm(arg1: pDevDesc);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_doMouseEvent(
         dd: pDevDesc,
         event: R_MouseEvent,
@@ -364,52 +326,28 @@ extern "C" {
         x: f64,
         y: f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_doKeybd(dd: pDevDesc, rkey: R_KeyName, keyname: *const ::std::os::raw::c_char);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_doIdle(dd: pDevDesc);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_doesIdle(dd: pDevDesc) -> Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_interrupts_suspended: Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_interrupts_pending: ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_onintr();
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut mbcslocale: Rboolean;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_AdobeSymbol2utf8(
         out: *mut ::std::os::raw::c_char,
         in_: *const ::std::os::raw::c_char,
         nwork: usize,
         usePUA: Rboolean,
     ) -> *mut ::std::os::raw::c_void;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_utf8toAdobeSymbol(
         out: *mut ::std::os::raw::c_char,
         in_: *const ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_utf8Toutf8NoPUA(in_: *const ::std::os::raw::c_char) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn Rf_utf8ToLatin1AdobeSymbol2utf8(
         in_: *const ::std::os::raw::c_char,
         usePUA: Rboolean,
     ) -> *const ::std::os::raw::c_char;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " Translates Unicode point to UTF-8"]
     pub fn Rf_ucstoutf8(s: *mut ::std::os::raw::c_char, c: ::std::os::raw::c_uint) -> usize;
 }

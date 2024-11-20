@@ -7,8 +7,6 @@
 
 #[repr(u32)]
 #[non_exhaustive]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum AlgType {
     NREG = 1,
@@ -17,8 +15,6 @@ pub enum AlgType {
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " 0-based indices into v"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum VPos {
     F = 9,
@@ -30,8 +26,6 @@ pub enum VPos {
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " 0-based indices into iv"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum IVPos {
     AI = 90,
@@ -78,8 +72,6 @@ impl IVPos {
     pub const INITS: IVPos = IVPos::INITH;
 }
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn S_Rf_divset(
         alg: ::std::os::raw::c_int,
         iv: *mut ::std::os::raw::c_int,
@@ -87,8 +79,6 @@ extern "C" {
         lv: ::std::os::raw::c_int,
         v: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn S_nlsb_iterate(
         b: *mut f64,
         d: *mut f64,
@@ -104,8 +94,6 @@ extern "C" {
         v: *mut f64,
         x: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn S_nlminb_iterate(
         b: *mut f64,
         d: *mut f64,
@@ -119,8 +107,6 @@ extern "C" {
         v: *mut f64,
         x: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn S_rcont2(
         nrow: ::std::os::raw::c_int,
         ncol: ::std::os::raw::c_int,

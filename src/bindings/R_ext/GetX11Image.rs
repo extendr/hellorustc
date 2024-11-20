@@ -6,8 +6,6 @@
 /* R version: 4.4.1 */
 
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " used by package tkrplot"]
     pub fn R_GetX11Image(
         d: ::std::os::raw::c_int,

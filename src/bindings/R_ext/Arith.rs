@@ -7,33 +7,17 @@
 
 extern "C" {
     #[doc = " IEEE NaN"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NaN: f64;
     #[doc = " IEEE Inf"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_PosInf: f64;
     #[doc = " IEEE -Inf"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NegInf: f64;
     #[doc = " NA_REAL: IEEE"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NaReal: f64;
     #[doc = " NA_INTEGER:= INT_MIN currently"]
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub static mut R_NaInt: ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " NA_STRING is a SEXP, so defined in Rinternals.h"]
     pub fn R_IsNA(arg1: f64) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_IsNaN(arg1: f64) -> ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_finite(arg1: f64) -> ::std::os::raw::c_int;
 }

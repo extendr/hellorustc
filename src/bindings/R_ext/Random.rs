@@ -8,8 +8,6 @@
 pub type Int32 = ::std::os::raw::c_uint;
 #[repr(u32)]
 #[non_exhaustive]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum RNGtype {
     WICHMANN_HILL = 0,
@@ -24,8 +22,6 @@ pub enum RNGtype {
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " Different kinds of \"N(0,1)\" generators :"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum N01type {
     BUGGY_KINDERMAN_RAMAGE = 0,
@@ -38,49 +34,23 @@ pub enum N01type {
 #[repr(u32)]
 #[non_exhaustive]
 #[doc = " Different ways to generate discrete uniform samples"]
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
 pub enum Sampletype {
     ROUNDING = 0,
     REJECTION = 1,
 }
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_sample_kind() -> Sampletype;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn GetRNGstate();
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn PutRNGstate();
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn unif_rand() -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_unif_index(arg1: f64) -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " These are also defined in Rmath.h"]
     pub fn norm_rand() -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn exp_rand() -> f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn user_unif_rand() -> *mut f64;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn user_unif_init(arg1: Int32);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn user_unif_nseed() -> *mut ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn user_unif_seedloc() -> *mut ::std::os::raw::c_int;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn user_norm_rand() -> *mut f64;
 }

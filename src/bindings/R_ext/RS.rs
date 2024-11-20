@@ -6,17 +6,11 @@
 /* R version: 4.4.1 */
 
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     #[doc = " S Like Memory Management"]
     pub fn R_chk_calloc(arg1: usize, arg2: usize) -> *mut ::std::os::raw::c_void;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_chk_realloc(
         arg1: *mut ::std::os::raw::c_void,
         arg2: usize,
     ) -> *mut ::std::os::raw::c_void;
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn R_chk_free(arg1: *mut ::std::os::raw::c_void);
 }

@@ -6,8 +6,6 @@
 /* R version: 4.4.1 */
 
 extern "C" {
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbfa_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -15,8 +13,6 @@ extern "C" {
         arg4: *mut ::std::os::raw::c_int,
         arg5: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbsl_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -24,8 +20,6 @@ extern "C" {
         arg4: *mut ::std::os::raw::c_int,
         arg5: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpoco_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -34,8 +28,6 @@ extern "C" {
         arg5: *mut f64,
         arg6: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpodi_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -43,24 +35,18 @@ extern "C" {
         arg4: *mut f64,
         arg5: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpofa_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
         arg3: *mut ::std::os::raw::c_int,
         arg4: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dposl_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
         arg3: *mut ::std::os::raw::c_int,
         arg4: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrdc_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -71,8 +57,6 @@ extern "C" {
         arg7: *mut f64,
         arg8: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dqrsl_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -88,8 +72,6 @@ extern "C" {
         arg12: *mut ::std::os::raw::c_int,
         arg13: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsvdc_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -105,8 +87,6 @@ extern "C" {
         arg12: *mut ::std::os::raw::c_int,
         arg13: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrco_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -115,8 +95,6 @@ extern "C" {
         arg5: *mut f64,
         arg6: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dtrsl_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -125,8 +103,6 @@ extern "C" {
         arg5: *mut ::std::os::raw::c_int,
         arg6: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dchdc_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -136,8 +112,6 @@ extern "C" {
         arg6: *mut ::std::os::raw::c_int,
         arg7: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dchdd_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -152,8 +126,6 @@ extern "C" {
         arg11: *mut f64,
         arg12: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dchex_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -167,8 +139,6 @@ extern "C" {
         arg10: *mut f64,
         arg11: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dchud_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -182,8 +152,6 @@ extern "C" {
         arg10: *mut f64,
         arg11: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbco_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -194,8 +162,6 @@ extern "C" {
         arg7: *mut f64,
         arg8: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbdi_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -205,8 +171,6 @@ extern "C" {
         arg6: *mut ::std::os::raw::c_int,
         arg7: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbfa_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -216,8 +180,6 @@ extern "C" {
         arg6: *mut ::std::os::raw::c_int,
         arg7: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgbsl_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -228,8 +190,6 @@ extern "C" {
         arg7: *mut f64,
         arg8: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgeco_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -238,8 +198,6 @@ extern "C" {
         arg5: *mut f64,
         arg6: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgedi_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -249,8 +207,6 @@ extern "C" {
         arg6: *mut f64,
         arg7: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgefa_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -258,8 +214,6 @@ extern "C" {
         arg4: *mut ::std::os::raw::c_int,
         arg5: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgesl_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -268,8 +222,6 @@ extern "C" {
         arg5: *mut f64,
         arg6: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dgtsl_(
         arg1: *mut ::std::os::raw::c_int,
         arg2: *mut f64,
@@ -278,8 +230,6 @@ extern "C" {
         arg5: *mut f64,
         arg6: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbco_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -289,8 +239,6 @@ extern "C" {
         arg6: *mut f64,
         arg7: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dpbdi_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -298,8 +246,6 @@ extern "C" {
         arg4: *mut ::std::os::raw::c_int,
         arg5: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dppco_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -307,29 +253,19 @@ extern "C" {
         arg4: *mut f64,
         arg5: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dppdi_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
         arg3: *mut f64,
         arg4: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dppfa_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
         arg3: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dppsl_(arg1: *mut f64, arg2: *mut ::std::os::raw::c_int, arg3: *mut f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dptsl_(arg1: *mut ::std::os::raw::c_int, arg2: *mut f64, arg3: *mut f64, arg4: *mut f64);
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsico_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -338,8 +274,6 @@ extern "C" {
         arg5: *mut f64,
         arg6: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsidi_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -350,8 +284,6 @@ extern "C" {
         arg7: *mut f64,
         arg8: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsifa_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -359,8 +291,6 @@ extern "C" {
         arg4: *mut ::std::os::raw::c_int,
         arg5: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dsisl_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -368,8 +298,6 @@ extern "C" {
         arg4: *mut ::std::os::raw::c_int,
         arg5: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspco_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -377,8 +305,6 @@ extern "C" {
         arg4: *mut f64,
         arg5: *mut f64,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspdi_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
@@ -388,16 +314,12 @@ extern "C" {
         arg6: *mut f64,
         arg7: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspfa_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,
         arg3: *mut ::std::os::raw::c_int,
         arg4: *mut ::std::os::raw::c_int,
     );
-    #[cfg(feature = "r_4_4_1")]
-    #[cfg(target_family = "unix")]
     pub fn dspsl_(
         arg1: *mut f64,
         arg2: *mut ::std::os::raw::c_int,

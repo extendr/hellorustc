@@ -5,33 +5,13 @@
 /* rustc 1.81.0 (eeb90cda1 2024-09-04) */
 /* R version: 4.4.1 */
 
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const HAVE_F77_UNDERSCORE: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const IEEE_754: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const SUPPORT_UTF8: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const SUPPORT_MBCS: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const ENABLE_NLS: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const HAVE_AQUA: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const PR18534fixed: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const SIZEOF_SIZE_T: u32 = 8;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const HAVE_ALLOCA_H: u32 = 1;
-#[cfg(feature = "r_4_4_1")]
-#[cfg(target_family = "unix")]
 pub const HAVE_UINTPTR_T: u32 = 1;
