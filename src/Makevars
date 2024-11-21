@@ -39,7 +39,7 @@ RUSTC_FLAGS = \
 # PKG_LIBS += -L. -lrust_add
 # PKG_LIBS += -lc -lm "-Wl,-dead_strip" "-dynamiclib" "-Wl,-dylib" "-nodefaultlibs"
 
-r_blocked_items = --blocklist-item="VECTOR_PTR|SEXPREC"
+r_blocked_items = --blocklist-item="VECTOR_PTR|SEXPREC|TYPEOF|R_altrep_Coerce_method_t|Rf_isS4"
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
 RUSTC_VERSION = `rustc --version`
 ATTRIBUTE_CUSTOM = \
@@ -96,9 +96,10 @@ rust_analyzer_dummy: ALL_R_BINDINGS
 
 # OBJECTS_BASENAME = $(basename $(OBJECTS))
 
-# clean: shlib-clean
-# 	@rm -f \
-# 	$(addsuffix .so, $(OBJECTS_BASENAME)) \
-# 	$(addsuffix .dll, $(OBJECTS_BASENAME)) \
-# 	$(addsuffix .dylib, $(addprefix lib, $(OBJECTS_BASENAME))) \
-# 	$(addsuffix .d, $(OBJECTS_BASENAME))
+clean_rust: shlib-clean
+	@rm -f \
+	$(addsuffix .so, $(OBJECTS_BASENAME)) \
+	$(addsuffix .dll, $(OBJECTS_BASENAME)) \
+	$(addsuffix .dylib, $(addprefix lib, $(OBJECTS_BASENAME))) \
+	$(addsuffix .d, $(OBJECTS_BASENAME))
+# TODO: Also erase the bindings?

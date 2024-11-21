@@ -215,7 +215,6 @@ extern "C" {
     pub fn ATTRIB(x: SEXP) -> SEXP;
     pub fn OBJECT(x: SEXP) -> ::std::os::raw::c_int;
     pub fn MARK(x: SEXP) -> ::std::os::raw::c_int;
-    pub fn TYPEOF(x: SEXP) -> ::std::os::raw::c_int;
     pub fn NAMED(x: SEXP) -> ::std::os::raw::c_int;
     pub fn REFCNT(x: SEXP) -> ::std::os::raw::c_int;
     pub fn SET_ATTRIB(x: SEXP, v: SEXP);
@@ -549,7 +548,6 @@ extern "C" {
     pub fn R_tryEval(arg1: SEXP, arg2: SEXP, arg3: *mut ::std::os::raw::c_int) -> SEXP;
     pub fn R_tryEvalSilent(arg1: SEXP, arg2: SEXP, arg3: *mut ::std::os::raw::c_int) -> SEXP;
     pub fn R_GetCurrentEnv() -> SEXP;
-    pub fn Rf_isS4(arg1: SEXP) -> Rboolean;
     pub fn Rf_asS4(arg1: SEXP, arg2: Rboolean, arg3: ::std::os::raw::c_int) -> SEXP;
     pub fn Rf_S3Class(arg1: SEXP) -> SEXP;
     pub fn Rf_isBasicClass(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
