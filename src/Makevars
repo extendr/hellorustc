@@ -39,7 +39,7 @@ RUSTC_FLAGS = \
 # PKG_LIBS += -L. -lrust_add
 # PKG_LIBS += -lc -lm "-Wl,-dead_strip" "-dynamiclib" "-Wl,-dylib" "-nodefaultlibs"
 
-r_blocked_items = --blocklist-item="VECTOR_PTR|SEXPREC|TYPEOF|R_altrep_Coerce_method_t|Rf_isS4"
+R_BLOCKED_ITEMS = --blocklist-item="VECTOR_PTR|SEXPREC|DL_FUNC|TYPEOF|R_altrep_Coerce_method_t|Rf_isS4"
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
 RUSTC_VERSION = `rustc --version`
 ATTRIBUTE_CUSTOM = \
@@ -55,9 +55,10 @@ BINDGEN_ARGS = \
 	--raw-line "/* R version: $(R_VERSION) */" \
 	--enable-function-attribute-detection \
 	--no-layout-tests \
+	--with-derive-custom="R_CMethodDef|R_CallMethodDef=Debug,Copy,Clone" \
 	$(ATTRIBUTE_CUSTOM) \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
-	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(r_blocked_items)
+	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(R_BLOCKED_ITEMS)
 BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINES) \
  -Wno-visibility \
  -fparse-all-comments -DR_INTERFACE_PTRS \

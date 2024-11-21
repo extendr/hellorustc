@@ -5,8 +5,6 @@
 /* rustc 1.81.0 (eeb90cda1 2024-09-04) */
 /* R version: 4.4.1 */
 
-#[doc = " Called with a variable argument set after casting to a compatible\nfunction pointer."]
-pub type DL_FUNC = ::std::option::Option<unsafe extern "C" fn() -> *mut ::std::os::raw::c_void>;
 pub type R_NativePrimitiveArgType = ::std::os::raw::c_uint;
 #[doc = "These are very similar to those in Rdynpriv.h,\nbut we maintain them separately to give us more freedom to do\nsome computations on the internal versions that are derived from\nthese definitions."]
 pub type R_FortranMethodDef = R_CMethodDef;

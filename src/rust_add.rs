@@ -18,6 +18,7 @@ mod bindings {
     include!("bindings/R_ext/Complex.rs");
 
     include!("bindings/R_ext/Rdynload.rs");
+    include!("custom_bindings/custom_Rdynload.rs");
     include!("bindings/Rinternals.rs");
 }
 #[allow(unused_imports)]
