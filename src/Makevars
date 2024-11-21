@@ -7,7 +7,7 @@ R_VERSION_MAJOR_MINOR_ONLY = `echo $(R_VERSION) | sed 's/..$$//'`
 ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
 	TARGET = --target x86_64-pc-windows-gnu
-	OS_DEFINES = -DWin32
+	OS_DEFINES = -DWin32 -D_Win32
 	RUSTC_LINKER = -Clinker=x86_64-w64-mingw32.static.posix-gcc.exe
 	LIBGCC_EH_RECIPE = `mkdir -p libgcc_mock && touch libgcc_mock/libgcc_eh.a`
 	LIBGCC_EH_FLAG = -Llibgcc_mock
