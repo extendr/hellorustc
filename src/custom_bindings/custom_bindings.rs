@@ -1,0 +1,128 @@
+BINDINGS_DIR = bindings
+ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
+NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
+RUSTC = rustc
+R_VERSION_MAJOR_MINOR_ONLY = `echo $(R_VERSION) | sed 's/..$$//'`
+
+ifeq ($(R_OSTYPE),windows)
+	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
+	TARGET = --target x86_64-pc-windows-gnu
+	OS_DEFINES = -DWin32 -D_Win32
+	RUSTC_LINKER = -Clinker=x86_64-w64-mingw32.static.posix-gcc.exe
+	LIBGCC_EH_RECIPE = `mkdir -p libgcc_mock && touch libgcc_mock/libgcc_eh.a`
+	LIBGCC_EH_FLAG = -Llibgcc_mock
+	R_LIBRARY_PATH = -L"$(R_HOME)/bin$(R_ARCH)"
+else 
+	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked
+	TARGET =
+	OS_DEFINES =
+	RUSTC_LINKER =
+	LIBGCC_EH_RECIPE =
+	LIBGCC_EH_FLAG =
+	R_LIBRARY_PATH = -L$(R_HOME)/lib$(R_ARCH)
+BINDINGS_DIR = bindings
+ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
+NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
+RUSTC = rustc
+R_VERSION_MAJOR_MINOR_ONLY = `echo $(R_VERSION) | sed 's/..$$//'`
+
+ifeq ($(R_OSTYPE),windows)
+	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
+	TARGET = --target x86_64-pc-windows-gnu
+	OS_DEFINES = -DWin32
+	RUSTC_LINKER = -Clinker=x86_64-w64-mingw32.static.posix-gcc.exe
+	LIBGCC_EH_RECIPE = `mkdir -p libgcc_mock && touch libgcc_mock/libgcc_eh.a`
+	LIBGCC_EH_FLAG = -Llibgcc_mock
+	R_LIBRARY_PATH = -L"$(R_HOME)/bin$(R_ARCH)"
+else 
+	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked
+	TARGET =
+	OS_DEFINES =
+	RUSTC_LINKER =
+	LIBGCC_EH_RECIPE =
+	LIBGCC_EH_FLAG =
+	R_LIBRARY_PATH = -L$(R_HOME)/lib$(R_ARCH)
+endif
+
+RUSTC_FLAGS = \
+	--print native-static-libs \
+	$(TARGET) \
+	$(RUSTC_LINKER) \
+	$(LIBGCC_EH_FLAG) \
+	$(R_LIBRARY_PATH) -lR \
+	--edition=2021 \
+	-Cpanic=abort \
+	$(RUSTC_DEFAULT_FLAGS) \
+	-Cllvm-args=--align-all-functions=64 \
+	--crate-type=cdylib \
+	--emit=dep-info,obj
+
+# PKG_LIBS += -lc -lm -lresolv -ldl -lpthread  -dynamiclib -Wl,-dylib -shared -L. -lrust_add
+# PKG_LIBS += -L. -lrust_add
+# PKG_LIBS += -lc -lm "-Wl,-dead_strip" "-dynamiclib" "-Wl,-dylib" "-nodefaultlibs"
+
+R_BLOCKED_ITEMS = --blocklist-item="VECTOR_PTR|SEXPREC|DL_FUNC|TYPEOF|R_altrep_Coerce_method_t|Rf_isS4"
+# TODO: use --override-abi=C-unwind if the current rustc supports it.. 
+RUSTC_VERSION = `rustc --version`
+ATTRIBUTE_CUSTOM = \
+	--with-attribute-custom="$(NONAPI)=\#[cfg(feature = \"nonapi\")]" \
+	$()
+# --with-attribute-custom=".*=\#[cfg(feature = \"$(addprefix r_,$(subst .,_,$(R_VERSION_MAJOR_MINOR_ONLY)))\")]" \
+# --with-attribute-custom=".*=\#[cfg(target_family = \"$(R_OSTYPE)\")]" \
+
+BINDGEN_ARGS = \
+	--raw-line "/* OS: ${R_OSTYPE} */"  \
+	--raw-line "/* Platform: $(R_PLATFORM) */" \
+	--raw-line "/* $(RUSTC_VERSION) */" \
+	--raw-line "/* R version: $(R_VERSION) */" \
+	--enable-function-attribute-detection \
+	--no-layout-tests \
+	--with-derive-custom="R_CMethodDef|R_CallMethodDef=Debug,Copy,Clone" \
+	$(ATTRIBUTE_CUSTOM) \
+	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
+	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(R_BLOCKED_ITEMS)
+BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINES) \
+ -Wno-visibility \
+ -fparse-all-comments -DR_INTERFACE_PTRS \
+ -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
+
+# TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
+all: LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(OBJECTS) $(SHLIB)
+
+LIBGCC_EH_RECIPE_SETUP:
+	@$(LIBGCC_EH_RECIPE)
+
+# Map .h paths in R_INCLUDE_DIR to .rs paths in BINDINGS_DIR
+ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(BINDINGS_DIR)/%.rs,$(ALL_R_HEADERS))
+
+# Rule to generate all bindings
+ALL_R_BINDINGS: $(ALL_R_BINDINGS)
+	@echo "All bindings are up-to-date."
+
+# Pattern rule to generate .rs from .h
+$(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
+	@echo "Generating $@ from $<"
+	@mkdir -p $(dir $@)
+	-@bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
+
+%.o: %.rs
+	@$(RUSTC) $(RUSTC_FLAGS) --out-dir . $<
+
+# User-defined variables
+OBJECTS = rust_add.o hello.o
+hello.o: hello.rs
+rust_add.o: rust_add.rs
+
+rust_analyzer_dummy: ALL_R_BINDINGS
+	mkdir -p dummy/bindings
+	cp -r bindings/ dummy/bindings
+
+# OBJECTS_BASENAME = $(basename $(OBJECTS))
+
+clean_rust: shlib-clean
+	@rm -f \
+	$(addsuffix .so, $(OBJECTS_BASENAME)) \
+	$(addsuffix .dll, $(OBJECTS_BASENAME)) \
+	$(addsuffix .dylib, $(addprefix lib, $(OBJECTS_BASENAME))) \
+	$(addsuffix .d, $(OBJECTS_BASENAME))
+# TODO: Also erase the bindings?
