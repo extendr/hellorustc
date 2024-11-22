@@ -63,7 +63,7 @@ jobs:
           build_args: 'c("--no-manual")'
       - name: Install the package to collect cached bindings
         run: |
-          Invoke-Expression "R CMD INSTALL ."
+          & R CMD INSTALL .
       - uses: actions/upload-artifact@v4
         with:
           name: cached_bindings
