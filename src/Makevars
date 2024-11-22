@@ -1,8 +1,9 @@
 BINDINGS_DIR = bindings
+CACHE_BINDINGS_LOCATION = ../cached_bindings
 ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
 NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
 RUSTC = rustc
-R_VERSION_MAJOR_MINOR_ONLY = `echo $(R_VERSION) | sed 's/..$$//'`
+R_VERSION_MAJOR_MINOR_ONLY = $(word 1,$(subst ., ,$(R_VERSION)))-$(word 2,$(subst ., ,$(R_VERSION)))
 
 ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
@@ -65,22 +66,20 @@ BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINE
  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
-all: LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(OBJECTS) $(SHLIB)
+all: LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS ALL_CACHED_BINDINGS $(OBJECTS) $(SHLIB)
 
 LIBGCC_EH_RECIPE_SETUP:
 	@$(LIBGCC_EH_RECIPE)
 
-# Map .h paths in R_INCLUDE_DIR to .rs paths in BINDINGS_DIR
 ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(BINDINGS_DIR)/%.rs,$(ALL_R_HEADERS))
 
 # Rule to generate all bindings
 ALL_R_BINDINGS: $(ALL_R_BINDINGS)
 	@echo "All bindings are up-to-date."
 
-# Pattern rule to generate .rs from .h
 $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
-	@echo "Generating $@ from $<"
-	@mkdir -p $(dir $@)
+	echo "Generating $@ from $<"
+	mkdir -p $(dir $@)
 	-@bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
 
 %.o: %.rs
@@ -94,6 +93,14 @@ rust_add.o: rust_add.rs
 rust_analyzer_dummy: ALL_R_BINDINGS
 	mkdir -p dummy/bindings
 	cp -r bindings/ dummy/bindings
+
+ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs, $(CACHE_BINDINGS_LOCATION)/%-$(R_OSTYPE)-$(R_VERSION_MAJOR_MINOR_ONLY).rs, $(ALL_R_BINDINGS))
+
+$(ALL_CACHED_BINDINGS): $(ALL_R_BINDINGS)
+	mkdir -p $(dir $@)
+	@cp $< $@
+
+ALL_CACHED_BINDINGS: $(ALL_CACHED_BINDINGS)
 
 # OBJECTS_BASENAME = $(basename $(OBJECTS))
 
