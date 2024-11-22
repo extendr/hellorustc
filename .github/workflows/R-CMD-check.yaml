@@ -61,9 +61,10 @@ jobs:
           error-on: '"error"'
           upload-snapshots: true
           build_args: 'c("--no-manual")'
-      - uses: actions/upload-artifact@v4
+      - name: Install the package to collect cached bindings
         run: |
           R CMD INSTALL .
+      - uses: actions/upload-artifact@v4
         with:
           name: cached_bindings
           path: cached_bindings/
