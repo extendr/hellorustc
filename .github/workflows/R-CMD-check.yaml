@@ -62,6 +62,8 @@ jobs:
           upload-snapshots: true
           build_args: 'c("--no-manual")'
       - uses: actions/upload-artifact@v4
+        run: |
+          R CMD INSTALL .
         with:
           name: cached_bindings
           path: cached_bindings/
