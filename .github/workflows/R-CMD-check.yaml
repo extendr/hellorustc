@@ -69,8 +69,8 @@ jobs:
           Del alias:R
           R CMD INSTALL .
       - name: Push cached bindings to the repository
-      - uses: actions/checkout@v4
-      - run: |
+        uses: actions/checkout@v4
+        run: |
           # Note: the following account information will not work on GHES
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

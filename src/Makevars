@@ -100,7 +100,7 @@ $(ALL_CACHED_BINDINGS): $(ALL_R_BINDINGS)
 
 %.o: %.rs
 	$(ECHO) "Compiling $< to $@"
-	$(RUSTC) $(RUSTC_FLAGS) --emit=obj -o $@ $<
+	$(RUSTC) $(RUSTC_FLAGS) $<
 
 # rust_analyzer_dummy: ALL_R_BINDINGS
 # 	mkdir -p dummy/bindings
