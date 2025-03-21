@@ -1,6 +1,6 @@
 # User-defined variables
 # OBJECTS = rust_add.o hello.o
-OBJECTS = $(wildcard *.rs:.rs=.o)
+OBJECTS = $(patsubst %.rs,%.o,$(wildcard *.rs))
 
 BINDINGS_DIR = bindings
 CACHE_BINDINGS_LOCATION = ../cached_bindings
@@ -94,14 +94,10 @@ $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	-bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
 
 $(ALL_CACHED_BINDINGS): $(ALL_R_BINDINGS)
-	@echo "Updating cache for $< -> $@"
+	$(ECHO) "Updating cache for $< -> $@"
 	@mkdir -p $(dir $@)
 	@cp -f $< $@
 
-# .SUFFIXES:
-# .SUFFIXES: .rs .o
-
-# .rs.o:
 %.o: %.rs
 	$(ECHO) "Compiling $< to $@"
 	$(RUSTC) $(RUSTC_FLAGS) --emit=obj -o $@ $<
