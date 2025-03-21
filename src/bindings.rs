@@ -16,8 +16,8 @@ include!("custom_bindings/custom_Altrep.rs");
 include!("bindings/R_ext/Altrep.rs");
 include!("bindings/R_ext/Applic.rs");
 include!("bindings/R_ext/Arith.rs");
-include!("bindings/R_ext/BLAS.rs"); // FIXME: `zdrot_` is defined here
-// include!("bindings/R_ext/Lapack.rs"); // FIXME: zdrot_ belongs to BLAS
+include!("bindings/R_ext/BLAS.rs");
+include!("bindings/R_ext/Lapack.rs");
 include!("bindings/R_ext/Linpack.rs");
 
 include!("bindings/R_ext/Callbacks.rs");
@@ -27,7 +27,8 @@ include!("bindings/R_ext/Complex.rs");
 // include!("bindings/R_ext/Connections.rs"); // FIXME: missing va_list!?
 include!("bindings/R_ext/Constants.rs");
 include!("bindings/R_ext/Error.rs");
-// include!("bindings/R_ext/eventloop.rs"); // FIXME: missing fd_set??
+
+// include!("bindings/R_ext/eventloop.rs"); // FIXME: missing libc::fd_set??
 #[cfg(unix)]
 include!("bindings/R_ext/GetX11Image.rs");
 

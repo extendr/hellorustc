@@ -100,11 +100,12 @@ LIBGCC_EH_RECIPE_SETUP:
 ALL_R_BINDINGS: $(ALL_R_BINDINGS)
 # $(ECHO) $(ALL_R_BINDINGS)
 # $(ECHO) "All bindings are up-to-date."
+$(BINDINGS_DIR)/R_ext/Lapack.rs: BINDGEN_EXTRA = --blocklist-item zdrot_
 
 $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	$(ECHO) "Generating $@ from $<"
 	@mkdir -p $(dir $@)
-	bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
+	bindgen "$<" -o "$@" $(BINDGEN_ARGS) $(BINDGEN_EXTRA) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR)  $(BINDGEN_CLANG_ARGS)
 
 $(CACHE_BINDINGS_LOCATION)/%-$(UNAME)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BINDINGS_DIR)/%.rs
 	$(ECHO) "Updating cache for $< -> $@"
