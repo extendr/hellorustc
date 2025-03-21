@@ -23,10 +23,18 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: macos-latest,   r: 'release'}
-          - {os: windows-latest, r: 'release'}
-          # - {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release'}
-          - {os: ubuntu-latest,   r: 'release'}
+          - { os: macos-latest, r: "oldrel/1" }
+          - { os: windows-latest, r: "oldrel/1" }
+          - { os: ubuntu-latest, r: "oldrel/1" }
+          - { os: macos-latest, r: "oldrel" }
+          - { os: windows-latest, r: "oldrel" }
+          - { os: ubuntu-latest, r: "oldrel" }
+          - { os: macos-latest, r: "release" }
+          - { os: windows-latest, r: "release" }
+          - { os: ubuntu-latest, r: "release" }
+          - { os: macos-latest, r: "devel", http-user-agent: "release" }
+          - { os: windows-latest, r: "devel", http-user-agent: "release" }
+          - { os: ubuntu-latest, r: "devel", http-user-agent: "release" }
           # - {os: ubuntu-latest,   r: 'oldrel-1'}
 
     env:
@@ -34,7 +42,9 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
 
     steps:
-      - run: git config --global core.autocrlf true
+      - run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
       - name: Install `bindgen`
         run: |
           # cargo install bindgen-cli
@@ -70,7 +80,7 @@ jobs:
         run: |
           Del alias:R
           R CMD INSTALL .
-      
+
       - uses: actions/upload-artifact@v4
         with:
           retention-days: 1
@@ -87,13 +97,15 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - run: git config --global core.autocrlf true
+      - run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           path: cached_bindings
           merge-multiple: true
-      
+
       - name: Push cached bindings to the repository
         run: |
           # Note: the following account information will not work on GHES
@@ -102,4 +114,3 @@ jobs:
           git add cached_bindings
           git commit -m "generated bindings"
           git push
-
