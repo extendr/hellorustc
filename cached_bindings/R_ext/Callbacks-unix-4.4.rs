@@ -2,7 +2,7 @@
 
 /* OS: unix */
 /* Platform: aarch64-apple-darwin20 */
-/* rustc 1.85.0 (4d91de4e4 2025-02-17) */
+/* rustc 1.85.1 (4eb161250 2025-03-15) */
 /* R version: 4.4.3 */
 
 #[doc = "The signature of the C routine that a callback must implement.\nexpr - the expression for the top-level task that was evaluated.\nvalue - the result of the top-level task, i.e. evaluating expr.\nsucceeded - a logical value indicating whether the task completed properly.\nvisible - a logical value indicating whether the result was printed to the R ``console''/stdout.\ndata - user-level data passed to the registration routine."]
