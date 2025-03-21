@@ -5,6 +5,7 @@
 /* rustc 1.85.1 (4eb161250 2025-03-15) */
 /* R version: 4.4.3 */
 
+pub type CGContextRef = *mut CGContext;
 pub type QuartzDesc_t = *mut ::std::os::raw::c_void;
 pub type QuartzBackend_t = QuartzBackend_s;
 #[doc = " parameters that are passed to functions that create backends"]
@@ -18,6 +19,11 @@ pub type quartz_create_fn_t = ::std::option::Option<
         par: *mut QuartzParameters_t,
     ) -> QuartzDesc_t,
 >;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CGContext {
+    _unused: [u8; 0],
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct QuartzBackend_s {
