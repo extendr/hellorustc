@@ -74,7 +74,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           retention-days: 1
-          name: cached_bindings
+          name: cached_bindings-${{ matrix.config.os }}-R-${{ matrix.config.r }}
           path: cached_bindings/
           overwrite: true
 
@@ -87,9 +87,6 @@ jobs:
       - run: git config --global core.autocrlf false
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
-        with:
-          name: cached_bindings
-          path: cached_bindings
       
       - name: Push cached bindings to the repository
         run: |
