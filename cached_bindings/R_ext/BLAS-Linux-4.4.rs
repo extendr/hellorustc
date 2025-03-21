@@ -844,3 +844,25 @@ unsafe extern "C" {
         arg1: usize,
     );
 }
+        a: *const Rcomplex,
+        lda: *const ::std::os::raw::c_int,
+        x: *mut Rcomplex,
+        incx: *const ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+        arg3: usize,
+    );
+    #[doc = " ZSPMV  performs the matrix-vector operation\n\n     y := alpha*A*x + beta*y,\n\n where alpha and beta are scalars, x and y are n element vectors\n and A is an n by n symmetric matrix, supplied in packed form.\n Added in R 4.4.0"]
+    pub fn zspmv_(
+        uplo: *const ::std::os::raw::c_char,
+        n: *const ::std::os::raw::c_int,
+        alpha: *const Rcomplex,
+        ap: *const Rcomplex,
+        x: *const Rcomplex,
+        incx: *const ::std::os::raw::c_int,
+        beta: *const Rcomplex,
+        y: *mut Rcomplex,
+        incy: *const ::std::os::raw::c_int,
+        arg1: usize,
+    );
+}

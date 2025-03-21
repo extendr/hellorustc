@@ -28,3 +28,5 @@ unsafe extern "C" {
     pub fn R_SaveGlobalEnv();
     pub fn fpu_setup(start: Rboolean);
 }
+u_setup(start: Rboolean);
+}

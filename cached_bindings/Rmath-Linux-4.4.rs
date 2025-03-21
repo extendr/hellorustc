@@ -532,3 +532,17 @@ unsafe extern "C" {
     pub fn tanpi(arg1: f64) -> f64;
     pub fn Rtanpi(arg1: f64) -> f64;
 }
+raw::c_int,
+    ) -> ::std::os::raw::c_int;
+    pub fn Rf_fmax2(arg1: f64, arg2: f64) -> f64;
+    pub fn Rf_fmin2(arg1: f64, arg2: f64) -> f64;
+    pub fn Rf_sign(arg1: f64) -> f64;
+    pub fn Rf_fprec(arg1: f64, arg2: f64) -> f64;
+    pub fn Rf_fround(arg1: f64, arg2: f64) -> f64;
+    pub fn Rf_fsign(arg1: f64, arg2: f64) -> f64;
+    pub fn Rf_ftrunc(arg1: f64) -> f64;
+    pub fn cospi(arg1: f64) -> f64;
+    pub fn sinpi(arg1: f64) -> f64;
+    pub fn tanpi(arg1: f64) -> f64;
+    pub fn Rtanpi(arg1: f64) -> f64;
+}
