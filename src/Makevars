@@ -104,6 +104,7 @@ ALL_R_BINDINGS: $(ALL_R_BINDINGS)
 # $(ECHO) $(ALL_R_BINDINGS)
 # $(ECHO) "All bindings are up-to-date."
 
+$(BINDINGS_DIR)/R.rs: BINDGEN_EXTRA = --blocklist-item __STDC_WANT_IEC_60559_FUNCS_EXT__
 $(BINDINGS_DIR)/R_ext/Constants.rs: BINDGEN_EXTRA = --blocklist-item M_PI
 # Applic.h includes what's in R_ext/Utils.h, so we block them
 $(BINDINGS_DIR)/R_ext/Applic.rs: BINDGEN_EXTRA = --blocklist-item findInterval

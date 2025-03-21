@@ -65,6 +65,12 @@ include!("custom_bindings/custom_Rinternals.rs");
 include!("bindings/Rconfig.rs");
 include!("bindings/Rdefines.rs");
 include!("bindings/Rembedded.rs"); // defined in R internals!
-                                   // include!("bindings/Rinterface.rs"); //FIXME: conflicts with Rembedded
+
+// include!("bindings/Rinterface.rs"); //FIXME: conflicts with Rembedded
 include!("bindings/Rmath.rs"); // defined elements in R.rs
 include!("bindings/Rversion.rs"); // defined elements in R.rs
+
+#[cfg(windows)]
+include!("bindings/iconv.rs");
+
+// TODO: two missing windows-specific headers ga and graphapp
