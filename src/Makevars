@@ -90,7 +90,7 @@ ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)
 all: DEBUG LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(ALL_CACHED_BINDINGS) $(OBJECTS) $(SHLIB)
 
 DEBUG:
-#$(ECHO) $(.VARIABLES)
+# $(ECHO) $(.VARIABLES)
 # $(foreach var,$(.VARIABLES),$(info $(var) = $($(var))))
 # $(ECHO) SDK `xcrun --show-sdk-path`
 # $(ECHO) $(NONAPI)
@@ -114,7 +114,11 @@ $(BINDINGS_DIR)/Rinternals.rs: BINDGEN_EXTRA = --blocklist-item "R_allocator|R_a
 $(BINDINGS_DIR)/R_ext/RStartup.rs: BINDGEN_EXTRA = --blocklist-item "setup_Rmainloop"
 # Rmath includes what's in R_ext/Random.h, so we block them
 $(BINDINGS_DIR)/Rmath.rs: BINDGEN_EXTRA = --blocklist-item "__STDC_WANT_IEC_60559_FUNCS_EXT__|norm_rand|unif_rand|R_unif_index|exp_rand"
+# Rallocators have items blocked by Rinternals, so we allow them explicitly here.
 $(BINDINGS_DIR)/R_ext/Rallocators.rs: BINDGEN_EXTRA = --allowlist-item "R_allocator|R_allocator_t"
+
+$(BINDINGS_DIR)/R_ext/Print.rs: BINDGEN_EXTRA = --blocklist-item "Rvprintf|REvprintf"
+
 
 $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	$(ECHO) "Generating $@ from $<"
@@ -133,11 +137,3 @@ $(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BIN
 # rust_analyzer_dummy: ALL_R_BINDINGS
 # 	mkdir -p dummy/bindings
 # 	cp -r bindings/ dummy/bindings
-
-# clean_rust: shlib-clean
-# 	@rm -f \
-# 	$(addsuffix .so, $(OBJECTS_BASENAME)) \
-# 	$(addsuffix .dll, $(OBJECTS_BASENAME)) \
-# 	$(addsuffix .dylib, $(addprefix lib, $(OBJECTS_BASENAME))) \
-# 	$(addsuffix .d, $(OBJECTS_BASENAME))
-# TODO: Also erase the bindings?

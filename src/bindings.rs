@@ -39,7 +39,7 @@ include!("bindings/R_ext/libextern.rs");
 include!("bindings/R_ext/MathThreads.rs");
 include!("bindings/R_ext/Memory.rs");
 include!("bindings/R_ext/Parse.rs");
-// include!("bindings/R_ext/Print.rs"); // missing va_list
+include!("bindings/R_ext/Print.rs"); // missing va_list
 include!("bindings/R_ext/PrtUtil.rs");
 #[cfg(unix)]
 include!("bindings/R_ext/QuartzDevice.rs");
@@ -60,8 +60,8 @@ include!("bindings/R_ext/Visibility.rs");
 include!("bindings/Rinternals.rs");
 include!("custom_bindings/custom_Rinternals.rs");
 
-#[cfg(target_os = "macos")]
-include!("bindings/libintl.rs");
+// #[cfg(target_os = "macos")]
+// include!("bindings/libintl.rs");
 include!("bindings/Rconfig.rs");
 include!("bindings/Rdefines.rs");
 include!("bindings/Rembedded.rs"); // defined in R internals!
