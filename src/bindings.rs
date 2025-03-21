@@ -28,7 +28,7 @@ include!("bindings/R_ext/Complex.rs");
 include!("bindings/R_ext/Constants.rs");
 include!("bindings/R_ext/Error.rs");
 // include!("bindings/R_ext/eventloop.rs"); // FIXME: missing fd_set??
-#[cfg(not(windows))]
+#[cfg(unix)]
 include!("bindings/R_ext/GetX11Image.rs");
 
 include!("bindings/R_ext/GraphicsDevice.rs");
@@ -41,6 +41,7 @@ include!("bindings/R_ext/Memory.rs");
 include!("bindings/R_ext/Parse.rs");
 // include!("bindings/R_ext/Print.rs"); // missing va_list
 include!("bindings/R_ext/PrtUtil.rs");
+#[cfg(unix)]
 include!("bindings/R_ext/QuartzDevice.rs");
 // include!("bindings/R_ext/Rallocators.rs"); // FIXME: defined in Rinternals
 include!("bindings/R_ext/Random.rs");
@@ -63,7 +64,7 @@ include!("custom_bindings/custom_Rinternals.rs");
 include!("bindings/libintl.rs");
 include!("bindings/Rconfig.rs");
 include!("bindings/Rdefines.rs");
-// include!("bindings/Rembedded.rs"); // defined in R internals!
+include!("bindings/Rembedded.rs"); // defined in R internals!
 // include!("bindings/Rinterface.rs");
 // include!("bindings/Rmath.rs"); // defined elements in R.rs
 include!("bindings/Rversion.rs"); // defined elements in R.rs
