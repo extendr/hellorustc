@@ -17,7 +17,7 @@ include!("bindings/R_ext/Altrep.rs");
 include!("bindings/R_ext/Applic.rs");
 include!("bindings/R_ext/Arith.rs");
 include!("bindings/R_ext/BLAS.rs"); // FIXME: `zdrot_` is defined here
-// include!("bindings/R_ext/Lapack.rs"); // FIXME: `zdrot_` here too
+// include!("bindings/R_ext/Lapack.rs"); // FIXME: zdrot_ belongs to BLAS
 include!("bindings/R_ext/Linpack.rs");
 
 include!("bindings/R_ext/Callbacks.rs");
