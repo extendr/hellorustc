@@ -20,7 +20,12 @@ ifeq ($(R_OSTYPE),windows)
 else 
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked
 	TARGET =
+	UNAME = $(shell uname)
 	OS_DEFINES =
+	ifeq ($(UNAME), Darwin)
+		# Mac-specific settings
+		OS_DEFINES = @OS_DEFINES@ -isysroot `xcrun -show-sdk-path`
+	endif
 	RUSTC_LINKER =
 	LIBGCC_EH_RECIPE =
 	LIBGCC_EH_FLAG =
@@ -47,14 +52,12 @@ RUSTC_FLAGS = \
 R_BLOCKED_ITEMS = --blocklist-item="VECTOR_PTR|SEXPREC|DL_FUNC|TYPEOF|R_altrep_Coerce_method_t|Rf_isS4"
 # TODO: use --override-abi=C-unwind if the current rustc supports it.. 
 RUSTC_VERSION = `rustc --version`
-ATTRIBUTE_CUSTOM = \
-	--with-attribute-custom="$(NONAPI)=\#[cfg(feature = \"nonapi\")]" \
-	$()
+ATTRIBUTE_CUSTOM = --with-attribute-custom="$(NONAPI)=\#[cfg(feature = \"nonapi\")]"
 # --with-attribute-custom=".*=\#[cfg(feature = \"$(addprefix r_,$(subst .,_,$(R_VERSION_MAJOR_MINOR_ONLY)))\")]" \
 # --with-attribute-custom=".*=\#[cfg(target_family = \"$(R_OSTYPE)\")]" \
 
 BINDGEN_ARGS = \
-	--raw-line "/* OS: ${R_OSTYPE} */"  \
+	--raw-line "/* OS: $(R_OSTYPE) */"  \
 	--raw-line "/* Platform: $(R_PLATFORM) */" \
 	--raw-line "/* $(RUSTC_VERSION) */" \
 	--raw-line "/* R version: $(R_VERSION) */" \
@@ -63,9 +66,11 @@ BINDGEN_ARGS = \
 	--with-derive-custom="R_CMethodDef|R_CallMethodDef=Debug,Copy,Clone" \
 	--opaque-type SEXPREC \
 	--opaque-type DL_FUNC \
-	$(ATTRIBUTE_CUSTOM) \
+	--opaque-type CGContext \
+	--builtins \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
-	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(R_BLOCKED_ITEMS)
+	--no-recursive-allowlist --rustified-non-exhaustive-enum=".*" $(R_BLOCKED_ITEMS)
+
 BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS -DR_INTERFACE_PTRS \
 	$(OS_DEFINES) \
 	-Wno-visibility \
@@ -77,20 +82,27 @@ ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(BINDINGS_DIR)/%.rs,$(ALL_R_HE
 ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)/%-$(R_OSTYPE)-$(R_VERSION_MAJOR_MINOR_ONLY).rs,$(ALL_R_BINDINGS))
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
-all: LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(ALL_CACHED_BINDINGS) $(OBJECTS) $(SHLIB)
+all: DEBUG LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(ALL_CACHED_BINDINGS) $(OBJECTS) $(SHLIB)
+
+DEBUG:
+#$(ECHO) $(.VARIABLES)
+# $(foreach var,$(.VARIABLES),$(info $(var) = $($(var))))
+# $(ECHO) SDK `xcrun --show-sdk-path`
+# $(ECHO) $(NONAPI)
+# $(ECHO) $(ATTRIBUTE_CUSTOM)
 
 LIBGCC_EH_RECIPE_SETUP:
 	$(LIBGCC_EH_RECIPE)
 
 # Rule to generate all bindings
 ALL_R_BINDINGS: $(ALL_R_BINDINGS)
-	$(ECHO) $(ALL_R_BINDINGS)
-	$(ECHO) "All bindings are up-to-date."
+# $(ECHO) $(ALL_R_BINDINGS)
+# $(ECHO) "All bindings are up-to-date."
 
 $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	$(ECHO) "Generating $@ from $<"
 	@mkdir -p $(dir $@)
-	-bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
+	bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-item "CGContextRef|CGContext" --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
 
 $(CACHE_BINDINGS_LOCATION)/%-$(R_OSTYPE)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BINDINGS_DIR)/%.rs
 	$(ECHO) "Updating cache for $< -> $@"
