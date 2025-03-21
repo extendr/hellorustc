@@ -87,6 +87,9 @@ jobs:
       - run: git config --global core.autocrlf false
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
+        with:
+          path: cached_bindings
+          merge-multiple: true
       
       - name: Push cached bindings to the repository
         run: |
