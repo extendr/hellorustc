@@ -28,6 +28,7 @@ include!("bindings/R_ext/Complex.rs");
 include!("bindings/R_ext/Constants.rs");
 include!("bindings/R_ext/Error.rs");
 // include!("bindings/R_ext/eventloop.rs"); // FIXME: missing fd_set??
+#[cfg(not(windows))]
 include!("bindings/R_ext/GetX11Image.rs");
 
 include!("bindings/R_ext/GraphicsDevice.rs");
