@@ -64,7 +64,7 @@ include!("custom_bindings/custom_Rinternals.rs");
 include!("bindings/libintl.rs");
 include!("bindings/Rconfig.rs");
 include!("bindings/Rdefines.rs");
-include!("bindings/Rembedded.rs"); // defined in R internals!
+// include!("bindings/Rembedded.rs"); // defined in R internals!
 // include!("bindings/Rinterface.rs");
 // include!("bindings/Rmath.rs"); // defined elements in R.rs
 include!("bindings/Rversion.rs"); // defined elements in R.rs
