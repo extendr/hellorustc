@@ -1,4 +1,3 @@
-
 #![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
@@ -44,7 +43,7 @@ include!("bindings/R_ext/Parse.rs");
 include!("bindings/R_ext/PrtUtil.rs");
 #[cfg(unix)]
 include!("bindings/R_ext/QuartzDevice.rs");
-// include!("bindings/R_ext/Rallocators.rs"); // FIXME: defined in Rinternals
+include!("bindings/R_ext/Rallocators.rs");
 include!("bindings/R_ext/Random.rs");
 
 include!("bindings/R_ext/Rdynload.rs");
@@ -55,7 +54,7 @@ include!("bindings/R_ext/RS.rs");
 include!("bindings/R_ext/RStartup.rs");
 include!("bindings/R_ext/stats_package.rs");
 // include!("bindings/R_ext/stats_stubs.rs"); // FIXME: redefined in stats_package!
-// include!("bindings/R_ext/Utils.rs"); // FIXME: redefined in Applic!
+include!("bindings/R_ext/Utils.rs"); // FIXME: redefined in Applic!
 include!("bindings/R_ext/Visibility.rs");
 
 include!("bindings/Rinternals.rs");
@@ -65,9 +64,7 @@ include!("custom_bindings/custom_Rinternals.rs");
 include!("bindings/libintl.rs");
 include!("bindings/Rconfig.rs");
 include!("bindings/Rdefines.rs");
-// include!("bindings/Rembedded.rs"); // defined in R internals!
-// include!("bindings/Rinterface.rs");
-// include!("bindings/Rmath.rs"); // defined elements in R.rs
+include!("bindings/Rembedded.rs"); // defined in R internals!
+                                   // include!("bindings/Rinterface.rs"); //FIXME: conflicts with Rembedded
+include!("bindings/Rmath.rs"); // defined elements in R.rs
 include!("bindings/Rversion.rs"); // defined elements in R.rs
-
-

@@ -100,7 +100,17 @@ LIBGCC_EH_RECIPE_SETUP:
 ALL_R_BINDINGS: $(ALL_R_BINDINGS)
 # $(ECHO) $(ALL_R_BINDINGS)
 # $(ECHO) "All bindings are up-to-date."
+
+# Applic.h includes what's in R_ext/Utils.h, so we block them
+$(BINDINGS_DIR)/R_ext/Applic.rs: BINDGEN_EXTRA = --blocklist-item findInterval
+# Lapack.h includes what's in R_ext/BLAS.h, so we block them
 $(BINDINGS_DIR)/R_ext/Lapack.rs: BINDGEN_EXTRA = --blocklist-item zdrot_
+# Rinternals.h includes what's in R_ext/Rallocators.h, so we block them (and Rembedded)
+$(BINDINGS_DIR)/Rinternals.rs: BINDGEN_EXTRA = --blocklist-item "R_allocator|R_allocator_t|R_RunExitFinalizers"
+$(BINDINGS_DIR)/R_ext/RStartup.rs: BINDGEN_EXTRA = --blocklist-item "setup_Rmainloop"
+# Rmath includes what's in R_ext/Random.h, so we block them
+$(BINDINGS_DIR)/Rmath.rs: BINDGEN_EXTRA = --blocklist-item "__STDC_WANT_IEC_60559_FUNCS_EXT__|norm_rand|unif_rand|R_unif_index|exp_rand"
+$(BINDINGS_DIR)/R_ext/Rallocators.rs: BINDGEN_EXTRA = --allowlist-item "R_allocator|R_allocator_t"
 
 $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	$(ECHO) "Generating $@ from $<"

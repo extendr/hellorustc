@@ -1,45 +1,16 @@
-mod bindings {
-    #![allow(non_upper_case_globals)]
-    #![allow(non_camel_case_types)]
-    #![allow(non_snake_case)]
-    #![allow(unused)]
-
-    include!("bindings/R.rs");
-
-    #[non_exhaustive]
-    #[repr(transparent)]
-    #[derive(Debug)]
-    pub struct SEXPREC(std::ffi::c_void);
-
-    // TODO: What should this be? libc::FILE?
-    pub enum FILE {}
-
-    include!("bindings/R_ext/Boolean.rs");
-    include!("bindings/R_ext/Complex.rs");
-
-    include!("bindings/R_ext/Rdynload.rs");
-    include!("custom_bindings/custom_Rdynload.rs");
-    include!("bindings/Rinternals.rs");
-}
-#[allow(unused_imports)]
-use bindings::*;
-
-include!("bindings/R_ext/Error.rs");
-
+mod bindings;
+use bindings::{
+    Rboolean, Rf_ScalarInteger, Rf_allocVector, Rf_error, Rf_isReal, Rf_protect, Rf_unprotect,
+    Rf_xlength, REAL, SEXP, SEXPTYPE,
+};
 #[no_mangle]
 unsafe extern "C" fn add(x: SEXP, y: SEXP) -> SEXP {
     // Ensure inputs are numeric vectors of length 1
     if Rf_isReal(x) == Rboolean::FALSE || Rf_xlength(x) != 1 {
-        Rf_error(
-            c"x must be a numeric value"
-                .as_ptr(),
-        );
+        Rf_error((c"x must be a numeric value").as_ptr());
     }
     if Rf_isReal(y) == Rboolean::FALSE || Rf_xlength(y) != 1 {
-        Rf_error(
-            c"y must be a numeric value"
-                .as_ptr(),
-        );
+        Rf_error((c"y must be a numeric value").as_ptr());
     }
 
     // Retrieve the numeric values
