@@ -72,13 +72,14 @@ jobs:
       
       - uses: actions/upload-artifact@v4
         with:
+          retention-days: 1
           name: cached_bindings
           path: cached_bindings/
           overwrite: true
 
   commit:
     needs: R-CMD-check
-    runs-in: ubuntu-latest
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
