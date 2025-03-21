@@ -8,7 +8,7 @@ ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
 NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
 RUSTC = rustc
 R_VERSION_MAJOR_MINOR_ONLY = $(word 1,$(subst ., ,$(R_VERSION))).$(word 2,$(subst ., ,$(R_VERSION)))
-UNAME = $(shell uname)
+UNAME = $(shell uname -s)
 
 ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
