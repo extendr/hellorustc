@@ -82,7 +82,6 @@ all: LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(ALL_CACHED_BINDINGS) $(OBJECTS) $(S
 LIBGCC_EH_RECIPE_SETUP:
 	$(LIBGCC_EH_RECIPE)
 
-
 # Rule to generate all bindings
 ALL_R_BINDINGS: $(ALL_R_BINDINGS)
 	$(ECHO) $(ALL_R_BINDINGS)
@@ -93,7 +92,7 @@ $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	@mkdir -p $(dir $@)
 	-bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
 
-$(ALL_CACHED_BINDINGS): $(ALL_R_BINDINGS)
+$(CACHE_BINDINGS_LOCATION)/%-$(R_OSTYPE)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BINDINGS_DIR)/%.rs
 	$(ECHO) "Updating cache for $< -> $@"
 	@mkdir -p $(dir $@)
 	@cp -f $< $@
