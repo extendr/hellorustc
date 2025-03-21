@@ -69,6 +69,26 @@ jobs:
         run: |
           Del alias:R
           R CMD INSTALL .
+      
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cached_bindings
+          path: cached_bindings/
+          overwrite: true
+
+  commit:
+    needs: R-CMD-check
+    
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: cached_bindings
+          path: cached_bindings
+      
+      - uses: actions/checkout@v4
+
       - name: Push cached bindings to the repository
         run: |
           # Note: the following account information will not work on GHES
