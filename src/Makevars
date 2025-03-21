@@ -57,12 +57,15 @@ BINDGEN_ARGS = \
 	--enable-function-attribute-detection \
 	--no-layout-tests \
 	--with-derive-custom="R_CMethodDef|R_CallMethodDef=Debug,Copy,Clone" \
+--opaque-type SEXPREC \
+	--opaque-type DL_FUNC \
 	$(ATTRIBUTE_CUSTOM) \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
 	--no-recursive-allowlist --rustified-non-exhaustive-enum=.* $(R_BLOCKED_ITEMS)
-BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS $(OS_DEFINES) \
+BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS -DR_INTERFACE_PTRS \
+$(OS_DEFINES) \
  -Wno-visibility \
- -fparse-all-comments -DR_INTERFACE_PTRS \
+ -fparse-all-comments \
  -include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
