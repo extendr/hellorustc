@@ -12,8 +12,6 @@ pub enum FILE {}
 include!("bindings/R_ext/Boolean.rs");
 include!("custom_bindings/custom_Boolean.rs");
 
-
-
 include!("custom_bindings/custom_Altrep.rs");
 include!("bindings/R_ext/Altrep.rs");
 include!("bindings/R_ext/Applic.rs");
@@ -40,22 +38,22 @@ include!("bindings/R_ext/libextern.rs");
 include!("bindings/R_ext/MathThreads.rs");
 include!("bindings/R_ext/Memory.rs");
 include!("bindings/R_ext/Parse.rs");
-// include!("bindings/R_ext/Print.rs");
-// include!("bindings/R_ext/PrtUtil.rs");
-// include!("bindings/R_ext/QuartzDevice.rs");
-// include!("bindings/R_ext/Rallocators.rs");
-// include!("bindings/R_ext/Random.rs");
+// include!("bindings/R_ext/Print.rs"); // missing va_list
+include!("bindings/R_ext/PrtUtil.rs");
+include!("bindings/R_ext/QuartzDevice.rs");
+// include!("bindings/R_ext/Rallocators.rs"); // FIXME: defined in Rinternals
+include!("bindings/R_ext/Random.rs");
 
 include!("bindings/R_ext/Rdynload.rs");
 include!("custom_bindings/custom_Rdynload.rs");
 
-// include!("bindings/R_ext/Riconv.rs");
-// include!("bindings/R_ext/RS.rs");
-// include!("bindings/R_ext/RStartup.rs");
-// include!("bindings/R_ext/stats_package.rs");
-// include!("bindings/R_ext/stats_stubs.rs");
-// include!("bindings/R_ext/Utils.rs");
-// include!("bindings/R_ext/Visibility.rs");
+include!("bindings/R_ext/Riconv.rs");
+include!("bindings/R_ext/RS.rs");
+include!("bindings/R_ext/RStartup.rs");
+include!("bindings/R_ext/stats_package.rs");
+// include!("bindings/R_ext/stats_stubs.rs"); // FIXME: redefined in stats_package!
+// include!("bindings/R_ext/Utils.rs"); // FIXME: redefined in Applic!
+include!("bindings/R_ext/Visibility.rs");
 
 include!("bindings/Rinternals.rs");
 include!("custom_bindings/custom_Rinternals.rs");
