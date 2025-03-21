@@ -7,7 +7,8 @@ on:
 
 name: R-CMD-check.yaml
 
-permissions: read-all
+permissions:
+  contents: write
 
 jobs:
   R-CMD-check:
@@ -76,8 +77,4 @@ jobs:
           git add cached_bindings/.
           git commit -m "generated bindings"
           git push
-      # - uses: actions/upload-artifact@v4
-      #   with:
-      #     name: cached_bindings
-      #     path: cached_bindings/
-      #     overwrite: true
+
