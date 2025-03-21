@@ -9,6 +9,7 @@ NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, s
 RUSTC = rustc
 R_VERSION_MAJOR_MINOR_ONLY = $(word 1,$(subst ., ,$(R_VERSION))).$(word 2,$(subst ., ,$(R_VERSION)))
 UNAME = $(shell uname -s)
+PLATFORM = $(UNAME)
 
 ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
@@ -18,6 +19,8 @@ ifeq ($(R_OSTYPE),windows)
 	LIBGCC_EH_RECIPE = `mkdir -p libgcc_mock && touch libgcc_mock/libgcc_eh.a`
 	LIBGCC_EH_FLAG = -Llibgcc_mock
 	R_LIBRARY_PATH = -L"$(R_HOME)/bin$(R_ARCH)"
+
+	PLATFORM = "windows"
 else 
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked
 	TARGET =
@@ -81,7 +84,7 @@ BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS -DR_INTERFA
 
 ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(BINDINGS_DIR)/%.rs,$(ALL_R_HEADERS))
 
-ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)/%-$(UNAME)-$(R_VERSION_MAJOR_MINOR_ONLY).rs,$(ALL_R_BINDINGS))
+ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs,$(ALL_R_BINDINGS))
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
 all: DEBUG LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(ALL_CACHED_BINDINGS) $(OBJECTS) $(SHLIB)
@@ -118,7 +121,7 @@ $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	@mkdir -p $(dir $@)
 	bindgen "$<" -o "$@" $(BINDGEN_ARGS) $(BINDGEN_EXTRA) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR)  $(BINDGEN_CLANG_ARGS)
 
-$(CACHE_BINDINGS_LOCATION)/%-$(UNAME)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BINDINGS_DIR)/%.rs
+$(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BINDINGS_DIR)/%.rs
 	$(ECHO) "Updating cache for $< -> $@"
 	@mkdir -p $(dir $@)
 	@cp -f $< $@
