@@ -58,6 +58,7 @@ include!("bindings/R_ext/Visibility.rs");
 include!("bindings/Rinternals.rs");
 include!("custom_bindings/custom_Rinternals.rs");
 
+#[cfg(target_os = "macos")]
 include!("bindings/libintl.rs");
 include!("bindings/Rconfig.rs");
 include!("bindings/Rdefines.rs");
