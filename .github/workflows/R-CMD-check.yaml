@@ -78,7 +78,7 @@ jobs:
 
   commit:
     needs: R-CMD-check
-    
+    runs-in: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
