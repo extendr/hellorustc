@@ -8,6 +8,7 @@ ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
 NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
 RUSTC = rustc
 R_VERSION_MAJOR_MINOR_ONLY = $(word 1,$(subst ., ,$(R_VERSION))).$(word 2,$(subst ., ,$(R_VERSION)))
+UNAME = $(shell uname)
 
 ifeq ($(R_OSTYPE),windows)
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2
@@ -20,11 +21,10 @@ ifeq ($(R_OSTYPE),windows)
 else 
 	RUSTC_DEFAULT_FLAGS = -Cembed-bitcode=no -Cdebuginfo=2 -Csplit-debuginfo=unpacked
 	TARGET =
-	UNAME = $(shell uname)
 	OS_DEFINES =
 	ifeq ($(UNAME), Darwin)
 		# Mac-specific settings
-		OS_DEFINES = @OS_DEFINES@ -isysroot `xcrun -show-sdk-path`
+		OS_DEFINES += -isysroot `xcrun -show-sdk-path`
 	endif
 	RUSTC_LINKER =
 	LIBGCC_EH_RECIPE =
@@ -69,7 +69,8 @@ BINDGEN_ARGS = \
 	--opaque-type CGContext \
 	--builtins \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
-	--no-recursive-allowlist --rustified-non-exhaustive-enum=".*" $(R_BLOCKED_ITEMS)
+	--no-recursive-allowlist --rustified-non-exhaustive-enum=".*" \
+	$(R_BLOCKED_ITEMS)
 
 BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS -DR_INTERFACE_PTRS \
 	$(OS_DEFINES) \
@@ -79,7 +80,7 @@ BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS -DR_INTERFA
 
 ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(BINDINGS_DIR)/%.rs,$(ALL_R_HEADERS))
 
-ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)/%-$(R_OSTYPE)-$(R_VERSION_MAJOR_MINOR_ONLY).rs,$(ALL_R_BINDINGS))
+ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)/%-$(UNAME)-$(R_VERSION_MAJOR_MINOR_ONLY).rs,$(ALL_R_BINDINGS))
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
 all: DEBUG LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(ALL_CACHED_BINDINGS) $(OBJECTS) $(SHLIB)
@@ -104,7 +105,7 @@ $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	@mkdir -p $(dir $@)
 	bindgen "$<" -o "$@" $(BINDGEN_ARGS) --allowlist-item "CGContextRef|CGContext" --allowlist-file "$<" -- -I$(R_INCLUDE_DIR) $(BINDGEN_CLANG_ARGS)
 
-$(CACHE_BINDINGS_LOCATION)/%-$(R_OSTYPE)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BINDINGS_DIR)/%.rs
+$(CACHE_BINDINGS_LOCATION)/%-$(UNAME)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BINDINGS_DIR)/%.rs
 	$(ECHO) "Updating cache for $< -> $@"
 	@mkdir -p $(dir $@)
 	@cp -f $< $@
