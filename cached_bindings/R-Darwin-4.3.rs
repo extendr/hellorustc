@@ -10,6 +10,3 @@ unsafe extern "C" {
     #[doc = " always declared, but only usable under Win32 and Aqua"]
     pub fn R_ProcessEvents();
 }
-nder Win32 and Aqua"]
-    pub fn R_ProcessEvents();
-}
