@@ -5,4 +5,17 @@
 /* rustc 1.85.1 (4eb161250 2025-03-15) */
 /* R version: 4.6.0 */
 
-unsafe extern "C" { pub fn Riconv_open (tocode : * const :: std :: os :: raw :: c_char , fromcode : * const :: std :: os :: raw :: c_char) -> * mut :: std :: os :: raw :: c_void ; pub fn Riconv (cd : * mut :: std :: os :: raw :: c_void , inbuf : * mut * const :: std :: os :: raw :: c_char , inbytesleft : * mut usize , outbuf : * mut * mut :: std :: os :: raw :: c_char , outbytesleft : * mut usize) -> usize ; pub fn Riconv_close (cd : * mut :: std :: os :: raw :: c_void) -> :: std :: os :: raw :: c_int ; }
+unsafe extern "C" {
+    pub fn Riconv_open(
+        tocode: *const ::std::os::raw::c_char,
+        fromcode: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_void;
+    pub fn Riconv(
+        cd: *mut ::std::os::raw::c_void,
+        inbuf: *mut *const ::std::os::raw::c_char,
+        inbytesleft: *mut usize,
+        outbuf: *mut *mut ::std::os::raw::c_char,
+        outbytesleft: *mut usize,
+    ) -> usize;
+    pub fn Riconv_close(cd: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
+}

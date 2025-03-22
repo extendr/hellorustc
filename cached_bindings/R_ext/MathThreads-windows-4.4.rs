@@ -5,4 +5,7 @@
 /* rustc 1.85.1 (4eb161250 2025-03-15) */
 /* R version: 4.4.3 */
 
-unsafe extern "C" { pub static mut R_num_math_threads : :: std :: os :: raw :: c_int ; pub static mut R_max_num_math_threads : :: std :: os :: raw :: c_int ; }
+unsafe extern "C" {
+    pub static mut R_num_math_threads: ::std::os::raw::c_int;
+    pub static mut R_max_num_math_threads: ::std::os::raw::c_int;
+}

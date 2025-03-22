@@ -5,4 +5,21 @@
 /* rustc 1.85.1 (4eb161250 2025-03-15) */
 /* R version: 4.3.3 */
 
-# [derive (PartialEq , Copy , Clone , Hash , Debug , Default)] # [repr (C)] pub struct __BindgenComplex < T > { pub re : T , pub im : T } # [repr (C)] # [derive (Debug , Copy , Clone)] pub struct Rcomplex__bindgen_ty_1 { pub r : f64 , pub i : f64 , } # [repr (C)] # [derive (Copy , Clone)] pub union Rcomplex { pub __bindgen_anon_1 : Rcomplex__bindgen_ty_1 , pub private_data_c : __BindgenComplex < f64 > , }
+#[derive(PartialEq, Copy, Clone, Hash, Debug, Default)]
+#[repr(C)]
+pub struct __BindgenComplex<T> {
+    pub re: T,
+    pub im: T,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct Rcomplex__bindgen_ty_1 {
+    pub r: f64,
+    pub i: f64,
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union Rcomplex {
+    pub __bindgen_anon_1: Rcomplex__bindgen_ty_1,
+    pub private_data_c: __BindgenComplex<f64>,
+}

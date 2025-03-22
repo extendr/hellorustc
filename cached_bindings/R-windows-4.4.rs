@@ -5,4 +5,9 @@
 /* rustc 1.85.1 (4eb161250 2025-03-15) */
 /* R version: 4.4.3 */
 
-unsafe extern "C" { pub fn R_FlushConsole () ; # [doc = " always declared, but only usable under Win32 and Aqua"] pub fn R_ProcessEvents () ; pub fn R_WaitEvent () ; }
+unsafe extern "C" {
+    pub fn R_FlushConsole();
+    #[doc = " always declared, but only usable under Win32 and Aqua"]
+    pub fn R_ProcessEvents();
+    pub fn R_WaitEvent();
+}

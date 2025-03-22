@@ -5,4 +5,4 @@
 /* rustc 1.85.1 (4eb161250 2025-03-15) */
 /* R version: 4.4.3 */
 
-pub const GET_REGION_BUFSIZE : u32 = 512 ;
+pub const GET_REGION_BUFSIZE: u32 = 512;

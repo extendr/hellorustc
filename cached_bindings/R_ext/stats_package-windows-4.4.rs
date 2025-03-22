@@ -5,4 +5,116 @@
 /* rustc 1.85.1 (4eb161250 2025-03-15) */
 /* R version: 4.4.3 */
 
-# [repr (i32)] # [non_exhaustive] # [derive (Debug , Copy , Clone , Hash , PartialEq , Eq)] pub enum AlgType { NREG = 1 , OPT = 2 , } # [repr (i32)] # [non_exhaustive] # [doc = " 0-based indices into v"] # [derive (Debug , Copy , Clone , Hash , PartialEq , Eq)] pub enum VPos { F = 9 , F0 = 12 , FDIF = 10 , G = 27 , HC = 70 , } # [repr (i32)] # [non_exhaustive] # [doc = " 0-based indices into iv"] # [derive (Debug , Copy , Clone , Hash , PartialEq , Eq)] pub enum IVPos { AI = 90 , AM = 94 , ALGSAV = 50 , COVMAT = 25 , COVPRT = 13 , COVREQ = 14 , DRADPR = 100 , DTYPE = 15 , IERR = 74 , INITH = 24 , IPIVOT = 75 , IVNEED = 2 , LASTIV = 42 , LASTV = 44 , LMAT = 41 , MXFCAL = 16 , MXITER = 17 , NEXTV = 46 , NFCALL = 5 , NFCOV = 51 , NFGCAL = 6 , NGCOV = 52 , NITER = 30 , NVDFLT = 49 , NVSAVE = 8 , OUTLEV = 18 , PARPRT = 19 , PARSAV = 48 , PERM = 57 , PRUNIT = 20 , QRTYP = 79 , RDREQ = 56 , RMAT = 77 , SOLPRT = 21 , STATPR = 22 , TOOBIG = 1 , VNEED = 3 , VSAVE = 59 , X0PRT = 23 , } impl IVPos { pub const INITS : IVPos = IVPos :: INITH ; } unsafe extern "C" { pub fn S_Rf_divset (alg : :: std :: os :: raw :: c_int , iv : * mut :: std :: os :: raw :: c_int , liv : :: std :: os :: raw :: c_int , lv : :: std :: os :: raw :: c_int , v : * mut f64) ; pub fn S_nlsb_iterate (b : * mut f64 , d : * mut f64 , dr : * mut f64 , iv : * mut :: std :: os :: raw :: c_int , liv : :: std :: os :: raw :: c_int , lv : :: std :: os :: raw :: c_int , n : :: std :: os :: raw :: c_int , nd : :: std :: os :: raw :: c_int , p : :: std :: os :: raw :: c_int , r : * mut f64 , rd : * mut f64 , v : * mut f64 , x : * mut f64) ; pub fn S_nlminb_iterate (b : * mut f64 , d : * mut f64 , fx : f64 , g : * mut f64 , h : * mut f64 , iv : * mut :: std :: os :: raw :: c_int , liv : :: std :: os :: raw :: c_int , lv : :: std :: os :: raw :: c_int , n : :: std :: os :: raw :: c_int , v : * mut f64 , x : * mut f64) ; pub fn S_rcont2 (nrow : :: std :: os :: raw :: c_int , ncol : :: std :: os :: raw :: c_int , nrowt : * const :: std :: os :: raw :: c_int , ncolt : * const :: std :: os :: raw :: c_int , ntotal : :: std :: os :: raw :: c_int , fact : * const f64 , jwork : * mut :: std :: os :: raw :: c_int , matrix : * mut :: std :: os :: raw :: c_int) ; }
+#[repr(i32)]
+#[non_exhaustive]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum AlgType {
+    NREG = 1,
+    OPT = 2,
+}
+#[repr(i32)]
+#[non_exhaustive]
+#[doc = " 0-based indices into v"]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum VPos {
+    F = 9,
+    F0 = 12,
+    FDIF = 10,
+    G = 27,
+    HC = 70,
+}
+#[repr(i32)]
+#[non_exhaustive]
+#[doc = " 0-based indices into iv"]
+#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+pub enum IVPos {
+    AI = 90,
+    AM = 94,
+    ALGSAV = 50,
+    COVMAT = 25,
+    COVPRT = 13,
+    COVREQ = 14,
+    DRADPR = 100,
+    DTYPE = 15,
+    IERR = 74,
+    INITH = 24,
+    IPIVOT = 75,
+    IVNEED = 2,
+    LASTIV = 42,
+    LASTV = 44,
+    LMAT = 41,
+    MXFCAL = 16,
+    MXITER = 17,
+    NEXTV = 46,
+    NFCALL = 5,
+    NFCOV = 51,
+    NFGCAL = 6,
+    NGCOV = 52,
+    NITER = 30,
+    NVDFLT = 49,
+    NVSAVE = 8,
+    OUTLEV = 18,
+    PARPRT = 19,
+    PARSAV = 48,
+    PERM = 57,
+    PRUNIT = 20,
+    QRTYP = 79,
+    RDREQ = 56,
+    RMAT = 77,
+    SOLPRT = 21,
+    STATPR = 22,
+    TOOBIG = 1,
+    VNEED = 3,
+    VSAVE = 59,
+    X0PRT = 23,
+}
+impl IVPos {
+    pub const INITS: IVPos = IVPos::INITH;
+}
+unsafe extern "C" {
+    pub fn S_Rf_divset(
+        alg: ::std::os::raw::c_int,
+        iv: *mut ::std::os::raw::c_int,
+        liv: ::std::os::raw::c_int,
+        lv: ::std::os::raw::c_int,
+        v: *mut f64,
+    );
+    pub fn S_nlsb_iterate(
+        b: *mut f64,
+        d: *mut f64,
+        dr: *mut f64,
+        iv: *mut ::std::os::raw::c_int,
+        liv: ::std::os::raw::c_int,
+        lv: ::std::os::raw::c_int,
+        n: ::std::os::raw::c_int,
+        nd: ::std::os::raw::c_int,
+        p: ::std::os::raw::c_int,
+        r: *mut f64,
+        rd: *mut f64,
+        v: *mut f64,
+        x: *mut f64,
+    );
+    pub fn S_nlminb_iterate(
+        b: *mut f64,
+        d: *mut f64,
+        fx: f64,
+        g: *mut f64,
+        h: *mut f64,
+        iv: *mut ::std::os::raw::c_int,
+        liv: ::std::os::raw::c_int,
+        lv: ::std::os::raw::c_int,
+        n: ::std::os::raw::c_int,
+        v: *mut f64,
+        x: *mut f64,
+    );
+    pub fn S_rcont2(
+        nrow: ::std::os::raw::c_int,
+        ncol: ::std::os::raw::c_int,
+        nrowt: *const ::std::os::raw::c_int,
+        ncolt: *const ::std::os::raw::c_int,
+        ntotal: ::std::os::raw::c_int,
+        fact: *const f64,
+        jwork: *mut ::std::os::raw::c_int,
+        matrix: *mut ::std::os::raw::c_int,
+    );
+}
