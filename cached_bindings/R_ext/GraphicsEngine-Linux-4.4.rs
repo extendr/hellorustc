@@ -550,3 +550,22 @@ P) -> *const ::std::os::raw::c_char;
         dd: pGEDevDesc,
     );
 }
+sc,
+    );
+}
+P) -> *const ::std::os::raw::c_char;
+    pub fn R_GE_glyphFontWeight(glyphFont: SEXP) -> f64;
+    pub fn R_GE_glyphFontStyle(glyphFont: SEXP) -> ::std::os::raw::c_int;
+    pub fn R_GE_glyphFontPSname(glyphFont: SEXP) -> *const ::std::os::raw::c_char;
+    pub fn GEGlyph(
+        n: ::std::os::raw::c_int,
+        glyphs: *mut ::std::os::raw::c_int,
+        x: *mut f64,
+        y: *mut f64,
+        font: SEXP,
+        size: f64,
+        colour: ::std::os::raw::c_int,
+        rot: f64,
+        dd: pGEDevDesc,
+    );
+}

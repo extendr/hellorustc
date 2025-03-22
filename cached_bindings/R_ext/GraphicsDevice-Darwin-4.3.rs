@@ -351,3 +351,11 @@ unsafe extern "C" {
     #[doc = " Translates Unicode point to UTF-8"]
     pub fn Rf_ucstoutf8(s: *mut ::std::os::raw::c_char, c: ::std::os::raw::c_uint) -> usize;
 }
+aw::c_char) -> *const ::std::os::raw::c_char;
+    pub fn Rf_utf8ToLatin1AdobeSymbol2utf8(
+        in_: *const ::std::os::raw::c_char,
+        usePUA: Rboolean,
+    ) -> *const ::std::os::raw::c_char;
+    #[doc = " Translates Unicode point to UTF-8"]
+    pub fn Rf_ucstoutf8(s: *mut ::std::os::raw::c_char, c: ::std::os::raw::c_uint) -> usize;
+}

@@ -12,3 +12,5 @@ unsafe extern "C" {
     pub fn Rf_warning(arg1: *const ::std::os::raw::c_char, ...);
     pub fn R_ShowMessage(s: *const ::std::os::raw::c_char);
 }
+:c_char);
+}

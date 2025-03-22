@@ -831,3 +831,31 @@ unsafe extern "C" {
         arg3: usize,
     );
 }
+:os::raw::c_char,
+        diag: *const ::std::os::raw::c_char,
+        m: *mut ::std::os::raw::c_int,
+        n: *mut ::std::os::raw::c_int,
+        alpha: *mut Rcomplex,
+        a: *mut Rcomplex,
+        lda: *mut ::std::os::raw::c_int,
+        b: *mut Rcomplex,
+        ldb: *mut ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+        arg3: usize,
+        arg4: usize,
+    );
+    pub fn ztrsv_(
+        uplo: *const ::std::os::raw::c_char,
+        trans: *const ::std::os::raw::c_char,
+        diag: *const ::std::os::raw::c_char,
+        n: *const ::std::os::raw::c_int,
+        a: *const Rcomplex,
+        lda: *const ::std::os::raw::c_int,
+        x: *mut Rcomplex,
+        incx: *const ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+        arg3: usize,
+    );
+}

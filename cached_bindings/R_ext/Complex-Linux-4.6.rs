@@ -23,3 +23,5 @@ pub union Rcomplex {
     pub __bindgen_anon_1: Rcomplex__bindgen_ty_1,
     pub private_data_c: __BindgenComplex<f64>,
 }
+BindgenComplex<f64>,
+}

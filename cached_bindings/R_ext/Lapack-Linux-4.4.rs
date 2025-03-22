@@ -2132,6 +2132,62 @@ unsafe extern "C" {
         vl: *const f64,
         vu: *const f64,
         il: *const ::std::os::raw::c_int,
+        iu: *const ::std::os::QR */\n/* method"]
+    pub fn dsteqr_(
+        compz: *const ::std::os::raw::c_char,
+        n: *const ::std::os::raw::c_int,
+        d: *mut f64,
+        e: *mut f64,
+        z: *mut f64,
+        ldz: *const ::std::os::raw::c_int,
+        work: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+    );
+    #[doc = " DSTERF - compute all eigenvalues of a symmetric tridiagonal */\n/* matrix using the Pal-Walker-Kahan variant of the QL or QR */\n/* algorithm"]
+    pub fn dsterf_(
+        n: *const ::std::os::raw::c_int,
+        d: *mut f64,
+        e: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+    );
+    #[doc = " DSTEV - compute all eigenvalues and, optionally, eigenvectors */\n/* of a real symmetric tridiagonal matrix A"]
+    pub fn dstev_(
+        jobz: *const ::std::os::raw::c_char,
+        n: *const ::std::os::raw::c_int,
+        d: *mut f64,
+        e: *mut f64,
+        z: *mut f64,
+        ldz: *const ::std::os::raw::c_int,
+        work: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+    );
+    #[doc = " DSTEVD - compute all eigenvalues and, optionally, eigenvectors */\n/* of a real symmetric tridiagonal matrix"]
+    pub fn dstevd_(
+        jobz: *const ::std::os::raw::c_char,
+        n: *const ::std::os::raw::c_int,
+        d: *mut f64,
+        e: *mut f64,
+        z: *mut f64,
+        ldz: *const ::std::os::raw::c_int,
+        work: *mut f64,
+        lwork: *const ::std::os::raw::c_int,
+        iwork: *mut ::std::os::raw::c_int,
+        liwork: *const ::std::os::raw::c_int,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+    );
+    #[doc = " DSTEVX - compute selected eigenvalues and, optionally, */\n/* eigenvectors of a real symmetric tridiagonal matrix A"]
+    pub fn dstevx_(
+        jobz: *const ::std::os::raw::c_char,
+        range: *const ::std::os::raw::c_char,
+        n: *const ::std::os::raw::c_int,
+        d: *mut f64,
+        e: *mut f64,
+        vl: *const f64,
+        vu: *const f64,
+        il: *const ::std::os::raw::c_int,
         iu: *const ::std::os::raw::c_int,
         abstol: *const f64,
         m: *mut ::std::os::raw::c_int,
@@ -3673,97 +3729,7 @@ unsafe extern "C" {
         tau: *mut f64,
         sup: *mut f64,
     );
-    #[doc = " DLASR - perform the transformation\tA := P*A, when SIDE = 'L' */\n/* or 'l' ( Left-hand side );\tA := A*P', when SIDE = 'R' or 'r' */\n/* ( Right-hand side );\t where A is an m by n real matrix and P is */\n/* an orthogonal matrix,"]
-    pub fn dlasr_(
-        side: *const ::std::os::raw::c_char,
-        pivot: *const ::std::os::raw::c_char,
-        direct: *const ::std::os::raw::c_char,
-        m: *const ::std::os::raw::c_int,
-        n: *const ::std::os::raw::c_int,
-        c: *const f64,
-        s: *const f64,
-        a: *mut f64,
-        lda: *const ::std::os::raw::c_int,
-        arg1: usize,
-        arg2: usize,
-        arg3: usize,
-    );
-    #[doc = " DLASRT - the numbers in D in increasing order (if ID = 'I'); */\n/* or in decreasing order (if ID = 'D' );"]
-    pub fn dlasrt_(
-        id: *const ::std::os::raw::c_char,
-        n: *const ::std::os::raw::c_int,
-        d: *mut f64,
-        info: *mut ::std::os::raw::c_int,
-        arg1: usize,
-    );
-    #[doc = " DLASSQ - return the values scl and smsq such that   ( scl**2 */\n/* );*smsq = x( 1 );**2 +...+ x( n );**2 + ( scale**2 );*sumsq,"]
-    pub fn dlassq_(
-        n: *const ::std::os::raw::c_int,
-        x: *const f64,
-        incx: *const ::std::os::raw::c_int,
-        scale: *mut f64,
-        sumsq: *mut f64,
-    );
-    #[doc = " DLASV2 - compute the singular value decomposition of a 2-by-2 */\n/* triangular matrix  [ F G ]  [ 0 H ]"]
-    pub fn dlasv2_(
-        f: *const f64,
-        g: *const f64,
-        h: *const f64,
-        ssmin: *mut f64,
-        ssmax: *mut f64,
-        snr: *mut f64,
-        csr: *mut f64,
-        snl: *mut f64,
-        csl: *mut f64,
-    );
-    #[doc = " DLASWP - perform a series of row La_INT *erchanges on the matrix A"]
-    pub fn dlaswp_(
-        n: *const ::std::os::raw::c_int,
-        a: *mut f64,
-        lda: *const ::std::os::raw::c_int,
-        k1: *const ::std::os::raw::c_int,
-        k2: *const ::std::os::raw::c_int,
-        ipiv: *const ::std::os::raw::c_int,
-        incx: *const ::std::os::raw::c_int,
-    );
-    #[doc = " DLASY2 - solve for the N1 by N2 matrix double* x, 1 <= N1,N2 <= 2, in */\n/* op(TL);*X + ISGN*X*op(TR); = SCALE*B,"]
-    pub fn dlasy2_(
-        ltranl: *const ::std::os::raw::c_int,
-        ltranr: *const ::std::os::raw::c_int,
-        isgn: *const ::std::os::raw::c_int,
-        n1: *const ::std::os::raw::c_int,
-        n2: *const ::std::os::raw::c_int,
-        tl: *const f64,
-        ldtl: *const ::std::os::raw::c_int,
-        tr: *const f64,
-        ldtr: *const ::std::os::raw::c_int,
-        b: *const f64,
-        ldb: *const ::std::os::raw::c_int,
-        scale: *mut f64,
-        x: *mut f64,
-        ldx: *const ::std::os::raw::c_int,
-        xnorm: *mut f64,
-        info: *mut ::std::os::raw::c_int,
-    );
-    #[doc = " DLASYF - compute a partial factorization of a real symmetric */\n/* matrix A using the Bunch-Kaufman diagonal pivoting method"]
-    pub fn dlasyf_(
-        uplo: *const ::std::os::raw::c_char,
-        n: *const ::std::os::raw::c_int,
-        nb: *const ::std::os::raw::c_int,
-        kb: *const ::std::os::raw::c_int,
-        a: *mut f64,
-        lda: *const ::std::os::raw::c_int,
-        ipiv: *mut ::std::os::raw::c_int,
-        w: *mut f64,
-        ldw: *const ::std::os::raw::c_int,
-        info: *mut ::std::os::raw::c_int,
-        arg1: usize,
-    );
-    #[doc = " DLATBS - solve one of the triangular systems\t  A *x = s*b or */\n/* A'*x = s*b  with scaling to prevent overflow, where A is an */\n/* upper or lower triangular band matrix"]
-    pub fn dlatbs_(
-        uplo: *const ::std::os::raw::c_char,
-        trans: *const ::std::os::raw::c_char,
-        diag: *const ::std::os::raw::c_char,
+    #ag: *const ::std::os::raw::c_char,
         normin: *const ::std::os::raw::c_char,
         n: *const ::std::os::raw::c_int,
         kd: *const ::std::os::raw::c_int,
@@ -6420,6 +6386,194 @@ unsafe extern "C" {
         nb: *mut ::std::os::raw::c_int,
         a: *mut Rcomplex,
         lda: *mut ::std::os::raw::c_int,
+        tau: *mut Rcomplex,
+        t: *mut Rcomplex,
+        ldt: *mut ::std::os::raw::c_int,
+        y: *mut Rcomplex,
+        ldy: *mut ::std::os::raw::c_int,
+    );
+}
+     rwork: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+    );
+    #[doc = " DGEGV - compute for a pair of n-by-n real nonsymmetric */\n/* matrices A and B, the generalized eigenvalues (alphar +/- */\n/* alphai*i, beta);, and optionally, the left and/or right */\n/* generalized eigenvectors (VL and VR);"]
+    pub fn dgegv_(
+        jobvl: *const ::std::os::raw::c_char,
+        jobvr: *const ::std::os::raw::c_char,
+        n: *const ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *const ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *const ::std::os::raw::c_int,
+        alphar: *mut f64,
+        alphai: *mut f64,
+        beta: *const f64,
+        vl: *mut f64,
+        ldvl: *const ::std::os::raw::c_int,
+        vr: *mut f64,
+        ldvr: *const ::std::os::raw::c_int,
+        work: *mut f64,
+        lwork: *const ::std::os::raw::c_int,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+    );
+    #[doc = " DGEQPF - compute a QR factorization with column pivoting of a */\n/* real M-by-N matrix A"]
+    pub fn dgeqpf_(
+        m: *const ::std::os::raw::c_int,
+        n: *const ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *const ::std::os::raw::c_int,
+        jpvt: *mut ::std::os::raw::c_int,
+        tau: *mut f64,
+        work: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+    );
+    #[doc = " DGGSVD - compute the generalized singular value decomposition */\n/* (GSVD) of an M-by-N real matrix A and P-by-N real matrix B"]
+    pub fn dggsvd_(
+        jobu: *const ::std::os::raw::c_char,
+        jobv: *const ::std::os::raw::c_char,
+        jobq: *const ::std::os::raw::c_char,
+        m: *const ::std::os::raw::c_int,
+        n: *const ::std::os::raw::c_int,
+        p: *const ::std::os::raw::c_int,
+        k: *const ::std::os::raw::c_int,
+        l: *const ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *const ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *const ::std::os::raw::c_int,
+        alpha: *const f64,
+        beta: *const f64,
+        u: *mut f64,
+        ldu: *const ::std::os::raw::c_int,
+        v: *mut f64,
+        ldv: *const ::std::os::raw::c_int,
+        q: *mut f64,
+        ldq: *const ::std::os::raw::c_int,
+        work: *mut f64,
+        iwork: *mut ::std::os::raw::c_int,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+        arg3: usize,
+    );
+    #[doc = " DTZRQF - reduce the M-by-N ( M<=N ); real upper trapezoidal */\n/* matrix A to upper triangular form by means of orthogonal */\n/* transformations"]
+    pub fn dtzrqf_(
+        m: *const ::std::os::raw::c_int,
+        n: *const ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *const ::std::os::raw::c_int,
+        tau: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+    );
+    #[doc = " DLAHRD - reduce the first NB columns of a real general */\n/* n-by-(n-k+1); matrix A so that elements below the k-th */\n/* subdiagonal are zero"]
+    pub fn dlahrd_(
+        n: *const ::std::os::raw::c_int,
+        k: *const ::std::os::raw::c_int,
+        nb: *const ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *const ::std::os::raw::c_int,
+        tau: *mut f64,
+        t: *mut f64,
+        ldt: *const ::std::os::raw::c_int,
+        y: *mut f64,
+        ldy: *const ::std::os::raw::c_int,
+    );
+    #[doc = " DLATZM - apply a Householder matrix generated by DTZRQF to a */\n/* matrix"]
+    pub fn dlatzm_(
+        side: *const ::std::os::raw::c_char,
+        m: *const ::std::os::raw::c_int,
+        n: *const ::std::os::raw::c_int,
+        v: *const f64,
+        incv: *const ::std::os::raw::c_int,
+        tau: *const f64,
+        c1: *mut f64,
+        c2: *mut f64,
+        ldc: *const ::std::os::raw::c_int,
+        work: *mut f64,
+        arg1: usize,
+    );
+    pub fn dgegs_(
+        jobvsl: *const ::std::os::raw::c_char,
+        jobvsr: *const ::std::os::raw::c_char,
+        n: *mut ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *mut ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *mut ::std::os::raw::c_int,
+        alphar: *mut f64,
+        alphai: *mut f64,
+        beta: *mut f64,
+        vsl: *mut f64,
+        ldvsl: *mut ::std::os::raw::c_int,
+        vsr: *mut f64,
+        ldvsr: *mut ::std::os::raw::c_int,
+        work: *mut f64,
+        lwork: *mut ::std::os::raw::c_int,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+    );
+    pub fn dgelsx_(
+        m: *mut ::std::os::raw::c_int,
+        n: *mut ::std::os::raw::c_int,
+        nrhs: *mut ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *mut ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *mut ::std::os::raw::c_int,
+        jpvt: *mut ::std::os::raw::c_int,
+        rcond: *mut f64,
+        rank: *mut ::std::os::raw::c_int,
+        work: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+    );
+    pub fn dggsvp_(
+        jobu: *const ::std::os::raw::c_char,
+        jobv: *const ::std::os::raw::c_char,
+        jobq: *const ::std::os::raw::c_char,
+        m: *mut ::std::os::raw::c_int,
+        p: *mut ::std::os::raw::c_int,
+        n: *mut ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *mut ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *mut ::std::os::raw::c_int,
+        tola: *mut f64,
+        tolb: *mut f64,
+        k: *mut ::std::os::raw::c_int,
+        l: *mut *mut ::std::os::raw::c_int,
+        u: *mut f64,
+        ldu: *mut ::std::os::raw::c_int,
+        v: *mut f64,
+        ldv: *mut ::std::os::raw::c_int,
+        q: *mut f64,
+        ldq: *mut ::std::os::raw::c_int,
+        iwork: *mut ::std::os::raw::c_int,
+        tau: *mut f64,
+        work: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+        arg3: usize,
+    );
+    pub fn zlahrd_(
+        n: *mut ::std::os::raw::c_int,
+        k: *mut ::std::os::raw::c_int,
+        nb: *mut ::std::os::raw::c_int,
+        a: *mut Rcomplex,
+        lda: *mut ::std::os::raw::c_int,
+        tau: *mut Rcomplex,
+        t: *mut Rcomplex,
+        ldt: *mut ::std::os::raw::c_int,
+        y: *mut Rcomplex,
+        ldy: *mut ::std::os::raw::c_int,
+    );
+}
+
         tau: *mut Rcomplex,
         t: *mut Rcomplex,
         ldt: *mut ::std::os::raw::c_int,
