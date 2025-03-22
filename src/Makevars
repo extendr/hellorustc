@@ -35,16 +35,11 @@ else
 	R_LIBRARY_PATH = -L$(R_HOME)/lib$(R_ARCH)
 endif
 
-RUSTC_FLAGS = \
-	--print native-static-libs \
-	$(TARGET) \
-	$(RUSTC_LINKER) \
-	$(LIBGCC_EH_FLAG) \
-	$(R_LIBRARY_PATH) -lR \
+RUSTC_FLAGS = --print native-static-libs \
+	$(TARGET) $(RUSTC_LINKER) $(LIBGCC_EH_FLAG) $(R_LIBRARY_PATH) -lR \
 	--edition=2021 \
 	-Cpanic=abort \
-	$(RUSTC_DEFAULT_FLAGS) \
-	-Cllvm-args=--align-all-functions=64 \
+	$(RUSTC_DEFAULT_FLAGS) -Cllvm-args=--align-all-functions=64 \
 	--crate-type=cdylib \
 	--emit=dep-info,obj
 
@@ -88,7 +83,7 @@ ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(BINDINGS_DIR)/%.rs,$(ALL_R_HE
 ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs,$(ALL_R_BINDINGS))
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
-all: DEBUG LIBGCC_EH_RECIPE_SETUP ALL_R_BINDINGS $(ALL_CACHED_BINDINGS) $(OBJECTS) $(SHLIB)
+all: DEBUG LIBGCC_EH_RECIPE_SETUP $(ALL_R_BINDINGS) $(ALL_CACHED_BINDINGS) BINDINGS_CRATE $(OBJECTS) $(SHLIB)
 
 DEBUG:
 # $(ECHO) $(.VARIABLES)
@@ -99,11 +94,6 @@ DEBUG:
 
 LIBGCC_EH_RECIPE_SETUP:
 	$(LIBGCC_EH_RECIPE)
-
-# Rule to generate all bindings
-ALL_R_BINDINGS: $(ALL_R_BINDINGS)
-# $(ECHO) $(ALL_R_BINDINGS)
-# $(ECHO) "All bindings are up-to-date."
 
 $(BINDINGS_DIR)/R.rs: BINDGEN_EXTRA = --blocklist-item __STDC_WANT_IEC_60559_FUNCS_EXT__
 $(BINDINGS_DIR)/R_ext/Constants.rs: BINDGEN_EXTRA = --blocklist-item M_PI
@@ -118,9 +108,8 @@ $(BINDINGS_DIR)/R_ext/RStartup.rs: BINDGEN_EXTRA = --blocklist-item "setup_Rmain
 $(BINDINGS_DIR)/Rmath.rs: BINDGEN_EXTRA = --blocklist-item "__STDC_WANT_IEC_60559_FUNCS_EXT__|norm_rand|unif_rand|R_unif_index|exp_rand"
 # Rallocators have items blocked by Rinternals, so we allow them explicitly here.
 $(BINDINGS_DIR)/R_ext/Rallocators.rs: BINDGEN_EXTRA = --allowlist-item "R_allocator|R_allocator_t"
-
+# Varaible length arguments are messing up bindgen. Maybe it can be done by custom bindings.
 $(BINDINGS_DIR)/R_ext/Print.rs: BINDGEN_EXTRA = --blocklist-item "Rvprintf|REvprintf"
-
 
 $(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	$(ECHO) "Generating $@ from $<"
@@ -132,9 +121,18 @@ $(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BIN
 	@mkdir -p $(dir $@)
 	@cp -f $< $@
 
-%.o: %.rs
+BINDINGS_CRATE: $(ALL_R_BINDINGS)
+	$(RUSTC) --print native-static-libs \
+	$(TARGET) $(RUSTC_LINKER) $(LIBGCC_EH_FLAG) $(R_LIBRARY_PATH) \
+	--edition=2021 \
+	-Cpanic=abort \
+	$(RUSTC_DEFAULT_FLAGS) \
+	-Cllvm-args=--align-all-functions=64 \
+	-l dylib=R --crate-type=dylib bindings.rs
+
+%.o: %.rs BINDINGS_CRATE
 	$(ECHO) "Compiling $< to $@"
-	$(RUSTC) $(RUSTC_FLAGS) $<
+	$(RUSTC) $(RUSTC_FLAGS) -L. -lbindings -lSystem -lc -lm -lR $<
 
 # rust_analyzer_dummy: ALL_R_BINDINGS
 # 	mkdir -p dummy/bindings

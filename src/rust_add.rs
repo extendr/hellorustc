@@ -1,4 +1,5 @@
 extern crate bindings;
+pub use bindings::*;
 use bindings::{
     Rboolean, Rf_ScalarInteger, Rf_allocVector, Rf_error, Rf_isReal, Rf_protect, Rf_unprotect,
     Rf_xlength, REAL, REAL0, SEXP, SEXPTYPE,
