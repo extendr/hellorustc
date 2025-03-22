@@ -128,11 +128,11 @@ BINDINGS_CRATE: $(ALL_R_BINDINGS)
 	-Cpanic=abort \
 	$(RUSTC_DEFAULT_FLAGS) \
 	-Cllvm-args=--align-all-functions=64 \
-	-l dylib=R --crate-type=dylib bindings.rs
+	-l dylib=R --crate-type=lib bindings.rs
 
 %.o: %.rs BINDINGS_CRATE
 	$(ECHO) "Compiling $< to $@"
-	$(RUSTC) $(RUSTC_FLAGS) -L. -lbindings -lSystem -lc -lm -lR $<
+	$(RUSTC) $(RUSTC_FLAGS) -L. -lbindings -lR $<
 
 # rust_analyzer_dummy: ALL_R_BINDINGS
 # 	mkdir -p dummy/bindings
