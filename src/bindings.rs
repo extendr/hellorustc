@@ -70,7 +70,12 @@ include!("bindings/Rembedded.rs"); // defined in R internals!
 include!("bindings/Rmath.rs"); // defined elements in R.rs
 include!("bindings/Rversion.rs"); // defined elements in R.rs
 
+// note: not present in 4.3.3, windows-latest
 #[cfg(windows)]
 include!("bindings/iconv.rs");
 
-// TODO: two missing windows-specific headers ga and graphapp
+#[cfg(windows)]
+include!("bindings/ga.rs");
+
+#[cfg(windows)]
+include!("bindings/graphapp.rs");
