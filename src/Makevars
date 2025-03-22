@@ -68,7 +68,6 @@ BINDGEN_ARGS = \
 	--builtins \
 	--allowlist-item "CGContextRef|CGContext" \
 	--sort-semantically --translate-enum-integer-types --merge-extern-blocks \
-	--rustfmt-configuration-file $(CURDIR)/rustfmt.toml \
 	--no-recursive-allowlist --rustified-non-exhaustive-enum=".*" \
 	$(R_BLOCKED_ITEMS)
 
