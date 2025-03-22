@@ -24,3 +24,5 @@ pub struct R_allocator {
     #[doc = " custom data for the allocator implementation"]
     pub data: *mut ::std::os::raw::c_void,
 }
+std::os::raw::c_void,
+}

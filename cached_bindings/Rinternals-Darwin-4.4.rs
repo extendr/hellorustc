@@ -927,3 +927,24 @@ unsafe extern "C" {
     #[doc = " used by BIOC::matter; mightbe reasonable to include in API"]
     pub fn R_tryWrap(arg1: SEXP) -> SEXP;
 }
+
+        arg2: *const ::std::os::raw::c_char,
+        arg3: Rboolean,
+    ) -> Rboolean;
+    pub fn SETLENGTH(x: SEXP, v: R_xlen_t);
+    pub fn SET_TRUELENGTH(x: SEXP, v: R_xlen_t);
+    pub fn SETLEVELS(x: SEXP, v: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn SET_ENVFLAGS(x: SEXP, v: ::std::os::raw::c_int);
+    pub fn SET_FRAME(x: SEXP, v: SEXP);
+    pub fn SET_ENCLOS(x: SEXP, v: SEXP);
+    pub fn SET_HASHTAB(x: SEXP, v: SEXP);
+    pub fn SET_PRENV(x: SEXP, v: SEXP);
+    pub fn SET_PRVALUE(x: SEXP, v: SEXP);
+    pub fn SET_PRCODE(x: SEXP, v: SEXP);
+    pub fn STDVEC_DATAPTR(x: SEXP) -> *mut ::std::os::raw::c_void;
+    pub fn IS_GROWABLE(x: SEXP) -> ::std::os::raw::c_int;
+    pub fn SET_GROWABLE_BIT(x: SEXP);
+    pub fn SET_NAMED(x: SEXP, v: ::std::os::raw::c_int);
+    #[doc = " used by BIOC::matter; mightbe reasonable to include in API"]
+    pub fn R_tryWrap(arg1: SEXP) -> SEXP;
+}

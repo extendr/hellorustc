@@ -8,7 +8,7 @@
 pub type CGContextRef = *mut CGContext;
 pub type QuartzDesc_t = *mut ::std::os::raw::c_void;
 pub type QuartzBackend_t = QuartzBackend_s;
-#[doc = " parameters that are passed to functions that create backends"]
+#[doc = " parameterspassed to functions that create backends"]
 pub type QuartzParameters_t = QuartzParameters_s;
 pub type QuartzFunctions_t = QuartzFunctons_s;
 #[doc = " type of a Quartz contructor"]
@@ -235,6 +235,13 @@ unsafe extern "C" {
         ) -> QuartzDesc_t,
     >;
     #[doc = " C version of the Quartz call (experimental)\nreturns 0 on success, error code on failure"]
+    pub fn Quartz_C(
+        par: *mut QuartzParameters_t,
+        q_create: quartz_create_fn_t,
+        errorCode: *mut ::std::os::raw::c_int,
+    ) -> QuartzDesc_t;
+}
+call (experimental)\nreturns 0 on success, error code on failure"]
     pub fn Quartz_C(
         par: *mut QuartzParameters_t,
         q_create: quartz_create_fn_t,
