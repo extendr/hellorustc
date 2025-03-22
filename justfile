@@ -16,5 +16,8 @@ uninstall:
 test:
     R -e 'devtools::load_all();.Call("ultimate_answer");.Call("hellorustc")'
 
+devtools-check:
+    R -e "devtools::check()"
+
 watch:
     watchexec -w src/bindings.rs -w src/Makevars "R CMD INSTALL --preclean --clean ."

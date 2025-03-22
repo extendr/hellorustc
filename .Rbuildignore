@@ -7,3 +7,5 @@
 ^notes$
 ^justfile$
 ^data-raw$
+^cached_bindings$
+^cached_bindings$
