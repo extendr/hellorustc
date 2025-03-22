@@ -104,7 +104,10 @@ jobs:
           merge-multiple: true
       - name: Manually sort Windows bindings
         run: |
-          find cached_bindings -type f -name '*-windows-*' -exec rustfmt --edition=2021 -v {} \;
+          Get-ChildItem -Path "cached_bindings" -Recurse -File -Filter "*-windows-*" | ForEach-Object {
+            rustfmt --edition=2021 -v $_.FullName
+          }
+
       - name: Push cached bindings to the repository
         run: |
           # Note: the following account information will not work on GHES
