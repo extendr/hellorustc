@@ -14,5 +14,3 @@ unsafe extern "C" {
         pheight: *mut ::std::os::raw::c_int,
     ) -> Rboolean;
 }
-> Rboolean;
-}

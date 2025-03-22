@@ -6,4 +6,3 @@
 /* R version: 4.6.0 */
 
 pub const GET_REGION_BUFSIZE: u32 = 512;
-= 512;

@@ -819,31 +819,3 @@ unsafe extern "C" {
         arg1: usize,
     );
 }
-4: usize,
-    );
-    pub fn ztrsv_(
-        uplo: *const ::std::os::raw::c_char,
-        trans: *const ::std::os::raw::c_char,
-        diag: *const ::std::os::raw::c_char,
-        n: *const ::std::os::raw::c_int,
-        a: *const Rcomplex,
-        lda: *const ::std::os::raw::c_int,
-        x: *mut Rcomplex,
-        incx: *const ::std::os::raw::c_int,
-        arg1: usize,
-        arg2: usize,
-        arg3: usize,
-    );
-    pub fn zspmv_(
-        uplo: *const ::std::os::raw::c_char,
-        n: *const ::std::os::raw::c_int,
-        alpha: *const Rcomplex,
-        ap: *const Rcomplex,
-        x: *const Rcomplex,
-        incx: *const ::std::os::raw::c_int,
-        beta: *const Rcomplex,
-        y: *mut Rcomplex,
-        incy: *const ::std::os::raw::c_int,
-        arg1: usize,
-    );
-}

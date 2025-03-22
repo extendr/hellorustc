@@ -111,7 +111,3 @@ unsafe extern "C" {
         -> usize;
     pub fn R_GetConnection(sConn: SEXP) -> Rconnection;
 }
-:std::os::raw::c_void, n: usize)
-        -> usize;
-    pub fn R_GetConnection(sConn: SEXP) -> Rconnection;
-}
