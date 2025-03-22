@@ -1,0 +1,62 @@
+{
+  "sysroot": "/Users/elea/.rustup/toolchains/stable-aarch64-apple-darwin",
+  "crates": [
+    {
+      "display_name": "bindings",
+      "root_module": "src/bindings.rs",
+      "edition": "2021",
+      "is_workspace_member": false,
+      "deps": [],
+      "source": {
+        "include_dirs": [
+          "src/bindings",
+          "src/custom_bindings"
+        ],
+        "exclude_dirs": []
+      },
+      "cfg": ["unix"],
+      "env": {},
+      "is_proc_macro": false
+    },
+    {
+      "display_name": "hello",
+      "root_module": "src/hello.rs",
+      "edition": "2021",
+      "is_workspace_member": true,
+      "deps": [
+        {
+          "crate": 0,
+          "name": "bindings"
+        }
+      ],
+      "source": {
+        "include_dirs": ["src"],
+        "exclude_dirs": [
+          "src/bindings",
+          "src/custom_bindings"
+        ]
+      },
+      "cfg": ["unix"],
+      "env": {},
+      "is_proc_macro": false
+    }
+    ,
+    {
+      "display_name": "rust_add",
+      "root_module": "src/rust_add.rs",
+      "edition": "2021",
+      "is_workspace_member": true,
+      "deps": [
+        {
+          "crate": 0,
+          "name": "bindings"
+        }
+      ],
+      "cfg": ["unix"],
+      "env": {},
+      "is_proc_macro": false
+    }
+  
+  ]
+}
+  

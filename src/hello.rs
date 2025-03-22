@@ -2,9 +2,10 @@
 #![allow(non_snake_case)]
 #![allow(non_camel_case_types)]
 
-mod bindings;
+extern crate bindings;
 
-use bindings::{
+pub use bindings::*;
+pub use bindings::{
     DllInfo, R_CallMethodDef, R_registerRoutines, R_useDynamicSymbols, Rboolean, Rf_mkString, SEXP,
 };
 
