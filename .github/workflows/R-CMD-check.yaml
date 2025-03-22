@@ -41,9 +41,15 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
 
     steps:
-      - run: |
-          git config --global core.autocrlf false
-          git config --global core.eol lf
+      - name: Configure Git line endings
+        run: |
+          if ($Env:RUNNER_OS -eq "Windows") {
+            git config --global core.autocrlf true
+            git config --global core.eol crlf
+          } else {
+            git config --global core.autocrlf input
+            git config --global core.eol lf
+          }
       - name: Install `bindgen`
         run: |
           # cargo install bindgen-cli
@@ -96,9 +102,15 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - run: |
-          git config --global core.autocrlf false
-          git config --global core.eol lf
+      - name: Configure Git line endings
+        run: |
+          if ($Env:RUNNER_OS -eq "Windows") {
+            git config --global core.autocrlf true
+            git config --global core.eol crlf
+          } else {
+            git config --global core.autocrlf input
+            git config --global core.eol lf
+          }
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
