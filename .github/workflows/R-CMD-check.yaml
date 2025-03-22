@@ -51,7 +51,8 @@ jobs:
           rustup target add i686-pc-windows-gnu
           rustup target add x86_64-pc-windows-gnu
           rustup override set stable-gnu
-
+          rustup component add rustfmt
+          
       - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-r@v2
