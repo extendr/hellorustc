@@ -2,7 +2,7 @@
 # OBJECTS = rust_add.o hello.o
 OBJECTS = $(patsubst %.rs,%.o,$(wildcard *.rs))
 
-BINDINGS_DIR = bindings
+GENERATED_BINDINGS_DIR = generated_bindings
 CACHE_BINDINGS_LOCATION = ../cached_bindings
 ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
 NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
@@ -78,9 +78,9 @@ BINDGEN_CLANG_ARGS = -Denum_SEXPTYPE -DR_NO_REMAP -DSTRICT_R_HEADERS -DR_INTERFA
 	-fparse-all-comments \
 	-include Rinternals.h -include R_ext/GraphicsEngine.h -include R_ext/GraphicsDevice.h
 
-ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(BINDINGS_DIR)/%.rs,$(ALL_R_HEADERS))
+ALL_R_BINDINGS = $(patsubst $(R_INCLUDE_DIR)/%.h,$(GENERATED_BINDINGS_DIR)/%.rs,$(ALL_R_HEADERS))
 
-ALL_CACHED_BINDINGS = $(patsubst $(BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs,$(ALL_R_BINDINGS))
+ALL_CACHED_BINDINGS = $(patsubst $(GENERATED_BINDINGS_DIR)/%.rs,$(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs,$(ALL_R_BINDINGS))
 
 # TODO: unless `rust_analyzer_dummy` is added here, it won't do anything
 all: DEBUG LIBGCC_EH_RECIPE_SETUP $(ALL_R_BINDINGS) $(ALL_CACHED_BINDINGS) BINDINGS_CRATE $(OBJECTS) $(SHLIB)
@@ -95,28 +95,28 @@ DEBUG:
 LIBGCC_EH_RECIPE_SETUP:
 	$(LIBGCC_EH_RECIPE)
 
-$(BINDINGS_DIR)/R.rs: BINDGEN_EXTRA = --blocklist-item __STDC_WANT_IEC_60559_FUNCS_EXT__
-$(BINDINGS_DIR)/R_ext/Constants.rs: BINDGEN_EXTRA = --blocklist-item M_PI
+$(GENERATED_BINDINGS_DIR)/R.rs: BINDGEN_EXTRA = --blocklist-item __STDC_WANT_IEC_60559_FUNCS_EXT__
+$(GENERATED_BINDINGS_DIR)/R_ext/Constants.rs: BINDGEN_EXTRA = --blocklist-item M_PI
 # Applic.h includes what's in R_ext/Utils.h, so we block them
-$(BINDINGS_DIR)/R_ext/Applic.rs: BINDGEN_EXTRA = --blocklist-item findInterval
+$(GENERATED_BINDINGS_DIR)/R_ext/Applic.rs: BINDGEN_EXTRA = --blocklist-item findInterval
 # Lapack.h includes what's in R_ext/BLAS.h, so we block them
-$(BINDINGS_DIR)/R_ext/Lapack.rs: BINDGEN_EXTRA = --blocklist-item zdrot_
+$(GENERATED_BINDINGS_DIR)/R_ext/Lapack.rs: BINDGEN_EXTRA = --blocklist-item zdrot_
 # Rinternals.h includes what's in R_ext/Rallocators.h, so we block them (and Rembedded)
-$(BINDINGS_DIR)/Rinternals.rs: BINDGEN_EXTRA = --blocklist-item "R_allocator|R_allocator_t|R_RunExitFinalizers"
-$(BINDINGS_DIR)/R_ext/RStartup.rs: BINDGEN_EXTRA = --blocklist-item "setup_Rmainloop"
+$(GENERATED_BINDINGS_DIR)/Rinternals.rs: BINDGEN_EXTRA = --blocklist-item "R_allocator|R_allocator_t|R_RunExitFinalizers"
+$(GENERATED_BINDINGS_DIR)/R_ext/RStartup.rs: BINDGEN_EXTRA = --blocklist-item "setup_Rmainloop"
 # Rmath includes what's in R_ext/Random.h, so we block them
-$(BINDINGS_DIR)/Rmath.rs: BINDGEN_EXTRA = --blocklist-item "__STDC_WANT_IEC_60559_FUNCS_EXT__|norm_rand|unif_rand|R_unif_index|exp_rand"
+$(GENERATED_BINDINGS_DIR)/Rmath.rs: BINDGEN_EXTRA = --blocklist-item "__STDC_WANT_IEC_60559_FUNCS_EXT__|norm_rand|unif_rand|R_unif_index|exp_rand"
 # Rallocators have items blocked by Rinternals, so we allow them explicitly here.
-$(BINDINGS_DIR)/R_ext/Rallocators.rs: BINDGEN_EXTRA = --allowlist-item "R_allocator|R_allocator_t"
+$(GENERATED_BINDINGS_DIR)/R_ext/Rallocators.rs: BINDGEN_EXTRA = --allowlist-item "R_allocator|R_allocator_t"
 # Varaible length arguments are messing up bindgen. Maybe it can be done by custom bindings.
-$(BINDINGS_DIR)/R_ext/Print.rs: BINDGEN_EXTRA = --blocklist-item "Rvprintf|REvprintf"
+$(GENERATED_BINDINGS_DIR)/R_ext/Print.rs: BINDGEN_EXTRA = --blocklist-item "Rvprintf|REvprintf"
 
-$(BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
+$(GENERATED_BINDINGS_DIR)/%.rs: $(R_INCLUDE_DIR)/%.h
 	$(ECHO) "Generating $@ from $<"
 	@mkdir -p $(dir $@)
 	bindgen "$<" -o "$@" $(BINDGEN_ARGS) $(BINDGEN_EXTRA) --allowlist-file "$<" -- -I$(R_INCLUDE_DIR)  $(BINDGEN_CLANG_ARGS)
 
-$(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(BINDINGS_DIR)/%.rs
+$(CACHE_BINDINGS_LOCATION)/%-$(PLATFORM)-$(R_VERSION_MAJOR_MINOR_ONLY).rs: $(GENERATED_BINDINGS_DIR)/%.rs
 	$(ECHO) "Updating cache for $< -> $@"
 	@mkdir -p $(dir $@)
 	@cp -f $< $@
