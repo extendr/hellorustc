@@ -629,3 +629,21 @@ unsafe extern "C" {
     #[doc = " courier font (fixed width)"]
     pub static mut GA_Courier: font;
 }
+tchCursor: cursor;
+    #[doc = " insert text"]
+    pub static mut GA_CaretCursor: cursor;
+    #[doc = " insert text"]
+    pub static mut GA_TextCursor: cursor;
+    #[doc = " hand pointer"]
+    pub static mut GA_HandCursor: cursor;
+    #[doc = " cross pointer"]
+    pub static mut GA_CrossCursor: cursor;
+    #[doc = " system font"]
+    pub static mut GA_SystemFont: font;
+    #[doc = " times roman font (serif)"]
+    pub static mut GA_Times: font;
+    #[doc = " helvetica font (sans serif)"]
+    pub static mut GA_Helvetica: font;
+    #[doc = " courier font (fixed width)"]
+    pub static mut GA_Courier: font;
+}

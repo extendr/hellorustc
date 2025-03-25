@@ -3664,100 +3664,7 @@ unsafe extern "C" {
     #[doc = " DLARNV - return a vector of n random real numbers from a */\n/* uniform or normal distribution"]
     pub fn dlarnv_(
         idist: *const ::std::os::raw::c_int,
-        iseed: *mut ::std::os::raw::c_int,
-        n: *const ::std::os::raw::c_int,
-        x: *mut f64,
-    );
-    #[doc = " DLARTG - generate a plane rotation so that\t[ CS SN ]"]
-    pub fn dlartg_(f: *const f64, g: *const f64, cs: *mut f64, sn: *mut f64, r: *mut f64);
-    #[doc = " DLARTV - apply a vector of real plane rotations to elements of */\n/* the real vectors x and y"]
-    pub fn dlartv_(
-        n: *const ::std::os::raw::c_int,
-        x: *mut f64,
-        incx: *const ::std::os::raw::c_int,
-        y: *mut f64,
-        incy: *const ::std::os::raw::c_int,
-        c: *const f64,
-        s: *const f64,
-        incc: *const ::std::os::raw::c_int,
-    );
-    #[doc = " DLARUV - return a vector of n random real numbers from a */\n/* uniform (0,1);"]
-    pub fn dlaruv_(iseed: *mut ::std::os::raw::c_int, n: *const ::std::os::raw::c_int, x: *mut f64);
-    #[doc = " DLAS2 - compute the singular values of the 2-by-2 matrix */\n/* [ F G ]  [ 0 H ]"]
-    pub fn dlas2_(f: *const f64, g: *const f64, h: *const f64, ssmin: *mut f64, ssmax: *mut f64);
-    #[doc = " DLASCL - multiply the M by N real matrix A by the real scalar */\n/* CTO/CFROM"]
-    pub fn dlascl_(
-        type_: *const ::std::os::raw::c_char,
-        kl: *const ::std::os::raw::c_int,
-        ku: *const ::std::os::raw::c_int,
-        cfrom: *mut f64,
-        cto: *mut f64,
-        m: *const ::std::os::raw::c_int,
-        n: *const ::std::os::raw::c_int,
-        a: *mut f64,
-        lda: *const ::std::os::raw::c_int,
-        info: *mut ::std::os::raw::c_int,
-        arg1: usize,
-    );
-    #[doc = " DLASET - initialize an m-by-n matrix A to BETA on the diagonal */\n/* and ALPHA on the offdiagonals"]
-    pub fn dlaset_(
-        uplo: *const ::std::os::raw::c_char,
-        m: *const ::std::os::raw::c_int,
-        n: *const ::std::os::raw::c_int,
-        alpha: *const f64,
-        beta: *const f64,
-        a: *mut f64,
-        lda: *const ::std::os::raw::c_int,
-        arg1: usize,
-    );
-    #[doc = " DLASQ1 - DLASQ1 computes the singular values of a real N-by-N */\n/* bidiagonal  matrix with diagonal D and off-diagonal E"]
-    pub fn dlasq1_(
-        n: *const ::std::os::raw::c_int,
-        d: *mut f64,
-        e: *mut f64,
-        work: *mut f64,
-        info: *mut ::std::os::raw::c_int,
-    );
-    #[doc = " DLASQ2 - DLASQ2 computes the singular values of a real N-by-N */\n/* unreduced  bidiagonal matrix with squared diagonal elements in */\n/* Q and  squared off-diagonal elements in E"]
-    pub fn dlasq2_(
-        m: *const ::std::os::raw::c_int,
-        q: *mut f64,
-        e: *mut f64,
-        qq: *mut f64,
-        ee: *mut f64,
-        eps: *const f64,
-        tol2: *const f64,
-        small2: *const f64,
-        sup: *mut f64,
-        kend: *mut ::std::os::raw::c_int,
-        info: *mut ::std::os::raw::c_int,
-    );
-    #[doc = " DLASQ3 - DLASQ3 is the workhorse of the whole bidiagonal SVD */\n/* algorithm"]
-    pub fn dlasq3_(
-        n: *mut ::std::os::raw::c_int,
-        q: *mut f64,
-        e: *mut f64,
-        qq: *mut f64,
-        ee: *mut f64,
-        sup: *mut f64,
-        sigma: *mut f64,
-        kend: *mut ::std::os::raw::c_int,
-        off: *mut ::std::os::raw::c_int,
-        iphase: *mut ::std::os::raw::c_int,
-        iconv: *const ::std::os::raw::c_int,
-        eps: *const f64,
-        tol2: *const f64,
-        small2: *const f64,
-    );
-    #[doc = " DLASQ4 - DLASQ4 estimates TAU, the smallest eigenvalue of a */\n/* matrix"]
-    pub fn dlasq4_(
-        n: *const ::std::os::raw::c_int,
-        q: *const f64,
-        e: *const f64,
-        tau: *mut f64,
-        sup: *mut f64,
-    );
-    #[doc = " DLASR - perform the transformation\tA := P*A, when SIDE = 'L' */\n/* or 'l' ( Left-hand side );\tA := A*P', when SIDE = 'R' or 'r' */\n/* ( Right-hand side );\t where A is an m by n real matrix and P is */\n/* an orthogonal matrix,"]
+        iseed: *mut ::std::os::rawL' */\n/* or 'l' ( Left-hand side );\tA := A*P', when SIDE = 'R' or 'r' */\n/* ( Right-hand side );\t where A is an m by n real matrix and P is */\n/* an orthogonal matrix,"]
     pub fn dlasr_(
         side: *const ::std::os::raw::c_char,
         pivot: *const ::std::os::raw::c_char,
@@ -4343,6 +4250,148 @@ unsafe extern "C" {
         lwork: *mut ::std::os::raw::c_int,
         iwork: *mut ::std::os::raw::c_int,
         bwork: *mut ::std::os::raw::c_int,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+        arg2: usize,
+        arg3: usize,
+        arg4: usize,
+    );
+    pub fn dgtts2_(
+        itrans: *mut ::std::os::raw::c_int,
+        n: *mut ::std::os::raw::c_int,
+        nrhs: *mut ::std::os::raw::c_int,
+        dl: *mut f64,
+        d: *mut f64,
+        du: *mut f64,
+        du2: *mut f64,
+        ipiv: *mut ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *mut ::std::os::raw::c_int,
+    );
+    pub fn dlagv2_(
+        a: *mut f64,
+        lda: *mut ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *mut ::std::os::raw::c_int,
+        alphar: *mut f64,
+        alphai: *mut f64,
+        beta: *mut f64,
+        csl: *mut f64,
+        snl: *mut f64,
+        csr: *mut f64,
+        snr: *mut f64,
+    );
+    pub fn dlals0_(
+        icompq: *mut ::std::os::raw::c_int,
+        nl: *mut ::std::os::raw::c_int,
+        nr: *mut ::std::os::raw::c_int,
+        sqre: *mut ::std::os::raw::c_int,
+        nrhs: *mut ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *mut ::std::os::raw::c_int,
+        bx: *mut f64,
+        ldbx: *mut ::std::os::raw::c_int,
+        perm: *mut ::std::os::raw::c_int,
+        givptr: *mut ::std::os::raw::c_int,
+        givcol: *mut ::std::os::raw::c_int,
+        ldgcol: *mut ::std::os::raw::c_int,
+        givnum: *mut f64,
+        ldgnum: *mut ::std::os::raw::c_int,
+        poles: *mut f64,
+        difl: *mut f64,
+        difr: *mut f64,
+        z: *mut f64,
+        k: *mut ::std::os::raw::c_int,
+        c: *mut f64,
+        s: *mut f64,
+        work: *mut f64,
+        info: *mut ::std::os::raw::c_int,
+    );
+    pub fn dlalsa_(
+        icompq: *mut ::std::os::raw::c_int,
+        smlsiz: *mut ::std::os::raw::c_int,
+        n: *mut ::std::os::raw::c_int,
+        nrhs: *mut ::std::os::raw::c_int,
+        b: *mut f64,
+        ldb: *mut ::std::os::raw::c_int,
+        bx: *mut f64,
+        ldbx: *mut ::std::os::raw::c_int,
+        u: *mut f64,
+        ldu: *mut ::std::os::raw::c_int,
+        vt: *mut f64,
+        k: *mut ::std::os::raw::c_int,
+        difl: *mut f64,
+        difr: *mut f64,
+        z: *mut f64,
+        poles: *mut f64,
+        givptr: *mut ::std::os::raw::c_int,
+        givcol: *mut ::std::os::raw::c_int,
+        ldgcol: *mut ::std::os::raw::c_int,
+        perm: *mut ::std::os::raw::c_int,
+        givnum: *mut f64,
+        c: *mut f64,
+        s: *mut f64,
+        work: *mut f64,
+        iwork: *mut ::std::os::raw::c_int,
+        info: *mut ::std::os::raw::c_int,
+    );
+    pub fn dlalsd_(
+        uplo: *const ::std::os::raw::c_char,
+        smlsiz: *mut ::std::os::raw::c_int,
+        n: *mut ::std::os::raw::c_int,
+        nrhs: *mut ::std::os::raw::c_int,
+        d: *mut f64,
+        e: *mut f64,
+        b: *mut f64,
+        ldb: *mut ::std::os::raw::c_int,
+        rcond: *mut f64,
+        rank: *mut ::std::os::raw::c_int,
+        work: *mut f64,
+        iwork: *mut ::std::os::raw::c_int,
+        info: *mut ::std::os::raw::c_int,
+        arg1: usize,
+    );
+    pub fn dlamc1_(
+        beta: *mut ::std::os::raw::c_int,
+        t: *mut ::std::os::raw::c_int,
+        rnd: *mut ::std::os::raw::c_int,
+        ieee1: *mut *mut ::std::os::raw::c_int,
+    );
+    pub fn dlamc2_(
+        beta: *mut ::std::os::raw::c_int,
+        t: *mut ::std::os::raw::c_int,
+        rnd: *mut ::std::os::raw::c_int,
+        eps: *mut f64,
+        emin: *mut ::std::os::raw::c_int,
+        rmin: *mut f64,
+        emax: *mut ::std::os::raw::c_int,
+        rmax: *mut f64,
+    );
+    pub fn dlamc3_(a: *mut f64, b: *mut f64) -> f64;
+    pub fn dlamc4_(
+        emin: *mut ::std::os::raw::c_int,
+        start: *mut f64,
+        base: *mut ::std::os::raw::c_int,
+    );
+    pub fn dlamc5_(
+        beta: *mut ::std::os::raw::c_int,
+        p: *mut ::std::os::raw::c_int,
+        emin: *mut ::std::os::raw::c_int,
+        ieee: *mut ::std::os::raw::c_int,
+        emax: *mut ::std::os::raw::c_int,
+        rmax: *mut f64,
+    );
+    pub fn dlaqp2_(
+        m: *mut ::std::os::raw::c_int,
+        n: *mut ::std::os::raw::c_int,
+        offset: *mut ::std::os::raw::c_int,
+        a: *mut f64,
+        lda: *mut ::std::os::raw::c_int,
+        jpvt: *mut ::std::os::raw::c_int,
+        tau: *mut f64,
+        vn1: *mut f64,
+        vn2: *mut f64,
+        work: *mbwork: *mut ::std::os::raw::c_int,
         info: *mut ::std::os::raw::c_int,
         arg1: usize,
         arg2: usize,
