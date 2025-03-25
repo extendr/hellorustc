@@ -74,8 +74,9 @@ include!("bindings/Rversion.rs"); // defined elements in R.rs
 #[cfg(windows)]
 include!("bindings/iconv.rs");
 
-#[cfg(windows)]
-include!("bindings/ga.rs");
+// FIXME: there is an issue with wchar_t binding that ought to be debugged on windows.
+// #[cfg(windows)]
+// include!("bindings/ga.rs");
 
 #[cfg(windows)]
 include!("bindings/graphapp.rs");
