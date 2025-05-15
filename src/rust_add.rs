@@ -1,11 +1,12 @@
 extern crate bindings;
-pub use bindings::*;
+// pub use bindings::*;
 use bindings::{
     Rboolean, Rf_ScalarInteger, Rf_allocVector, Rf_error, Rf_isReal, Rf_protect, Rf_unprotect,
     Rf_xlength, REAL, REAL0, SEXP, SEXPTYPE,
 };
 
 // `REAL0` is non-api. But this does not cause r-cmd-check failure`
+#[allow(dead_code)]
 unsafe extern "C" fn add2(x: SEXP) {
     REAL0(x);
 }
