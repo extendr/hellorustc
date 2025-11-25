@@ -17,6 +17,8 @@ Currently, the [`src/Makevars`](./src/Makevars) currently builds *any* single Ru
 
 This R package generates bindings for R's C-API on its own and stores it in the package itself. How to include these files is shown in [`src/hello.rs`](./src/hello.rs) and [`src/rust_add.rs`](./src/rust_add.rs).
 
+A cache of bindings for multiple OS/R-version combinations lives in [`cached_bindings/`](./cached_bindings). Run `python3 tools/reduce_cached_bindings.py` to collapse duplicate files and regenerate `cached_bindings/reduced/` wrappers that pick the right canonical binding via `cfg` gates on `target_os` and `r_ver_<major_minor>` (the R version cfg is injected by `src/Makevars`).
+
 A major pre-requisite is to have `bindgen` installed, i.e.
 
 ```sh

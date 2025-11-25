@@ -8,6 +8,7 @@ ALL_R_HEADERS = $(wildcard $(R_INCLUDE_DIR)/*.h $(R_INCLUDE_DIR)/*/*.h)
 NONAPI = `$(R_HOME)/bin$(R_ARCH_BIN)/Rscript --vanilla -e "cat(tools:::nonAPI, sep = '|')"`
 RUSTC = rustc
 R_VERSION_MAJOR_MINOR_ONLY = $(word 1,$(subst ., ,$(R_VERSION))).$(word 2,$(subst ., ,$(R_VERSION)))
+RUSTC_R_VERSION_CFG = --cfg r_ver_$(subst .,_,$(R_VERSION_MAJOR_MINOR_ONLY))
 UNAME = $(shell uname -s)
 PLATFORM = $(UNAME)
 
@@ -36,6 +37,7 @@ else
 endif
 
 RUSTC_FLAGS = --print native-static-libs \
+	$(RUSTC_R_VERSION_CFG) \
 	$(TARGET) $(RUSTC_LINKER) $(LIBGCC_EH_FLAG) $(R_LIBRARY_PATH) -lR \
 	--edition=2021 \
 	-Cpanic=abort \
