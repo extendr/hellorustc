@@ -34,8 +34,8 @@ unsafe extern "C" fn add(x: SEXP, y: SEXP) -> SEXP {
 }
 
 #[no_mangle]
-pub extern "C" fn ultimate_answer() -> SEXP {
-    unsafe { Rf_ScalarInteger(4242_i32) }
+pub unsafe extern "C" fn ultimate_answer() -> SEXP {
+    Rf_ScalarInteger(4242_i32)
 }
 
 // #[lang = "eh_personality"]

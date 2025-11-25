@@ -9,6 +9,10 @@ pub use bindings::{
     DllInfo, R_CallMethodDef, R_registerRoutines, R_useDynamicSymbols, Rboolean, Rf_mkString, SEXP,
 };
 
+extern "C" {
+    fn ultimate_answer() -> SEXP;
+}
+
 #[no_mangle]
 pub unsafe extern "C" fn hellorustc() -> SEXP {
     Rf_mkString(c"hello rustc".as_ptr())
@@ -25,6 +29,14 @@ pub unsafe extern "C" fn R_init_hellorustc(dll: *mut DllInfo) {
                 unsafe extern "C" fn() -> SEXP,
                 unsafe extern "C" fn(...) -> SEXP,
             >(hellorustc)),
+            numArgs: 0,
+        },
+        R_CallMethodDef {
+            name: c"ultimate_answer".as_ptr(),
+            fun: Some(std::mem::transmute::<
+                unsafe extern "C" fn() -> SEXP,
+                unsafe extern "C" fn(...) -> SEXP,
+            >(ultimate_answer)),
             numArgs: 0,
         },
         R_CallMethodDef {
