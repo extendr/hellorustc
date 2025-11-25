@@ -237,13 +237,14 @@ def main() -> None:
     removed = delete_duplicates(grouped) if args.prune_duplicates else 0
     write_wrappers(grouped, REDUCED_DIR)
     write_wrappers(grouped, ROOT / "src" / "bindings")
+    write_wrappers(grouped, ROOT / "src" / "custom_bindings")
     write_manifest(grouped)
 
     msg = [
         f"Reduced cached_bindings: removed {removed} duplicate files"
         if args.prune_duplicates
         else "Reduced cached_bindings: duplicates kept",
-        f"wrote wrappers to {REDUCED_DIR.relative_to(ROOT)} and src/bindings.",
+        f"wrote wrappers to {REDUCED_DIR.relative_to(ROOT)}, src/bindings, and src/custom_bindings.",
     ]
     print(", ".join(msg))
 
