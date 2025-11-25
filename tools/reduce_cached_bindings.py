@@ -18,6 +18,7 @@ generated header metadata. This script:
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -222,15 +223,29 @@ def write_manifest(grouped: Dict[str, Dict[str, List[BindingFile]]]) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Condense cached bindings and emit cfg-gated wrappers."
+    )
+    parser.add_argument(
+        "--prune-duplicates",
+        action="store_true",
+        help="Delete duplicate cached binding files. By default, duplicates are kept.",
+    )
+    args = parser.parse_args()
+
     grouped = group_bindings(read_head_bindings())
-    removed = delete_duplicates(grouped)
+    removed = delete_duplicates(grouped) if args.prune_duplicates else 0
     write_wrappers(grouped, REDUCED_DIR)
     write_wrappers(grouped, ROOT / "src" / "bindings")
     write_manifest(grouped)
-    print(
-        f"Reduced cached_bindings: removed {removed} duplicate files, "
-        f"wrote wrappers to {REDUCED_DIR.relative_to(ROOT)} and src/bindings."
-    )
+
+    msg = [
+        f"Reduced cached_bindings: removed {removed} duplicate files"
+        if args.prune_duplicates
+        else "Reduced cached_bindings: duplicates kept",
+        f"wrote wrappers to {REDUCED_DIR.relative_to(ROOT)} and src/bindings.",
+    ]
+    print(", ".join(msg))
 
 
 if __name__ == "__main__":
