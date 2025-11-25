@@ -2,15 +2,15 @@
 
 /* OS: windows */
 /* Platform:  */
-/* rustc 1.91.0 (f8297e351 2025-10-28) */
+/* rustc 1.91.1 (ed61e7d7e 2025-11-07) */
 /* R version: 4.5.2 */
 
 pub const R_VERSION: u32 = 263426;
 pub const R_NICK: &[u8; 23] = b"[Not] Part in a Rumble\0";
 pub const R_MAJOR: &[u8; 2] = b"4\0";
 pub const R_MINOR: &[u8; 4] = b"5.2\0";
-pub const R_STATUS: &[u8; 8] = b"Patched\0";
+pub const R_STATUS: &[u8; 1] = b"\0";
 pub const R_YEAR: &[u8; 5] = b"2025\0";
-pub const R_MONTH: &[u8; 3] = b"11\0";
-pub const R_DAY: &[u8; 3] = b"05\0";
-pub const R_SVN_REVISION: u32 = 88988;
+pub const R_MONTH: &[u8; 3] = b"10\0";
+pub const R_DAY: &[u8; 3] = b"31\0";
+pub const R_SVN_REVISION: u32 = 88974;

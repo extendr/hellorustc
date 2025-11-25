@@ -2,7 +2,7 @@
 
 /* OS: windows */
 /* Platform:  */
-/* rustc 1.91.0 (f8297e351 2025-10-28) */
+/* rustc 1.91.1 (ed61e7d7e 2025-11-07) */
 /* R version: 4.5.2 */
 
 pub const HAVE_F77_UNDERSCORE: u32 = 1;
