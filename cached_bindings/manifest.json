@@ -1,0 +1,3449 @@
+{
+  "R": [
+    {
+      "canonical": "R-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R-windows-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Altrep": [
+    {
+      "canonical": "R_ext/Altrep-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Altrep-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Applic": [
+    {
+      "canonical": "R_ext/Applic-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Applic-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Applic-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Applic-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Applic-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Applic-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Applic-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Applic-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Applic-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Applic-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Applic-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Applic-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Applic-Linux-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Applic-Linux-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Applic-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Applic-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Applic-windows-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Arith": [
+    {
+      "canonical": "R_ext/Arith-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Arith-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/BLAS": [
+    {
+      "canonical": "R_ext/BLAS-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/BLAS-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/BLAS-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/BLAS-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/BLAS-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/BLAS-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/BLAS-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/BLAS-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/BLAS-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/BLAS-Linux-4.4.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/BLAS-Linux-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/BLAS-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/BLAS-Linux-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/BLAS-Linux-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/BLAS-Linux-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/BLAS-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/BLAS-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/BLAS-Linux-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/BLAS-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/BLAS-windows-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Boolean": [
+    {
+      "canonical": "R_ext/Boolean-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Boolean-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Boolean-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Boolean-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Boolean-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Boolean-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Boolean-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Boolean-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Boolean-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Boolean-Darwin-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Boolean-Darwin-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Boolean-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Boolean-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Boolean-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Boolean-windows-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Callbacks": [
+    {
+      "canonical": "R_ext/Callbacks-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Callbacks-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Complex": [
+    {
+      "canonical": "R_ext/Complex-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Complex-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Complex-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Complex-Linux-4.6.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Connections": [
+    {
+      "canonical": "R_ext/Connections-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Connections-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Connections-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Connections-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Connections-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Connections-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Connections-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Connections-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Connections-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Connections-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Connections-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Connections-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Connections-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Connections-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Connections-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Connections-Linux-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Constants": [
+    {
+      "canonical": "R_ext/Constants-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Constants-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Constants-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Constants-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Constants-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Constants-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Constants-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Constants-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Constants-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Constants-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Constants-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Constants-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Constants-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Constants-Darwin-4.4.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Error": [
+    {
+      "canonical": "R_ext/Error-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Error-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Error-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Error-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Error-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Error-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Error-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Error-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Error-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Error-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Error-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Error-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Error-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Error-Darwin-4.4.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/GetX11Image": [
+    {
+      "canonical": "R_ext/GetX11Image-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/GetX11Image-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/GetX11Image-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/GetX11Image-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/GetX11Image-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GetX11Image-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/GetX11Image-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/GetX11Image-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/GetX11Image-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/GetX11Image-Darwin-4.4.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/GraphicsDevice": [
+    {
+      "canonical": "R_ext/GraphicsDevice-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/GraphicsDevice-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/GraphicsDevice-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/GraphicsDevice-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsDevice-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/GraphicsDevice-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsDevice-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/GraphicsDevice-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/GraphicsDevice-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/GraphicsDevice-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsDevice-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/GraphicsDevice-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsDevice-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/GraphicsDevice-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/GraphicsDevice-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/GraphicsDevice-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/GraphicsDevice-windows-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/GraphicsEngine": [
+    {
+      "canonical": "R_ext/GraphicsEngine-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/GraphicsEngine-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsEngine-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/GraphicsEngine-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsEngine-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/GraphicsEngine-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/GraphicsEngine-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsEngine-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/GraphicsEngine-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsEngine-Linux-4.4.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/GraphicsEngine-Linux-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsEngine-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/GraphicsEngine-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsEngine-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/GraphicsEngine-Linux-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsEngine-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/GraphicsEngine-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/GraphicsEngine-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/GraphicsEngine-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/GraphicsEngine-windows-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/GraphicsEngine-windows-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Itermacros": [
+    {
+      "canonical": "R_ext/Itermacros-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Itermacros-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Itermacros-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Itermacros-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Itermacros-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Itermacros-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Itermacros-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Itermacros-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Itermacros-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Itermacros-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Itermacros-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Itermacros-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Itermacros-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Itermacros-Darwin-4.4.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Lapack": [
+    {
+      "canonical": "R_ext/Lapack-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Lapack-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Lapack-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Lapack-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-Darwin-4.6.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Lapack-Darwin-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Lapack-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-Linux-4.4.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Lapack-Linux-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Lapack-Linux-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Lapack-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Lapack-Linux-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Lapack-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-windows-4.4.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Lapack-windows-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Lapack-windows-4.6.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Lapack-windows-4.6.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Linpack": [
+    {
+      "canonical": "R_ext/Linpack-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Linpack-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Linpack-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Linpack-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Linpack-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Linpack-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Linpack-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Linpack-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Linpack-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Linpack-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Linpack-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Linpack-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Linpack-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Linpack-Linux-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/MathThreads": [
+    {
+      "canonical": "R_ext/MathThreads-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/MathThreads-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Memory": [
+    {
+      "canonical": "R_ext/Memory-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Memory-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Memory-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Memory-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Memory-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Memory-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Memory-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Memory-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Memory-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Memory-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Memory-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Memory-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Memory-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Memory-Linux-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Parse": [
+    {
+      "canonical": "R_ext/Parse-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Parse-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Parse-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Parse-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Parse-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Parse-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Parse-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Parse-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Parse-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Parse-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Parse-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Parse-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Parse-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Parse-windows-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Print": [
+    {
+      "canonical": "R_ext/Print-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Print-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Print-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Print-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Print-Linux-4.4.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Print-Linux-4.4.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/PrtUtil": [
+    {
+      "canonical": "R_ext/PrtUtil-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/PrtUtil-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/PrtUtil-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/PrtUtil-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/PrtUtil-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/PrtUtil-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/PrtUtil-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/PrtUtil-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/PrtUtil-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/PrtUtil-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/PrtUtil-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/PrtUtil-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/PrtUtil-Linux-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/PrtUtil-Linux-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/QuartzDevice": [
+    {
+      "canonical": "R_ext/QuartzDevice-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/QuartzDevice-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/QuartzDevice-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/QuartzDevice-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/QuartzDevice-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/QuartzDevice-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/QuartzDevice-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/QuartzDevice-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/QuartzDevice-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/QuartzDevice-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/QuartzDevice-Linux-4.6.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/RS": [
+    {
+      "canonical": "R_ext/RS-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/RS-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/RS-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/RS-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/RS-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/RS-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/RS-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/RS-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/RS-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/RS-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/RS-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/RS-Darwin-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/RS-Darwin-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/RS-Darwin-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/RStartup": [
+    {
+      "canonical": "R_ext/RStartup-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/RStartup-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/RStartup-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/RStartup-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/RStartup-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/RStartup-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/RStartup-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/RStartup-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/RStartup-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/RStartup-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/RStartup-Darwin-4.6.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/RStartup-Darwin-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/RStartup-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/RStartup-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/RStartup-windows-4.4.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/RStartup-windows-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/RStartup-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/RStartup-windows-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/RStartup-windows-4.6.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/RStartup-windows-4.6.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Rallocators": [
+    {
+      "canonical": "R_ext/Rallocators-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Rallocators-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Rallocators-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Rallocators-Linux-4.6.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Random": [
+    {
+      "canonical": "R_ext/Random-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Random-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Random-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Random-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Random-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Random-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Random-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Random-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Random-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Random-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Random-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Random-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Random-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Random-windows-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Rdynload": [
+    {
+      "canonical": "R_ext/Rdynload-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Rdynload-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Rdynload-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Rdynload-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Rdynload-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Rdynload-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Rdynload-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Rdynload-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Rdynload-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Rdynload-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Rdynload-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Rdynload-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Rdynload-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Rdynload-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Rdynload-windows-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Rdynload-windows-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Riconv": [
+    {
+      "canonical": "R_ext/Riconv-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Riconv-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Utils": [
+    {
+      "canonical": "R_ext/Utils-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Utils-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Utils-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Utils-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Utils-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Utils-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Utils-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Utils-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Utils-Linux-4.4.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Utils-Linux-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Utils-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Utils-Linux-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Utils-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Utils-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Utils-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Utils-windows-4.4.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Utils-windows-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/Utils-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Utils-windows-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Utils-windows-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/Visibility": [
+    {
+      "canonical": "R_ext/Visibility-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/Visibility-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/eventloop": [
+    {
+      "canonical": "R_ext/eventloop-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/eventloop-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/eventloop-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/eventloop-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/eventloop-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/eventloop-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/eventloop-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/eventloop-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/eventloop-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/eventloop-Linux-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/libextern": [
+    {
+      "canonical": "R_ext/libextern-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/libextern-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/stats_package": [
+    {
+      "canonical": "R_ext/stats_package-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/stats_package-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/stats_package-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/stats_package-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/stats_package-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/stats_package-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/stats_package-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/stats_package-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/stats_package-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/stats_package-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/stats_package-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/stats_package-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/stats_package-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/stats_package-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/stats_package-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/stats_package-windows-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/stats_package-windows-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "R_ext/stats_stubs": [
+    {
+      "canonical": "R_ext/stats_stubs-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "R_ext/stats_stubs-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "R_ext/stats_stubs-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "R_ext/stats_stubs-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "R_ext/stats_stubs-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/stats_stubs-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "R_ext/stats_stubs-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "R_ext/stats_stubs-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "R_ext/stats_stubs-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "R_ext/stats_stubs-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "R_ext/stats_stubs-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "R_ext/stats_stubs-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "R_ext/stats_stubs-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "R_ext/stats_stubs-windows-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "R_ext/stats_stubs-windows-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "Rconfig": [
+    {
+      "canonical": "Rconfig-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "Rconfig-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "Rconfig-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rconfig-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "Rconfig-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "Rconfig-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rconfig-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "Rconfig-Linux-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "Rconfig-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rconfig-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "Rconfig-Linux-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "Rconfig-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rconfig-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "Rconfig-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "Rconfig-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rconfig-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "Rconfig-windows-4.5.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "Rconfig-windows-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "Rdefines": [
+    {
+      "canonical": "Rdefines-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "Rdefines-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "Rdefines-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "Rembedded": [
+    {
+      "canonical": "Rembedded-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "Rembedded-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "Rembedded-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "Rembedded-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "Rembedded-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "Rembedded-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "Rembedded-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "Rembedded-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rembedded-Linux-4.4.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "Rembedded-Linux-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rembedded-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "Rembedded-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "Rembedded-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "Rembedded-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "Rembedded-windows-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "Rinterface": [
+    {
+      "canonical": "Rinterface-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "Rinterface-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "Rinterface-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "Rinterface-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "Rinterface-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "Rinterface-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "Rinterface-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "Rinterface-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "Rinterface-Darwin-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "Rinternals": [
+    {
+      "canonical": "Rinternals-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "Rinternals-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "Rinternals-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "Rinternals-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-Darwin-4.6.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "Rinternals-Darwin-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "Rinternals-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-Linux-4.4.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "Rinternals-Linux-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "Rinternals-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "Rinternals-Linux-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "Rinternals-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-windows-4.4.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "Rinternals-windows-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "Rinternals-windows-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rinternals-windows-4.6.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "Rinternals-windows-4.6.rs"
+        }
+      ]
+    }
+  ],
+  "Rmath": [
+    {
+      "canonical": "Rmath-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "Rmath-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "Rmath-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "Rmath-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-Darwin-4.6.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "Rmath-Darwin-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-Linux-4.3.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "Rmath-Linux-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-Linux-4.4.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "Rmath-Linux-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-Linux-4.5.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "Rmath-Linux-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "Rmath-Linux-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "Rmath-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-windows-4.4.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "Rmath-windows-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "Rmath-windows-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rmath-windows-4.6.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "Rmath-windows-4.6.rs"
+        }
+      ]
+    }
+  ],
+  "Rversion": [
+    {
+      "canonical": "Rversion-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "Rversion-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.3",
+          "path": "Rversion-Darwin-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "Rversion-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rversion-Darwin-4.4.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "Rversion-Darwin-4.4.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.4",
+          "path": "Rversion-Darwin-4.4.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "Rversion-Darwin-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rversion-Darwin-4.5.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.5",
+          "path": "Rversion-Darwin-4.5.rs"
+        },
+        {
+          "platform": "Linux",
+          "r_version": "4.5",
+          "path": "Rversion-Darwin-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rversion-Darwin-4.6.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.6",
+          "path": "Rversion-Darwin-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rversion-Linux-4.6.rs",
+      "combos": [
+        {
+          "platform": "Linux",
+          "r_version": "4.6",
+          "path": "Rversion-Linux-4.6.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rversion-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "Rversion-windows-4.5.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "Rversion-windows-4.6.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "Rversion-windows-4.6.rs"
+        }
+      ]
+    }
+  ],
+  "ga": [
+    {
+      "canonical": "ga-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "ga-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "ga-windows-4.4.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "ga-windows-4.4.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "ga-windows-4.4.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "ga-windows-4.4.rs"
+        }
+      ]
+    }
+  ],
+  "graphapp": [
+    {
+      "canonical": "graphapp-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "graphapp-windows-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "graphapp-windows-4.4.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "graphapp-windows-4.4.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "graphapp-windows-4.4.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "graphapp-windows-4.5.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "graphapp-windows-4.5.rs"
+        }
+      ]
+    }
+  ],
+  "iconv": [
+    {
+      "canonical": "iconv-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "iconv-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "iconv-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "iconv-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "iconv-windows-4.3.rs"
+        }
+      ]
+    }
+  ],
+  "libintl": [
+    {
+      "canonical": "libintl-Darwin-4.3.rs",
+      "combos": [
+        {
+          "platform": "Darwin",
+          "r_version": "4.3",
+          "path": "libintl-Darwin-4.3.rs"
+        },
+        {
+          "platform": "Darwin",
+          "r_version": "4.4",
+          "path": "libintl-Darwin-4.3.rs"
+        }
+      ]
+    },
+    {
+      "canonical": "libintl-windows-4.3.rs",
+      "combos": [
+        {
+          "platform": "windows",
+          "r_version": "4.3",
+          "path": "libintl-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.4",
+          "path": "libintl-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.5",
+          "path": "libintl-windows-4.3.rs"
+        },
+        {
+          "platform": "windows",
+          "r_version": "4.6",
+          "path": "libintl-windows-4.3.rs"
+        }
+      ]
+    }
+  ]
+}
