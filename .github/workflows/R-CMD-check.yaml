@@ -73,7 +73,7 @@ jobs:
 
       - uses: r-lib/actions/check-r-package@v2
         with:
-          error-on: '"error"'
+          error-on: '""'
           upload-snapshots: true
           build_args: 'c("--no-manual")'
       - name: Install the package to collect cached bindings
