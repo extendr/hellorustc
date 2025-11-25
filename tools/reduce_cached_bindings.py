@@ -24,7 +24,8 @@ import re
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Iterable, List, Sequence
+from typing import Dict, Iterable, List
+import os
 
 ROOT = Path(__file__).resolve().parent.parent
 CACHE_DIR = ROOT / "cached_bindings"
@@ -154,10 +155,17 @@ def cfg_expr(platform: str, version: str) -> str:
     return f'all(target_os = "{target}", {version_cfg})'
 
 
-def write_wrappers(grouped: Dict[str, Dict[str, List[BindingFile]]]) -> None:
-    REDUCED_DIR.mkdir(parents=True, exist_ok=True)
+def rel_include_path(from_path: Path, to_path: Path) -> str:
+    """Return a POSIX relative path from the dir containing from_path to to_path."""
+    return Path(
+        os.path.relpath(to_path, start=from_path.parent)
+    ).as_posix()
+
+
+def write_wrappers(grouped: Dict[str, Dict[str, List[BindingFile]]], out_dir: Path) -> None:
+    out_dir.mkdir(parents=True, exist_ok=True)
     for base, variants in grouped.items():
-        wrapper_path = REDUCED_DIR / f"{base}.rs"
+        wrapper_path = out_dir / f"{base}.rs"
         wrapper_path.parent.mkdir(parents=True, exist_ok=True)
 
         lines: List[str] = []
@@ -173,12 +181,12 @@ def write_wrappers(grouped: Dict[str, Dict[str, List[BindingFile]]]) -> None:
             variant_files.sort(key=lambda f: f.rel)
             canonical = pick_canonical(variant_files)
             ensure_file(canonical)
-            include_target = Path("..") / canonical.rel
+            include_target = rel_include_path(wrapper_path, canonical.path)
             combos = [cfg_expr(f.platform, f.version) for f in variant_files]
             condition = "any(\n" + "\n".join(f"    {expr}," for expr in combos) + "\n)"
             all_conditions.extend([f"    {expr}," for expr in combos])
             lines.append(f"#[cfg({condition})]")
-            lines.append(f'include!("{include_target.as_posix()}");')
+            lines.append(f'include!("{include_target}");')
             lines.append("")
 
         if all_conditions:
@@ -216,11 +224,12 @@ def write_manifest(grouped: Dict[str, Dict[str, List[BindingFile]]]) -> None:
 def main() -> None:
     grouped = group_bindings(read_head_bindings())
     removed = delete_duplicates(grouped)
-    write_wrappers(grouped)
+    write_wrappers(grouped, REDUCED_DIR)
+    write_wrappers(grouped, ROOT / "src" / "bindings")
     write_manifest(grouped)
     print(
         f"Reduced cached_bindings: removed {removed} duplicate files, "
-        f"wrote wrappers to {REDUCED_DIR.relative_to(ROOT)}."
+        f"wrote wrappers to {REDUCED_DIR.relative_to(ROOT)} and src/bindings."
     )
 
 
