@@ -56,7 +56,7 @@ jobs:
           rustup override set stable-gnu
           rustup component add rustfmt
           
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: r-lib/actions/setup-r@v2
         with:
@@ -81,7 +81,7 @@ jobs:
           Del alias:R
           R CMD INSTALL .
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           retention-days: 1
           name: cached_bindings-${{ matrix.config.os }}-R-${{ matrix.config.r }}
@@ -97,8 +97,8 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v6
         with:
           path: cached_bindings
           merge-multiple: true
